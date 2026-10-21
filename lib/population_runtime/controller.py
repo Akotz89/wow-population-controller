@@ -7,7 +7,6 @@ from collections import deque
 from collections.abc import Callable
 from dataclasses import replace
 from decimal import Decimal, ROUND_CEILING
-from fractions import Fraction
 from pathlib import Path
 
 from .adapter import PopulationAdapter
@@ -118,8 +117,10 @@ class PopulationController:
         if not self.adapter.population_fail_closed():
             raise BridgeError(f"native bridge rejected fail-closed scheduler shutdown: {reason}")
         self.state.desired_session_keys.clear()
-        # Revocation is immediate; native cleanup clears each ledger row only on ACK.
-        # Keep observed session flags until a fresh authoritative snapshot replaces them.
+        for key, record in list(self.state.progress_cache.items()):
+            self.state.progress_cache[key] = replace(
+                record, session_requested=False, online=False
+            )
         self.state.revision += 1
         save_state(self.config.state_path, self.state)
         append_audit(
@@ -200,7 +201,6 @@ class PopulationController:
                         if self.config.newcomer_wave_counts is not None else self.manifest.identities)
             for item in eligible:
                 if (item.identity_key not in occupied and item.identity_key not in self.manifest.admission_holds
-                    and item.identity_key not in self.manifest.legacy_identity_keys
                     and (self.config.newcomer_wave_counts is not None or item.wave_owner_level <= owner_level)):
                     added.append(item.identity_key)
                     if len(added) == room:
@@ -267,8 +267,6 @@ class PopulationController:
                 or not 1 <= record.level <= 80
                 or record.xp < 0
                 or record.played_seconds < 0
-                or record.zone_id < 0
-                or record.map_id < 0
             ):
                 raise BridgeError(f"earned snapshot is invalid for {key}")
             self.state.progress_cache[key] = record
@@ -298,36 +296,33 @@ class PopulationController:
         by_band: dict[str, list[BandAssignment]] = {
             band.name: [] for band in self.config.bands
         }
-        eligible_by_key: dict[str, BandAssignment] = {}
         for assignment in assignments:
             level = self.state.progress_cache[assignment.identity_key].level
-            if (self.state.progress_cache[assignment.identity_key].zone_id > 0
-                    and level <= phase_ceiling
-                    and (self.config.allow_overcap_sessions or level <= assignment.effective_ceiling)):
+            if level <= phase_ceiling and (self.config.allow_overcap_sessions or level <= assignment.effective_ceiling):
                 by_band[assignment.band].append(assignment)
-                eligible_by_key[assignment.identity_key] = assignment
+        quotas = allocate_exact(session_limit, self.config.bands)
         desired: set[str] = set()
-        active = {
-            key for key, record in self.state.progress_cache.items()
-            if record.session_requested or record.online
+        current = {
+            key for key, record in self.state.progress_cache.items() if record.session_requested
         }
-        rotation_keys &= active
-        incumbents = active - rotation_keys
+        protected = current - rotation_keys
         all_items = [item for rows in by_band.values() for item in rows]
-        # Keep a native request alive while its first earned snapshot still has
-        # no zone; releasing that pending login causes one-second churn.
-        desired.update(
-            key for key in incumbents
-            if key in eligible_by_key or self.state.progress_cache[key].session_requested
-        )
-        for key in desired:
-            self.state.last_selected_epoch.setdefault(key, now)
+        assignment_by_key = {item.identity_key: item for item in all_items}
         newcomers = {
             item.identity_key
             for item in all_items
-            if item.identity_key not in active
+            if item.identity_key not in current
             and self.state.activation_count.get(item.identity_key, 0) == 0
         }
+        newcomer_target = min(
+            len(newcomers),
+            int(
+                (Decimal(session_limit) * self.config.newcomer_session_share).to_integral_value(
+                    rounding=ROUND_CEILING
+                )
+            ),
+        )
+        newcomer_quotas = allocate_exact(newcomer_target, self.config.bands)
         density_counts: dict[tuple[int, int], int] = {}
 
         def density_key(item: BandAssignment) -> tuple[int, int] | None:
@@ -335,22 +330,14 @@ class PopulationController:
             if record.zone_id not in self.config.starter_zone_ids:
                 return None
             # Keep the existing zone cap, but do not let a same-numbered zone on
-            # another map consume the first map's budget without area telemetry.
+            # another map consume the slot. Area-level telemetry is not required.
             return record.map_id, record.zone_id
-
-        for key in desired:
-            assignment = eligible_by_key.get(key)
-            if assignment is None:
-                continue
-            density = density_key(assignment)
-            if density is not None:
-                density_counts[density] = density_counts.get(density, 0) + 1
 
         def order(item: BandAssignment) -> tuple[int, int, int, int, str]:
             key = item.identity_key
             record = self.state.progress_cache[key]
             return (
-                0 if key in newcomers else 1,
+                0 if key in protected else 1 if key in newcomers else 2 if key not in current else 3,
                 self.state.activation_count.get(key, 0),
                 record.played_seconds,
                 self.state.last_selected_epoch.get(key, 0),
@@ -373,6 +360,14 @@ class PopulationController:
             self.state.last_selected_epoch.setdefault(key, now)
             return True
 
+        def remove(key: str) -> None:
+            if key not in desired:
+                return
+            density = density_key(assignment_by_key[key])
+            if density is not None:
+                density_counts[density] -= 1
+            desired.remove(key)
+
         def take(items: list[BandAssignment], limit: int) -> int:
             selected = 0
             for item in sorted(items, key=order):
@@ -382,88 +377,69 @@ class PopulationController:
                     break
             return selected
 
-        arrival_slots = max(0, session_limit - len(desired))
-        newcomer_target = min(
-            len(newcomers),
-            int(
-                (Decimal(arrival_slots) * self.config.newcomer_session_share).to_integral_value(
-                    rounding=ROUND_CEILING
-                )
-            ),
-        )
-        newcomer_quotas = allocate_exact(newcomer_target, self.config.bands)
-        arrival_quotas = allocate_exact(arrival_slots, self.config.bands)
-        for index, (band, quota) in enumerate(zip(self.config.bands, arrival_quotas, strict=True)):
+        for index, (band, quota) in enumerate(zip(self.config.bands, quotas, strict=True)):
             if quota == 0:
                 continue
             rows = by_band[band.name]
-            selected = take(
+            selected = take([item for item in rows if item.identity_key in protected], quota)
+            remaining = quota - selected
+            selected += take(
                 [item for item in rows if item.identity_key in newcomers],
-                min(quota, newcomer_quotas[index]),
+                min(remaining, newcomer_quotas[index]),
             )
             remaining = quota - selected
             take(
-                [item for item in rows
-                 if item.identity_key not in active and item.identity_key not in newcomers],
+                [item for item in rows if item.identity_key not in current and item.identity_key not in newcomers],
                 remaining,
             )
 
-        # Incumbents are never evicted to satisfy an arrival quota. Explicit stale
-        # rotation is the only path that can put an active identity in release.
-        for item in sorted((item for item in all_items if item.identity_key not in active), key=order):
+        # If band quotas were filled by existing identities, reserve the newcomer
+        # share by replacing an unrequested offline candidate, never a protected
+        # current session. This keeps actual session release bounded by rotation.
+        newcomer_count = lambda: sum(key in desired for key in newcomers)
+        for item in sorted(
+            (item for item in all_items if item.identity_key in newcomers), key=order
+        ):
+            if newcomer_count() >= newcomer_target:
+                break
+            key = item.identity_key
+            if key in desired:
+                continue
+            victim = None
+            if len(desired) >= session_limit:
+                candidates = [
+                    candidate
+                    for candidate in desired
+                    if candidate not in protected and candidate not in newcomers
+                ]
+                if not candidates:
+                    break
+                victim = max(
+                    candidates,
+                    key=lambda candidate: (
+                        self.state.activation_count.get(candidate, 0),
+                        self.state.progress_cache[candidate].played_seconds,
+                        self.state.last_selected_epoch.get(candidate, 0),
+                        candidate,
+                    ),
+                )
+                remove(victim)
+            if not add(item) and victim is not None:
+                add(assignment_by_key[victim])
+
+        for item in sorted(
+            (item for item in all_items if item.identity_key not in rotation_keys), key=order
+        ):
+            if len(desired) >= session_limit:
+                break
+            add(item)
+        for item in sorted(
+            (item for item in all_items if item.identity_key in rotation_keys), key=order
+        ):
             if len(desired) >= session_limit:
                 break
             add(item)
         return desired
-
-    def _arrival_order(
-        self,
-        candidates: set[str],
-        active: set[str],
-        limit: int,
-    ) -> list[str]:
-        """Choose the next bounded arrivals from planned role/faction/region deficits."""
-        role_units = {"tank": 1, "healer": 1, "damage": 3}
-        role_counts: dict[str, int] = {}
-        faction_counts: dict[str, int] = {}
-        region_counts: dict[str, int] = {}
-        for key in active:
-            identity = self._identity_by_key.get(key)
-            if identity is None:
-                continue
-            role_counts[identity.role_intent] = role_counts.get(identity.role_intent, 0) + 1
-            faction_counts[identity.faction] = faction_counts.get(identity.faction, 0) + 1
-            region_counts[identity.starter_region] = region_counts.get(identity.starter_region, 0) + 1
-
-        remaining = set(candidates)
-        ordered: list[str] = []
-        # ponytail: scan at most five arrivals; replace with a heap only if the
-        # configured per-window batch ever grows beyond this safety bound.
-        def sort_key(candidate: str) -> tuple[Fraction, int, int, int, int, int, str]:
-            identity = self._identity_by_key[candidate]
-            record = self.state.progress_cache.get(candidate)
-            return (
-                Fraction(
-                    role_counts.get(identity.role_intent, 0),
-                    role_units.get(identity.role_intent, 3),
-                ),
-                faction_counts.get(identity.faction, 0),
-                region_counts.get(identity.starter_region, 0),
-                self.state.activation_count.get(candidate, 0),
-                record.played_seconds if record is not None else 0,
-                self.state.last_selected_epoch.get(candidate, 0),
-                candidate,
-            )
-
-        for _ in range(min(limit, len(remaining))):
-            key = min(remaining, key=sort_key)
-            remaining.remove(key)
-            ordered.append(key)
-            identity = self._identity_by_key[key]
-            role_counts[identity.role_intent] = role_counts.get(identity.role_intent, 0) + 1
-            faction_counts[identity.faction] = faction_counts.get(identity.faction, 0) + 1
-            region_counts[identity.starter_region] = region_counts.get(identity.starter_region, 0) + 1
-        return ordered
 
     def _rotation_candidates(
         self,
@@ -480,8 +456,7 @@ class PopulationController:
         eligible = {
             item.identity_key
             for item in assignments
-            if self.state.progress_cache[item.identity_key].zone_id > 0
-            and self.state.progress_cache[item.identity_key].level <= phase_ceiling
+            if self.state.progress_cache[item.identity_key].level <= phase_ceiling
             and (
                 self.config.allow_overcap_sessions
                 or self.state.progress_cache[item.identity_key].level <= item.effective_ceiling
@@ -514,7 +489,8 @@ class PopulationController:
                 return True
             self._recovery_pending = False
             self.state.desired_session_keys.clear()
-            # Revoke ACK is not a logout ACK; preserve observed sessions for reconciliation.
+            for key, record in list(self.state.progress_cache.items()):
+                self.state.progress_cache[key] = replace(record, session_requested=False, online=False)
 
         phase = self.adapter.population_read_phase_snapshot()
         if not phase.enabled or not phase.policy_valid or not 1 <= phase.level_ceiling <= 80:
@@ -580,8 +556,9 @@ class PopulationController:
                 {
                     "identity_key": item.identity_key,
                     "effective_ceiling": item.effective_ceiling,
-                    "held": (self.state.progress_cache[item.identity_key].zone_id == 0
-                             or self.state.progress_cache[item.identity_key].level >= item.effective_ceiling),
+                    "held": self.state.progress_cache[item.identity_key].level >= item.effective_ceiling,
+                    "scheduler_eligible": item.identity_key in desired
+                    and self.state.progress_cache[item.identity_key].level < item.effective_ceiling,
                 }
                 for item in policies[start : start + 256]
             ]
@@ -589,15 +566,23 @@ class PopulationController:
                 raise BridgeError("native progression policy was rejected")
         self._published_progression_eligible = {
             item.identity_key for item in policies
-            if (self.state.progress_cache[item.identity_key].zone_id > 0
-                and self.state.progress_cache[item.identity_key].level < item.effective_ceiling)
+            if item.identity_key in desired
+            and self.state.progress_cache[item.identity_key].level < item.effective_ceiling
         }
         online = {key for key, record in self.state.progress_cache.items() if record.online}
         release = sorted((current | online) - desired)
         # Resume after the last attempt so protected sessions cannot starve later keys.
         start = bisect_right(release, self._last_release_key)
         release = release[start:] + release[:start]
-        request_candidates = desired - current - online
+        request = sorted(
+            desired - current,
+            key=lambda key: (
+                self.state.activation_count.get(key, 0),
+                self.state.progress_cache[key].played_seconds,
+                self.state.last_selected_epoch.get(key, 0),
+                key,
+            ),
+        )
         actions: list[dict[str, object]] = []
         remaining = self.config.action_batch_size
         release_deferred = False
@@ -617,21 +602,10 @@ class PopulationController:
                 self.state.progress_cache[key], session_requested=False, online=False
             )
             actions.append({"identity_key": key, "requested": False})
-        arrival_cadence_ready = (
-            not self.state.last_admission_epoch
-            or now - self.state.last_admission_epoch >= self.config.admission_interval_seconds
-        )
-        request_budget = min(
-            self.config.admission_batch_size,
-            max(0, capacity.available_sessions),
-        ) if arrival_cadence_ready and not release_deferred else 0
-        request = self._arrival_order(request_candidates, current | online, request_budget)
-        requested = 0
-        arrival_keys: list[str] = []
         if release_deferred:
             request = []
         for key in request:
-            if remaining == 0 or requested >= request_budget:
+            if remaining == 0:
                 break
             if not self.adapter.population_request_session(key, capacity.generation):
                 raise BridgeError(f"session request was rejected for {key}")
@@ -640,13 +614,7 @@ class PopulationController:
             )
             self.state.activation_count[key] = self.state.activation_count.get(key, 0) + 1
             actions.append({"identity_key": key, "requested": True})
-            arrival_keys.append(key)
             remaining -= 1
-            requested += 1
-        if requested:
-            # Reuse the existing durable arrival timestamp so reloads cannot burst
-            # more than one configured batch before the 30-second cadence expires.
-            self.state.last_admission_epoch = now
         self.state.desired_session_keys = desired
         self.state.revision += 1
         save_state(self.config.state_path, self.state)
@@ -668,31 +636,6 @@ class PopulationController:
                 "result": "ok",
                 "session_target": len(desired),
                 "rotated_identity_keys": sorted(set(release) & rotation_keys),
-                "session_request_budget": request_budget,
-                "session_request_cadence_ready": arrival_cadence_ready,
-                "session_requests": requested,
-                "arrival_role_evidence": "manifest_role_intent_only",
-                "arrival_functional_role_ready": False,
-                "arrival_roles": {
-                    role: sum(
-                        self._identity_by_key[key].role_intent == role for key in arrival_keys
-                    )
-                    for role in ("tank", "healer", "damage")
-                },
-                "arrival_factions": {
-                    faction: sum(
-                        self._identity_by_key[key].faction == faction for key in arrival_keys
-                    )
-                    for faction in ("alliance", "horde")
-                },
-                "arrival_regions": {
-                    region: sum(
-                        self._identity_by_key[key].starter_region == region for key in arrival_keys
-                    )
-                    for region in sorted(
-                        {self._identity_by_key[key].starter_region for key in arrival_keys}
-                    )
-                },
                 "starter_density_scope": "map_zone",
             },
         )

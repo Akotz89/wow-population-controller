@@ -1,12 +1,9 @@
 # WoW population controller
 
-Source-only ownership snapshot for the Python population controller used by the
-v30 release. The 17 tracked Python files are copied from the live, source-only
-working directory; `scripts/login.py`, bytecode, snapshots, credentials,
-database data, server configuration, and release artifacts are intentionally
-excluded.
+This repository is a source-only publication of the population controller, its accepted source-proof snapshots, and a portable native strategic-director source package. The exact copied files and pins are recorded in [source/PUBLICATION-PROVENANCE.json](source/PUBLICATION-PROVENANCE.json). Three owner-frozen Python source overlays from the accepted Core1 supplement are included at the controller’s matching relative paths.
 
-The native integration boundary is the maintained
-[`mod-python-engine`](https://github.com/Akotz89/mod-python-engine) fork at
-engine revision `700a4f75a2e550f17022665d7b5b009c24e46a40`. Runtime and gameplay
-acceptance remain separate from this source snapshot.
+The native package preserves the actual module53 producer’s 21-file source/header closure, including 10 translation units. Its CMake recipe uses relative paths. The host guard runs before `project()` can detect a compiler and is required by all three CMake build targets. The recipe is packaging evidence only: no configure, compiler, link, build, import, deployment, runtime, or gameplay result is claimed here. The module53 binary is excluded.
+
+The candidate gear-policy snapshot at `source/earned-upgrade-20261021/successor-source-proof/candidate/runtime/population/lib/gear_policy.py` is SHA-256 `8a2bfc8a90da3c7af5856c22c999041024f9320e68e974e764a2d0833509a8b8`. The separately pinned active-helper runtime gear source is SHA-256 `1e10af64a17778d1008a15942faabc6b891b7267560fe18ed5ed5b0cb88dc3d7`; these versions are distinct and are not merged. The three supplemental Python files are source pins, not evidence that they were loaded.
+
+Historical source-proof and provenance snapshots retain absolute path strings from their original capture context. Those strings are documentary references, not package paths, runtime dependencies, or instructions to publish referenced data. Raw SQL, DBC, catalogue, capture, dataset and runtime-state originals, private credentials, SDK contents, generated binaries, and build outputs remain excluded. The native integration boundary remains the maintained [mod-python-engine fork](https://github.com/Akotz89/mod-python-engine) at engine revision `700a4f75a2e550f17022665d7b5b009c24e46a40`; runtime and gameplay acceptance remain separate.

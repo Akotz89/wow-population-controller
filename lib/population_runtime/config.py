@@ -68,13 +68,12 @@ class RuntimeConfig:
     pending_admission_limit: int = 1
     snapshot_weights: tuple[int, int, int] = (4, 1, 1)
     rank_denominator: str = "admitted"
-    admission_capacity: int = 2500
+    admission_capacity: int = 10000
     newcomer_wave_counts: tuple[int, ...] | None = None
     newcomer_schedule_path: Path | None = None
     eligibility_path: Path | None = None
     eligibility_file_sha256: str | None = None
-    # Fail closed: the fresh-start policy must not opt into over-cap sessions.
-    allow_overcap_sessions: bool = False
+    allow_overcap_sessions: bool = True
     quest_discovery_budget: int = 8
     quest_renewal_budget: int = 1024
     quest_tick_interval_seconds: int = 1
@@ -142,8 +141,8 @@ def _load_bands(value: object) -> tuple[BandDefinition, ...]:
                 raise ArtifactError("owner-relative offsets must strictly increase")
             previous_offset = offset
         minimum = row.get("minimum_slots", 0)
-        if isinstance(minimum, bool) or not isinstance(minimum, int) or not 0 <= minimum <= 2500:
-            raise ArtifactError("minimum_slots must be an integer in [0, 2500]")
+        if isinstance(minimum, bool) or not isinstance(minimum, int) or not 0 <= minimum <= 10000:
+            raise ArtifactError("minimum_slots must be an integer in [0, 10000]")
         bands.append(BandDefinition(expected_name, share, offset, mode, minimum))
         share_sum += share
     if share_sum != Decimal(1):
@@ -162,6 +161,9 @@ def load_config(path: Path) -> RuntimeConfig:
         "admission_capacity",
         "newcomer_schedule_path",
         "newcomer_schedule_sha256",
+        "session_rotation_interval_seconds",
+        "session_rotation_max_per_tick",
+        "newcomer_session_share",
     }
     snapshot_keys = {
         "snapshot_weights",
@@ -174,11 +176,12 @@ def load_config(path: Path) -> RuntimeConfig:
         "session_rotation_max_per_tick",
         "newcomer_session_share",
     }
+    policy_keys -= snapshot_keys
     if set(raw) - snapshot_keys not in (_EXPECTED_KEYS, _EXPECTED_KEYS | eligibility_keys, _EXPECTED_KEYS | policy_keys, _EXPECTED_KEYS | eligibility_keys | policy_keys):
         raise ArtifactError("runtime config keyset is not exact")
     if raw["schema_version"] != SCHEMA or raw["enabled"] is not True:
         raise ArtifactError("runtime config must be explicitly enabled with the supported schema")
-    allow_overcap_sessions = raw.get("allow_overcap_sessions", False)
+    allow_overcap_sessions = raw.get("allow_overcap_sessions", True)
     if not isinstance(allow_overcap_sessions, bool):
         raise ArtifactError("allow_overcap_sessions must be a boolean")
     zones = raw["starter_zone_ids"]
@@ -192,7 +195,9 @@ def load_config(path: Path) -> RuntimeConfig:
         or len(zones) != len(set(zones))
     ):
         raise ArtifactError("starter_zone_ids must be a non-empty unique integer list")
-    target = _integer(raw, "durable_target", 1, 2500)
+    target = raw.get("durable_target")
+    if type(target) is not int or target < 1:
+        raise ArtifactError("durable_target must be a positive integer")
     online_cap = _integer(raw, "online_cap", 1, target)
     if raw.get("rank_denominator", "admitted") not in ("admitted", "admission_capacity"):
         raise ArtifactError("rank_denominator must be admitted or admission_capacity")

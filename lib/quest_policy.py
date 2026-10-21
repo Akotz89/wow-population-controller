@@ -116,8 +116,9 @@ class QuestPolicy:
     def __init__(self, native, audit: Callable[[dict], None], clock=time.monotonic,
                  max_per_tick: int = 8, retry_seconds: int = 30, *,
                  memory_path=None, source_sha256=None, wall_clock=lambda: int(time.time()),
-                 renewal_budget: int = 1024, tick_interval_seconds: int = 1):
+                 renewal_budget: int = 1024, tick_interval_seconds: int = 1, acquisition_capture=None):
         self.native, self.audit, self.clock = native, audit, clock
+        self.acquisition_capture = acquisition_capture
         self.limit = _integer(max_per_tick, "max_per_tick", 1)
         if self.limit > 256:
             raise ProtocolError("max_per_tick exceeds 256")
@@ -155,7 +156,17 @@ class QuestPolicy:
         QuestMemory.validate_context(context)
         return context
 
+    def _capture_event(self, event, *args):
+        observer = self.acquisition_capture
+        if observer is not None:
+            try:
+                getattr(observer, event)(*args, self.source_sha256)
+            except Exception as error:
+                # Observation failures cannot change the ordinary native goal result.
+                observer.fail(type(error).__name__ + ': ' + str(error))
+
     def _forget_goal(self, key):
+        self._capture_event('lost', key, self.goals.get(key, 0))
         self.active.pop(key, None)
         self.goals.pop(key, None)
         if self.memory is not None:
@@ -189,6 +200,8 @@ class QuestPolicy:
         if not isinstance(s.get("reason"), str):
             raise ProtocolError("missing control reason")
         _integer(s.get("current_goal_quest_id"), "current_goal_quest_id")
+        if type(s.get("current_goal_acquiring", False)) is not bool:
+            raise ProtocolError("invalid acquisition stage")
         if s.get("observed_quest_id") != observed:
             raise ProtocolError("observed quest mismatch")
         if s.get("observed_quest_status") not in {"none", "incomplete", "complete", "rewarded", "failed"}:
@@ -213,6 +226,7 @@ class QuestPolicy:
         s = self._snapshot(key, binding, previous)
         status = s["observed_quest_status"]
         if previous and status == "rewarded":
+            self._capture_event('rewarded', key, binding, previous)
             self._forget_goal(key)
             self._emit(key, "rewarded", previous, "native_rewarded_history")
             previous = 0
@@ -225,7 +239,8 @@ class QuestPolicy:
             self._forget_goal(key)  # A changed implementation/phase/level is not an executor failure.
             previous = 0
         current = s["current_goal_quest_id"]
-        if previous and (status in {"none", "failed"} or current != previous):
+        if previous and (status == "failed" or current != previous or
+                         (status == "none" and not self._pending_goal(previous, s))):
             if self.memory is None:
                 self.retry[key, previous] = now + self.retry_seconds
             reason = "quest_failed" if status == "failed" else "goal_lost"
@@ -241,6 +256,7 @@ class QuestPolicy:
                     count=old["count"] + 1 if old else 1, last_epoch=self._wall, retry_epoch=self._wall + 30)
                 self.memory.goals.pop(key, None)
                 self.memory.save()
+            self._capture_event('lost', key, previous)
             self._emit(key, "lost", previous, reason)
             self.goals.pop(key, None)
         eligible = [q for q in s["quests"] if q["eligible"] and q["status"] != "failed"
@@ -250,20 +266,20 @@ class QuestPolicy:
                 _digest(self._context(key, binding, q["quest_id"], s)), {}).get("retry_epoch", 0)]
         eligible.sort(key=lambda q: (q["quest_id"] != current,
                                      q["status"] != "complete", q["quest_id"]))
-        if not eligible:
-            self._emit(key, "deferred", 0, "no_supported_eligible_quest")
+        quest = self._select_goal(key, binding, s, eligible, now)
+        if quest is None:
             return
-        quest = eligible[0]["quest_id"]
         if key not in self.active and len(self.active) >= self.active_capacity:
             self._emit(key, "deferred", quest, "renewal_capacity")
             return
-        result = self.native.strategic_set_quest_goal(key, quest)
+        result = self._set_goal(key, quest)
         if (not isinstance(result, dict) or result.get("quest_id") != quest
                 or result.get("status") not in {"accepted", "deferred", "rejected"}
                 or not isinstance(result.get("reason"), str)):
             raise ProtocolError("invalid native goal acknowledgement")
         outcome = result["status"]
         if outcome == "accepted":
+            self._capture_event('accepted', key, binding, quest)
             self.goals[key] = quest
             self.active[key] = quest
             if self.memory is not None:
@@ -282,6 +298,19 @@ class QuestPolicy:
             self.retry[key, quest] = now + self.retry_seconds
             self._emit(key, outcome, quest, result["reason"])
 
+    def _pending_goal(self, quest, snapshot):
+        return False
+
+    def _set_goal(self, key, quest):
+        return self.native.strategic_set_quest_goal(key, quest)
+
+    def _select_goal(self, key, binding, snapshot, eligible, now):
+        """Override selection only; leases, failure memory and setter stay shared."""
+        if not eligible:
+            self._emit(key, "deferred", 0, "no_supported_eligible_quest")
+            return None
+        return eligible[0]["quest_id"]
+
     def inherit_schedule(self, previous):
         # Read-only copy: unsuccessful reload never mutates the active interpreter.
         self.cursor = previous.cursor
@@ -293,6 +322,9 @@ class QuestPolicy:
 
     def _renew(self, bindings):
         # Removal or expected hold stops renewal; native expires untouched leases within5s.
+        for key, quest in self.active.items():
+            if key not in bindings:
+                self._capture_event('lost', key, quest)
         self.active = {key: quest for key, quest in self.active.items() if key in bindings}
         keys = sorted(self.active)
         if not keys:
@@ -312,6 +344,7 @@ class QuestPolicy:
                         or not isinstance(reply.get("reason"), str)):
                     raise ProtocolError("invalid quest renewal acknowledgement")
                 if reply["status"] != "accepted":
+                    self._capture_event('lost', key, row["quest_id"])
                     self.active.pop(key, None)
                     self._emit(key, "deferred", row["quest_id"], reply["reason"])
 

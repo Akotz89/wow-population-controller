@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+
+host="$(hostname 2>/dev/null || true)"
+kernel="$(uname -r 2>/dev/null || true)"
+
+if [[ "$host" == "server-01" || ! "$kernel" =~ [Mm]icrosoft|[Ww][Ss][Ll] ]]; then
+    printf 'ERROR: WoW compilation is restricted to the regular PC WSL2 host.\n' >&2
+    printf '       host=%s kernel=%s\n' "$host" "$kernel" >&2
+    printf '       server-01 is runtime/deploy-only; do not run cmake, ninja, make, or compilers there.\n' >&2
+    exit 78
+fi
+
+printf 'WOW_BUILD_HOST_OK host=%s kernel=%s\n' "$host" "$kernel"

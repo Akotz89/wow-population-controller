@@ -1,0 +1,53 @@
+{
+  "schema": "core1-successor-owned-log-focused-review-v1",
+  "verdict": "source-clear",
+  "findings": [],
+  "source_sha256": "b82e442ddcfe5305eda792f57d5f8f1e579fd8c1b103b88172aa3b8191ae21a7",
+  "pins_sha256": "9f1ab57d5e87782cc02cdf978d74b16c0bc619afb7b0677d4c0788e5a8b0a521",
+  "prior_source_sha256": "9422a98e0ab1dc14c1516821f65d515344480300884de1a507aa188e2a48b0f1",
+  "active_helper_sha256": "460c3c109c95f63d86a05ddfceff230fb3dcfaa2311d4d22030fef2350ec4cd4",
+  "changed_functions": [
+    "reconcile"
+  ],
+  "added_functions": [
+    "Linux.owned_log_prefix",
+    "startup_evidence",
+    "verify_startup"
+  ],
+  "checks": {
+    "tests_run": 18,
+    "passed": true,
+    "real_fd_cases": [
+      "matching-and-append",
+      "missing-publication",
+      "foreign-inode",
+      "rewritten-prefix",
+      "second-writer"
+    ],
+    "additional_fallback_idempotence": true,
+    "original_history_preserved": true,
+    "no_fabricated_journal_rows": true,
+    "explicit_missing_contemporaneous_log_inventory": true,
+    "source_sha256": "b82e442ddcfe5305eda792f57d5f8f1e579fd8c1b103b88172aa3b8191ae21a7",
+    "remote_effects": false
+  },
+  "verified_manifest_matches": true,
+  "evidence_hashes_match": true,
+  "provenance_limitations": [
+    "Log lines do not contain native PID/invocation metadata.",
+    "No contemporaneous staged log-content inventory was retained; fresh log-root derivation comes from exact pinned stage source.",
+    "Exact current writable FD plus unchanged finite prefix is checked only over reconciliation interval."
+  ],
+  "live_adoption_verified": false,
+  "runtime_rollback_verified": false,
+  "dataset_accepted": false,
+  "gameplay_verified": false,
+  "remote_effects": false,
+  "settings": {
+    "requested_model": "gpt-6.1-sol",
+    "requested_effort": "medium",
+    "host_reported_model": "gpt-6.1-sol",
+    "observed_effective_effort": null
+  },
+  "governing_issue": "CPI-225 parent supplied; no tracker action"
+}

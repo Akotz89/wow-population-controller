@@ -1,0 +1,660 @@
+{
+  "complete_source_identity": "f4764eb77295c24027d407bd7476041e5796b625602031549b71465993ce037b",
+  "composition": {
+    "bytes": 1092619,
+    "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-native-held-custody-recovery-20261021/attempts/01/composition.json",
+    "sha256": "d866aa6b28761b769de8f7b5bb3d76a66a89389ba5746bbe47372425f4c55b7b"
+  },
+  "known_overriding_handlers": [
+    {
+      "class": "PythonPlayerScript",
+      "line": 24,
+      "overrides": [
+        "OnPlayerCanAcceptQuest",
+        "OnPlayerCanProgressQuestObjective",
+        "OnPlayerCanRewardQuest",
+        "OnPlayerBeforeQuestComplete"
+      ],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Scripts/PlayerScript.cpp",
+      "script_name": "PythonPlayerScript",
+      "sha256": "52356448e75406e9b76918846748ddd095a3f6689d454d26c3a85dfb1418c471"
+    },
+    {
+      "class": "progression_system_shared_phase_gate",
+      "line": 189,
+      "overrides": [
+        "OnPlayerCanAcceptQuest",
+        "OnPlayerCanProgressQuestObjective",
+        "OnPlayerCanRewardQuest",
+        "OnPlayerBeforeQuestComplete"
+      ],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/modules/mod-progression-system/src/SharedPhaseGate.cpp",
+      "script_name": "progression_system_shared_phase_gate",
+      "sha256": "10ff3e7a476260a5e85a24419dd42332f2f8f5bed4b176fb4de8137860899728"
+    }
+  ],
+  "limits": "No arbitrary registered-name or aggregate CanTake result becomes universal true. A matching default-only name relies on this exact source/build composition; unknown names or changed composition unresolved. Native semantic token includes actual enabled dispatch names and passive global/exact-entry callback presence.",
+  "methods": [
+    "OnPlayerCanAcceptQuest",
+    "OnPlayerCanProgressQuestObjective",
+    "OnPlayerCanRewardQuest",
+    "OnPlayerBeforeQuestComplete"
+  ],
+  "predecessor_map": {
+    "bytes": 32462,
+    "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/source-proof-ordinary-kill/evidence/native/CURRENT-HANDLER-SOURCE-MAP.json",
+    "sha256": "d8337b0174d946ab4e2f548c82df0eb1021baa186f5db44cba365ff63f788740"
+  },
+  "root_bounded_source_package_acceptance": {
+    "dataset_accepted": false,
+    "descriptor": {
+      "bytes": 2980,
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/root-resume-20261020/CORE2-HELD-WORLD-ROOT-BOUNDED-ACCEPTANCE.json",
+      "sha256": "7891c49a20d9ab6ab43300ef5e3663c50f5f34001296ab5b3dcdfa28b2267e07"
+    },
+    "effect_accepted": false,
+    "loaded_generation_accepted": false,
+    "scope": "bounded held-custody source/compiled-package and retained producer acceptance only"
+  },
+  "schema": "core1-current-player-quest-handler-source-map-v1",
+  "scope": "Successor sourcef476 selected materialized src+modules plus exact successor VFS overrides. Same 35 direct class constructors and existing four-hook method semantics as predecessor d833. Source-only map; actual loaded registry observations, fifth-hook proof and Root dataset/effect acceptance remain separate.",
+  "selected_vfs": {
+    "bytes": 15840,
+    "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-native-held-custody-recovery-20261021/attempts/01/vfs-overlay.json",
+    "sha256": "a98faffc40c06e248f9d85a014daf91e1e8deec96fe21f6d70385912ce8d67a4"
+  },
+  "source_only": true,
+  "source_verified_default_only_handlers": [
+    {
+      "class": "CharacterActionIpLogger",
+      "line": 168,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/scripts/World/action_ip_logger.cpp",
+      "script_name": "CharacterActionIpLogger",
+      "sha256": "fca0f9bcf2206a594714d104cacb3827678540acb634b065bc715240c84a4888"
+    },
+    {
+      "class": "CharacterDeleteActionIpLogger",
+      "line": 263,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/scripts/World/action_ip_logger.cpp",
+      "script_name": "CharacterDeleteActionIpLogger",
+      "sha256": "fca0f9bcf2206a594714d104cacb3827678540acb634b065bc715240c84a4888"
+    },
+    {
+      "class": "ChatLogScript",
+      "line": 25,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/scripts/World/chat_log.cpp",
+      "script_name": "ChatLogScript",
+      "sha256": "775b57de094140c6cd4d5c8dc3af7618bc94bfb06c4b27ab33b4f7b567e2d99a"
+    },
+    {
+      "class": "DungeonClearAddonHookScript",
+      "line": 161,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-dungeon-clear/src/DungeonClearAddonHook.cpp",
+      "script_name": "DungeonClearAddonHookScript",
+      "sha256": "0432bd88fcc2644a70f91b7ddf62c928b78c26e851f3b4ea40f08e26cd776e1b"
+    },
+    {
+      "class": "DungeonClearLoginPlayerScript",
+      "line": 278,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-dungeon-clear/src/DungeonClearModule.cpp",
+      "script_name": "DungeonClearLoginPlayerScript",
+      "sha256": "f66d2b07158d5fd3b75ef52bca52f372103e2d0d4c7096dd1bccbe929616ff51"
+    },
+    {
+      "class": "DungeonClearPullBrakeScript",
+      "line": 307,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-dungeon-clear/src/DungeonClearModule.cpp",
+      "script_name": "DungeonClearPullBrakeScript",
+      "sha256": "f66d2b07158d5fd3b75ef52bca52f372103e2d0d4c7096dd1bccbe929616ff51"
+    },
+    {
+      "class": "DungeonClearSpectatorMoverBeginScript",
+      "line": 146,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-dungeon-clear/src/DungeonClearModule.cpp",
+      "script_name": "DungeonClearSpectatorMoverBeginScript",
+      "sha256": "f66d2b07158d5fd3b75ef52bca52f372103e2d0d4c7096dd1bccbe929616ff51"
+    },
+    {
+      "class": "DungeonClearSpectatorMoverEndScript",
+      "line": 168,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-dungeon-clear/src/DungeonClearModule.cpp",
+      "script_name": "DungeonClearSpectatorMoverEndScript",
+      "sha256": "f66d2b07158d5fd3b75ef52bca52f372103e2d0d4c7096dd1bccbe929616ff51"
+    },
+    {
+      "class": "DungeonClearSpectatorPlayerScript",
+      "line": 331,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-dungeon-clear/src/DungeonClearModule.cpp",
+      "script_name": "DungeonClearSpectatorPlayerScript",
+      "sha256": "f66d2b07158d5fd3b75ef52bca52f372103e2d0d4c7096dd1bccbe929616ff51"
+    },
+    {
+      "class": "GuildHousePlayerScript",
+      "line": 726,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-guildhouse/src/mod_guildhouse.cpp",
+      "script_name": "GuildHousePlayerScript",
+      "sha256": "1c3fb201781beed44b1233eee1107cac082760744839d8e25e30470367859852"
+    },
+    {
+      "class": "InstanceResetAnnouncer",
+      "line": 20,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-instance-reset/src/instance_reset.h",
+      "script_name": "InstanceResetAnnouncer",
+      "sha256": "85ec6c7c20995f51faf7a097082cb34aec3d8903edc280330191fdab0623716e"
+    },
+    {
+      "class": "JunkToGoldPlus",
+      "line": 25,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-junk-to-gold-plus/src/mod_junk_to_gold_plus.cpp",
+      "script_name": "JunkToGoldPlus",
+      "sha256": "e9577c1f68c33bf09b3c31cb6ddbf5160023de79f22e2730795aa6cc3bd81b7e"
+    },
+    {
+      "class": "LFGPlayerScript",
+      "constructor_line": 32,
+      "constructor_path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/DungeonFinding/LFGScripts.cpp",
+      "constructor_sha256": "616cdded64c4076fade2bc5a00b9659af0f6c03fed533027dec35cea124922b4",
+      "line": 31,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/DungeonFinding/LFGScripts.h",
+      "relevant_hooks_enabled": false,
+      "script_name": "LFGPlayerScript",
+      "sha256": "99056335514e27cf27cac3f797c19370f0e7b7b1d91fc0b22c03fb17ca360614"
+    },
+    {
+      "class": "MidsummerPlayerScript",
+      "line": 150,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/scripts/Events/midsummer.cpp",
+      "script_name": "MidsummerPlayerScript",
+      "sha256": "719d9fc39d84cf2b8ea30522bcb04dcc61881bafdb64482f33b04023f8daca5b"
+    },
+    {
+      "class": "MorphSummonPlayerScript",
+      "line": 100,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-morphsummon/src/morphsummon.cpp",
+      "script_name": "MorphSummonPlayerScript",
+      "sha256": "5e1d8fbd4a832aa614da50a36b9d0b4960058e67647f2b17c7cab02f36bfc8ae"
+    },
+    {
+      "class": "MultiBotBridgePlayerScript",
+      "line": 17503,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-multibot-bridge/src/MultiBotBridge.cpp",
+      "script_name": "MultiBotBridgePlayerScript",
+      "sha256": "41af27db6baafb554a7003eeca574a08918c0dcbe6a78ae2a6747d8441ac6ccd"
+    },
+    {
+      "class": "PlayerLootParty",
+      "line": 10,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-quest-loot-party/src/qlp_main.cpp",
+      "script_name": "PlayerLootParty",
+      "sha256": "44d815fcdf1af31a608828df4c6eb3fd11c1e72223ea68a7ee742a2c4cff74d0"
+    },
+    {
+      "class": "PS_Transmogrification",
+      "line": 713,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-transmog/src/transmog_scripts.cpp",
+      "script_name": "Player_Transmogrify",
+      "sha256": "2c2c9f336c369b0e93c67aa7cddb8c8ddfd25d9a0854431b48bffed0b7544561"
+    },
+    {
+      "class": "PlayerbotDungeonSimPersonalLootScript",
+      "line": 2637,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-playerbot-dungeon-sim/src/mod_playerbot_dungeon_sim.cpp",
+      "script_name": "PlayerbotDungeonSimPersonalLootScript",
+      "sha256": "85161aaad83c3f4faf3ea5d99fa24f553fa9b57f38c976ca3d4f97f57a63285a"
+    },
+    {
+      "class": "PlayerbotsPlayerScript",
+      "line": 69,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi224-native-integration-20261019/candidate/core/modules/mod-playerbots/src/Script/Playerbots.cpp",
+      "script_name": "PlayerbotsPlayerScript",
+      "sha256": "f93c4da48c1d0656b5d08e67645dc6e9320b356acd566231898ffdf157825024"
+    },
+    {
+      "class": "QuestApprenticeAnglerPlayerScript",
+      "line": 27,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/scripts/World/player_scripts.cpp",
+      "script_name": "QuestApprenticeAnglerPlayerScript",
+      "sha256": "d89e529c5ca87dbd738e44905c8291a46af1a2e4bfd2aa248b539f28a009492b"
+    },
+    {
+      "class": "RandomBotLevelPlayerScript",
+      "line": 1122,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-playerbots/src/Bot/RandomBotLevelMgr.cpp",
+      "script_name": "RandomBotLevelPlayerScript",
+      "sha256": "d0897b8dab6ac999afb4cafd8fd0cfd6a434397a4eed0268ee931399aa6c93a1"
+    },
+    {
+      "class": "RdfExpansion",
+      "line": 9,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-rdf-expansion/src/RdfExpansion.cpp",
+      "script_name": "RdfExpansion",
+      "sha256": "a76fb8207e4b30ed46b66f4c4c1a4a8fad8ce3e825775d7601133ba777e0063e"
+    },
+    {
+      "class": "ServerMailReward",
+      "line": 23,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/scripts/World/server_mail.cpp",
+      "script_name": "ServerMailReward",
+      "sha256": "6c1e4f4c3a31af713383124944d9a8259094cc9b65bf37152e08b7564fd02810"
+    },
+    {
+      "class": "TalentButtonLevelUp",
+      "line": 115,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-talentbutton/src/TalentButton.h",
+      "script_name": "TalentButtonLevelUp",
+      "sha256": "9fd9770a6de9dd1eb296f6cdf598ca3ccc3bc7f600f5303a931b07e25bba8e32"
+    },
+    {
+      "class": "TestOocPlayerScript",
+      "line": 46,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/test/server/game/Modules/OmenOfClarityGlyphLockTest.cpp",
+      "script_name": "TestOocPlayerScript",
+      "sha256": "87d07ad6315a09b7314c36b08f8dc889dbafe5e66d59c51fa09d5206558714d1"
+    },
+    {
+      "class": "TestVisibilityScript",
+      "line": 34,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/test/server/game/Commands/GmVisibleCommandTest.cpp",
+      "script_name": "TestVisibilityScript",
+      "sha256": "530b7fd60a8e10edce547d00c0ad1ca5901e42d514db704d3fc8b4ff3c762ab0"
+    },
+    {
+      "class": "TimeIsTime",
+      "line": 39,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-TimeIsTime/src/TimeIsTime.cpp",
+      "script_name": "TimeIsTime",
+      "sha256": "6b4e4f709475b573d964473144e00f6a807fee26506d5661000b6043d964824c"
+    },
+    {
+      "class": "WeatherVibe_PlayerScript",
+      "line": 17,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-weather-vibe/src/mod_weather_vibe.cpp",
+      "script_name": "WeatherVibe_PlayerScript",
+      "sha256": "38f050044b267bcc5283ea1ea9b2719a02e4871d9d4d058a69e21b0a6e962f45"
+    },
+    {
+      "class": "managed_population_progression",
+      "line": 924,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-native-held-custody-recovery-20261021/candidate/core/modules/mod-playerbots/src/Guide/PythonPopulationBridge.cpp",
+      "script_name": "managed_population_progression",
+      "sha256": "4454565b58c79a363440a18c409e03f7cb51cac7421e1ce3e745dae142870631"
+    },
+    {
+      "class": "mod_progression_eventquest_playerscript",
+      "line": 37,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-progression-system/src/Bracket_1_19/scripts/events/hallows_end.cpp",
+      "script_name": "mod_progression_eventquest_playerscript",
+      "sha256": "638cfd480843f81c734bb961ce8b9f2a0e7deb0952cf52b12b9c7645d5053f30"
+    },
+    {
+      "class": "mythic_plus_playerscript",
+      "line": 9,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-mythic-plus/src/mythic_plus_playerscript.cpp",
+      "script_name": "mythic_plus_playerscript",
+      "sha256": "808f04376eaedbeaab584bbe824a90ef613b8c1f9ba55417c6122565c5a8666d"
+    },
+    {
+      "class": "rotation_player_script",
+      "line": 228,
+      "overrides": [],
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-rotation/src/Rotation.cpp",
+      "script_name": "rotation_player_script",
+      "sha256": "ee820748f8c5e57bb3a65381c4b3d3407089cd973357f29b247cc22fa281fde3"
+    }
+  ],
+  "source_verified_default_only_names": [
+    "CharacterActionIpLogger",
+    "CharacterDeleteActionIpLogger",
+    "ChatLogScript",
+    "DungeonClearAddonHookScript",
+    "DungeonClearLoginPlayerScript",
+    "DungeonClearPullBrakeScript",
+    "DungeonClearSpectatorMoverBeginScript",
+    "DungeonClearSpectatorMoverEndScript",
+    "DungeonClearSpectatorPlayerScript",
+    "GuildHousePlayerScript",
+    "InstanceResetAnnouncer",
+    "JunkToGoldPlus",
+    "LFGPlayerScript",
+    "MidsummerPlayerScript",
+    "MorphSummonPlayerScript",
+    "MultiBotBridgePlayerScript",
+    "PlayerLootParty",
+    "Player_Transmogrify",
+    "PlayerbotDungeonSimPersonalLootScript",
+    "PlayerbotsPlayerScript",
+    "QuestApprenticeAnglerPlayerScript",
+    "RandomBotLevelPlayerScript",
+    "RdfExpansion",
+    "ServerMailReward",
+    "TalentButtonLevelUp",
+    "TestOocPlayerScript",
+    "TestVisibilityScript",
+    "TimeIsTime",
+    "WeatherVibe_PlayerScript",
+    "managed_population_progression",
+    "mod_progression_eventquest_playerscript",
+    "mythic_plus_playerscript",
+    "rotation_player_script"
+  ],
+  "support_sources": [
+    {
+      "bytes": 56878,
+      "logical_path": "modules/mod-playerbots/src/Ai/World/Rpg/Action/NewRpgBaseAction.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/modules/mod-playerbots/src/Ai/World/Rpg/Action/NewRpgBaseAction.cpp",
+      "sha256": "8d969dd30f179b83272b9903a41e0e6b9a140f256d282cdcee44f909e8032563",
+      "symbols": [
+        "IsQuestCapableDoing",
+        "IsQuestWorthDoing",
+        "actual TurnInQuest choose opcode"
+      ]
+    },
+    {
+      "bytes": 191543,
+      "logical_path": "modules/mod-playerbots/src/Guide/PythonPopulationBridge.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-native-held-custody-recovery-20261021/candidate/core/modules/mod-playerbots/src/Guide/PythonPopulationBridge.cpp",
+      "sha256": "4454565b58c79a363440a18c409e03f7cb51cac7421e1ce3e745dae142870631",
+      "symbols": [
+        "catalogue source rule exporter",
+        "actual source-associated primitive evaluator",
+        "scope/lifecycle ownership",
+        "explicit finite capture owner before journal allocation"
+      ]
+    },
+    {
+      "bytes": 1734,
+      "logical_path": "modules/mod-progression-system/src/ProgressionSystem.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/modules/mod-progression-system/src/ProgressionSystem.h",
+      "sha256": "6be8cc10dc931fda98d4c221ad319927b40cb197eef0a442c233dbd3b3dfcbaf",
+      "symbols": [
+        "pure source policy observation declaration"
+      ]
+    },
+    {
+      "bytes": 16081,
+      "logical_path": "modules/mod-progression-system/src/SharedPhaseGate.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/modules/mod-progression-system/src/SharedPhaseGate.cpp",
+      "sha256": "10ff3e7a476260a5e85a24419dd42332f2f8f5bed4b176fb4de8137860899728",
+      "symbols": [
+        "actual static IsAllowedQuest/Item/Spell",
+        "pure ReadQuestSourcePolicy"
+      ]
+    },
+    {
+      "bytes": 3084,
+      "logical_path": "modules/mod-progression-system/src/SharedPhaseSnapshot.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-progression-system/src/SharedPhaseSnapshot.cpp",
+      "sha256": "bcb5578073a3a0bede9a869a2fbf36f3b30253384a45f5af302158a5eaaf6091",
+      "symbols": [
+        "actual raw1_19 and phase digest uppercase producer"
+      ]
+    },
+    {
+      "bytes": 55065,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "sha256": "8d62be32b717a1868a386bed8999b841a334e57a23c56f23566cb68b96b02bb3",
+      "symbols": [
+        "catalogue passive callback observation",
+        "semantic registry fingerprint"
+      ]
+    },
+    {
+      "bytes": 3456,
+      "logical_path": "modules/mod-python-engine/src/Hooks/HookMacros.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Hooks/HookMacros.h",
+      "sha256": "fb45ca6f7bec907c1043b2ce04a9eda954e1731ab966fffbf241a8ff43a95627",
+      "symbols": [
+        "TRIGGER_PLAYER_HOOK_RESULT global entry0/defaulttrue"
+      ]
+    },
+    {
+      "bytes": 10802,
+      "logical_path": "modules/mod-python-engine/src/PythonEngine.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/modules/mod-python-engine/src/PythonEngine.h",
+      "sha256": "a71f9eddec2de6dcd1f53de803515528d3e12438c4e6269c1e47c84c8752ff91",
+      "symbols": [
+        "TriggerResult guard",
+        "HasRegisteredCallbacks",
+        "private HasCallbacks shared lock"
+      ]
+    },
+    {
+      "bytes": 15663,
+      "logical_path": "src/common/Utilities/Util.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/common/Utilities/Util.cpp",
+      "sha256": "f8bcc8de14dec77f70daa8651a26185c7f2e8616758cdc965afbb253a88fdd75",
+      "symbols": [
+        "ByteArrayToHexStr uppercase %02X"
+      ]
+    },
+    {
+      "bytes": 108716,
+      "logical_path": "src/server/game/Conditions/ConditionMgr.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Conditions/ConditionMgr.cpp",
+      "sha256": "3aee947e32d5c6f6bd29b649a9c1ea39679499c1b9df472163a6df7cd9f3f36c",
+      "symbols": [
+        "actual positive primitive15/16/7/27/8 semantics"
+      ]
+    },
+    {
+      "bytes": 18981,
+      "logical_path": "src/server/game/Conditions/ConditionMgr.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Conditions/ConditionMgr.h",
+      "sha256": "bbed6e138e4f546d23569ada54d5fa99bd30d2a253800e2bd9168c8078398500",
+      "symbols": [
+        "native condition source19 and struct exact fields"
+      ]
+    },
+    {
+      "bytes": 16729,
+      "logical_path": "src/server/game/Conditions/DisableMgr.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Conditions/DisableMgr.cpp",
+      "sha256": "ce8c5aaefc229dad9fa0856ded2ce143f47c94c336eeea7660f61cb7b8da3b88",
+      "symbols": [
+        "unit-independent loaded QUEST disable case"
+      ]
+    },
+    {
+      "bytes": 138600,
+      "logical_path": "src/server/game/Entities/Player/Player.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/src/server/game/Entities/Player/Player.h",
+      "sha256": "22b7e3027942142483ee51f08d674d6572f0493c4305901afa54eec53268eb79",
+      "symbols": [
+        "GetQuestLevel effective raw-positive or actorlevel rule"
+      ]
+    },
+    {
+      "bytes": 113119,
+      "logical_path": "src/server/game/Entities/Player/PlayerQuest.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/src/server/game/Entities/Player/PlayerQuest.cpp",
+      "sha256": "df787559c12084a0a838672371595daac575a1469cb0b106bdce82798d93b50d",
+      "symbols": [
+        "CanTakeQuest",
+        "CanAddQuest",
+        "CanRewardQuest",
+        "SatisfyQuest* native source prerequisites"
+      ]
+    },
+    {
+      "bytes": 323803,
+      "logical_path": "src/server/game/Entities/Player/PlayerStorage.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core3-cpi211-vendor-notifications-20261020/candidate/core/src/server/game/Entities/Player/PlayerStorage.cpp",
+      "sha256": "06e0c60fbe5e4123b7f2ec370101431ad4a8341f14fffddc4b195eef3e0cd760",
+      "symbols": [
+        "RequiredSkill bonus-inclusive GetSkillValue differs ConditionMgr base primitive"
+      ]
+    },
+    {
+      "bytes": 84549,
+      "logical_path": "src/server/game/Entities/Player/PlayerUpdates.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Entities/Player/PlayerUpdates.cpp",
+      "sha256": "58a9fa11ef6042a8e38676b7867352c20bbc1dfacf96682e5a0b9a5a734429a8",
+      "symbols": [
+        "OnPlayerUpdate called in actual player map update"
+      ]
+    },
+    {
+      "bytes": 78036,
+      "logical_path": "src/server/game/Events/GameEventMgr.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Events/GameEventMgr.cpp",
+      "sha256": "b716012d0ec99232bed581418e15a6520452c5c55623e034c42366c22eaa6dfe",
+      "symbols": [
+        "signed spawn/pool event map slot semantics"
+      ]
+    },
+    {
+      "bytes": 10041,
+      "logical_path": "src/server/game/Events/GameEventMgr.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/src/server/game/Events/GameEventMgr.h",
+      "sha256": "e714d42d58d39a8b56f071b13d046a3586eede936928ccc06025e0aa4e2f5630",
+      "symbols": [
+        "passive exact copied event associations"
+      ]
+    },
+    {
+      "bytes": 461769,
+      "logical_path": "src/server/game/Globals/ObjectMgr.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Globals/ObjectMgr.cpp",
+      "sha256": "35ee4b42090492f2771ada50c918f3a894323b3edf9bde8c8bee27ff1f8de0df",
+      "symbols": [
+        "default group0 SYSTEM and group1 SYSTEM|COMPATIBILITY"
+      ]
+    },
+    {
+      "bytes": 67680,
+      "logical_path": "src/server/game/Globals/ObjectMgr.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Globals/ObjectMgr.h",
+      "sha256": "3fcce66e46154507c2a461f074c2e6b4f0404f6e13b8be3bfbb5134e4342072e",
+      "symbols": [
+        "loaded relation/spawn/required template registries"
+      ]
+    },
+    {
+      "bytes": 14199,
+      "logical_path": "src/server/game/Maps/MapMgr.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Maps/MapMgr.cpp",
+      "sha256": "1aa474fa0baf85e1c6829c183b95d155f251e41774be4cb5d2fadf1799650260",
+      "symbols": [
+        "map worker updates join before returning to World update"
+      ]
+    },
+    {
+      "bytes": 2415,
+      "logical_path": "src/server/game/Maps/SpawnData.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Maps/SpawnData.h",
+      "sha256": "cadcb358d121af9ca901a736761136d3950e5fa297fabab8fb9c96daf6686c82",
+      "symbols": [
+        "SPAWNGROUP_FLAG_SYSTEM=1 and all actual flags"
+      ]
+    },
+    {
+      "bytes": 9496,
+      "logical_path": "src/server/game/Pools/PoolMgr.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Pools/PoolMgr.h",
+      "sha256": "9c5c9466b01dd0d038b0010f2b27859edc7025e8f70fbb5ef48e58302100f43c",
+      "symbols": [
+        "quest/creature/gameobject/pool parent association"
+      ]
+    },
+    {
+      "bytes": 21798,
+      "logical_path": "src/server/game/Quests/QuestDef.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Quests/QuestDef.h",
+      "sha256": "baaee3502a85ce4e02e045ae67efb1f48b7c6f6aad162f4b116496f028390b20",
+      "symbols": [
+        "actual native prerequisite/reward/objective fields"
+      ]
+    },
+    {
+      "bytes": 7724,
+      "logical_path": "src/server/game/Scripting/ScriptDefines/AllMapScript.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/src/server/game/Scripting/ScriptDefines/AllMapScript.cpp",
+      "sha256": "7c828ee72b50dcee54ea4c402222844214de4f02ace76a5f512403dc9cb45362",
+      "symbols": [
+        "actual map-enter dispatch lifecycle context"
+      ]
+    },
+    {
+      "bytes": 58397,
+      "logical_path": "src/server/game/Scripting/ScriptDefines/PlayerScript.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/src/server/game/Scripting/ScriptDefines/PlayerScript.cpp",
+      "sha256": "12d3f8d2d4f13103621ee00354d8d31b93253d9c07828d4d930a9ee8fb9048f2",
+      "symbols": [
+        "four current actual enabled hook dispatch loops",
+        "passive ShouldObserveQuestReward only existing destination listener registry"
+      ]
+    },
+    {
+      "bytes": 48860,
+      "logical_path": "src/server/game/Scripting/ScriptDefines/PlayerScript.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/src/server/game/Scripting/ScriptDefines/PlayerScript.h",
+      "sha256": "54e96ac9cc3890c1cc359274581771f22afd1f1738c1557b6fba003dea525cf7",
+      "symbols": [
+        "default four virtual bool bodies returntrue",
+        "ShouldObserveQuestReward defaultfalse existing destination listener opt-in"
+      ]
+    },
+    {
+      "bytes": 57289,
+      "logical_path": "src/server/game/Scripting/ScriptMgr.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/src/server/game/Scripting/ScriptMgr.h",
+      "sha256": "e90c725a216e9e3cf34deeb20de646d88fe7104360b33f9b1a6ece8f3bd63f26",
+      "symbols": [
+        "value-only lifecycle context/RAII definition"
+      ]
+    },
+    {
+      "bytes": 73842,
+      "logical_path": "src/server/game/World/World.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/World/World.cpp",
+      "sha256": "c1348a81267bd59dc3581b835d71087f372e7bc758fa265a4ecf974874ebf054",
+      "symbols": [
+        "OnWorldUpdate ordering after map worker join"
+      ]
+    },
+    {
+      "bytes": 13107,
+      "logical_path": "src/server/game/World/World.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/World/World.h",
+      "sha256": "060c531b2c4be5a420bc2c9fe6bf60495e4da6747ee2a5bf4161831f30f94e11",
+      "symbols": [
+        "CONFIG_QUEST_LOW_LEVEL_HIDE_DIFF actual config getter"
+      ]
+    }
+  ],
+  "total_direct_subclasses": 35,
+  "unresolved_direct_classes": []
+}

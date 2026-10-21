@@ -1,0 +1,396 @@
+{
+  "schema": "core1-successor-source-proof-focused-review-v1",
+  "review_date": "2026-10-21",
+  "verdict": "source_clear",
+  "governing_issue": "CPI-225",
+  "dispatch": "dispatch677/global-cpi-225.17",
+  "route": "same existing BMAD Build plus focused Quick review continuation",
+  "requested_settings": {
+    "model": "gpt-6.1-sol",
+    "effort": "high",
+    "source": "same project-bound attributable Jev pair continued by parent"
+  },
+  "observed_settings": {
+    "host_reported_model": "gpt-6.1-sol",
+    "independently_observed_effort": null
+  },
+  "findings": [],
+  "checks": {
+    "copied_files": 48,
+    "unchanged": 44,
+    "changed": [
+      "candidate/core/modules/mod-playerbots/src/Guide/PythonPopulationBridge.cpp",
+      "candidate/first_current_input.py",
+      "candidate/ordinary-kill-census-pin.json",
+      "candidate/producer/verify_generation.py"
+    ],
+    "compiler_revision": "dc431475531556dbf2b71a8e42fb0d4d44e844695ec02df48c337072c2fd1765",
+    "planned_source_count": 186,
+    "planned_source_digest": "5cf374fdfe72f28d32556b441927a8469c3542043bf4cc18f070e0d486836ebe",
+    "snapshot": "nativecbaa-physical-20261021",
+    "actual_successor_input_created": false,
+    "map_methods": 4,
+    "map_vfs_sha256": "a98faffc40c06e248f9d85a014daf91e1e8deec96fe21f6d70385912ce8d67a4",
+    "verifier_one_pin_only": true
+  },
+  "tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 uv run --offline --with jsonschema python work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/review/check_successor.py",
+    "passed": true,
+    "tests": 12,
+    "compact_consumer_tests": 9,
+    "targeted_native_oracle_comparisons": 3,
+    "seconds": 9.806,
+    "log": "review/compact-tests.log",
+    "log_pin": {
+      "bytes": 1844,
+      "sha256": "fb281337812f55f5db0b5745b51d296fade2b14d787dce75ea5772cd6ac67ecf"
+    },
+    "author_logs": "Untouched; oracle/tests.log still matches author VERIFIED.json pin.",
+    "scratch": "TemporaryDirectory redirected into review/; no retained temporary directories.",
+    "warning": "uv reported base Python symlink warning; execution succeeded"
+  },
+  "identities": {
+    "compiler_revision": "dc431475531556dbf2b71a8e42fb0d4d44e844695ec02df48c337072c2fd1765",
+    "planned_exporter_revision": "5cf374fdfe72f28d32556b441927a8469c3542043bf4cc18f070e0d486836ebe",
+    "planned_snapshot": "nativecbaa-physical-20261021",
+    "planned_descriptors": 186,
+    "handler_map_sha256": "4389751459b9bf752163b3568bd855198bca4542f16bb823a4c432b9f66f2203",
+    "census_sha256": "9786368e5f2902a7769e1cecd4727f50e63dcc184bfd641c77bb45a0c71da9eb",
+    "selected_inventory_sha256": "154cb70bb57ecbbbac7798a860f60c4f03dfa1fcffbfa21e784181521373b26b",
+    "complete_source_identity": "f4764eb77295c24027d407bd7476041e5796b625602031549b71465993ce037b",
+    "native_bridge_sha256": "4454565b58c79a363440a18c409e03f7cb51cac7421e1ce3e745dae142870631",
+    "oracle_sha256": "30f5655a05f89f1da14bf6214d6f7dedddee603d846b6618f1e18fdcf432bf4c",
+    "ordinary_derivation_sha256": "598bda2aa39a72810c2f34f9129dd216dba93a3eeb6aae3e691f739ba562ff69",
+    "physical_export_sha256": "ee02d3db61c2abd431330f95b1c554a2ead653074d97216a2b7aa3b552c1dbdf"
+  },
+  "preserved": [
+    "44 of 48 copied files unchanged; only bridge, first-current map pin, census descriptor and independent audited bridge pin differ.",
+    "All remaining oracle bytes match source-clear predecessor, preserving graph/projection/native-fact verification, alias/POI corrections, true CAST, native16/27 and effect guard.",
+    "Actual bridge differs only in ReadGearSnapshot, SetQuestAcquisitionCapture and AcknowledgeQuestAcquisition bodies; ReadSourcePredicates and all hook declarations/wire remain unchanged.",
+    "Generic five-hook census has 35 classes with unchanged names, owners, enablement and inheritance kinds; native exporter still has four-hook wire.",
+    "Predecessor37ae binding refuses successor census; old Root true loaded attestation refuses derivative identities.",
+    "Synthetic pipeline keeps executable graph edges empty and dataset acceptance false."
+  ],
+  "acceptance": {
+    "source_clear": true,
+    "planned_source_closure_only": true,
+    "actual_successor_input_created": false,
+    "actual_loaded_generation_observed": false,
+    "effect_custody": "UNKNOWN",
+    "fifth_hook_runtime_observed": false,
+    "root_dataset_accepted": false,
+    "gameplay_verified": false
+  },
+  "limitations": [
+    "Source/package identity is distinct from actual successor loaded-generation, dataset or gameplay acceptance.",
+    "Compact q9/q487 semantics are predecessor raw rows under explicitly synthetic actor/runtime context; they are not genuine successor data.",
+    "No 858MB raw-world scan, physical capture, remote interaction, build or cutover occurred in this review.",
+    "Actual startup/catalogue/config/native generation and raw-to-loaded capture remain parent-owned observations; retained bf22 seed alone cannot establish them.",
+    "Actual fifth-hook/callback state and objective/addon/target/spawn/POI effect custody remain UNKNOWN; the new native recovery bodies do not supply these facts.",
+    "Earned reward, equipment and save/relog remain unverified."
+  ],
+  "reviewed_files": {
+    "candidate/README.md": {
+      "bytes": 21214,
+      "sha256": "212595597b12274f770178c34eb7b136e5f37af9874bf19e45684978a57ea048"
+    },
+    "candidate/capture_manifest.py": {
+      "bytes": 44559,
+      "sha256": "4934df3fbd85367b26b1788f938c7289d907779d48379957e52c50b93335ce21"
+    },
+    "candidate/capture_native_acquisition.py": {
+      "bytes": 58506,
+      "sha256": "3cfa72f7cbbc7e8b2647ab9dbf8fa8fbea7abee2ba1cef125d4dcb740f214968"
+    },
+    "candidate/core/modules/mod-playerbots/src/Ai/World/Rpg/Action/NewRpgAction.cpp": {
+      "bytes": 27976,
+      "sha256": "b35403a17d18acf0bd97b948a7574760f5669d24c635953dac5246689e118f37"
+    },
+    "candidate/core/modules/mod-playerbots/src/Ai/World/Rpg/Action/NewRpgBaseAction.cpp": {
+      "bytes": 56878,
+      "sha256": "8d969dd30f179b83272b9903a41e0e6b9a140f256d282cdcee44f909e8032563"
+    },
+    "candidate/core/modules/mod-playerbots/src/Ai/World/Rpg/NewRpgInfo.cpp": {
+      "bytes": 6651,
+      "sha256": "1827b87f58dfbb6d2b69ff42b03e81a3948a118ecfb005628b6c6c04ac64bc07"
+    },
+    "candidate/core/modules/mod-playerbots/src/Ai/World/Rpg/NewRpgInfo.h": {
+      "bytes": 5330,
+      "sha256": "d76bddfa0cf03132ac46b8ef2daab1e84d50700611e7029606dee980273a5635"
+    },
+    "candidate/core/modules/mod-playerbots/src/Guide/PythonPopulationBridge.cpp": {
+      "bytes": 191543,
+      "sha256": "4454565b58c79a363440a18c409e03f7cb51cac7421e1ce3e745dae142870631"
+    },
+    "candidate/core/modules/mod-progression-system/src/ProgressionSystem.h": {
+      "bytes": 1734,
+      "sha256": "6be8cc10dc931fda98d4c221ad319927b40cb197eef0a442c233dbd3b3dfcbaf"
+    },
+    "candidate/core/modules/mod-progression-system/src/SharedPhaseGate.cpp": {
+      "bytes": 16081,
+      "sha256": "10ff3e7a476260a5e85a24419dd42332f2f8f5bed4b176fb4de8137860899728"
+    },
+    "candidate/core/modules/mod-python-engine/src/Bindings/PopulationModule.cpp": {
+      "bytes": 55065,
+      "sha256": "8d62be32b717a1868a386bed8999b841a334e57a23c56f23566cb68b96b02bb3"
+    },
+    "candidate/core/modules/mod-python-engine/src/Population/PopulationBridge.h": {
+      "bytes": 19016,
+      "sha256": "788f3a416f03dcf33526d8af7077ccc94ef935de4ce1ce898665526ae8acafec"
+    },
+    "candidate/core/modules/mod-python-engine/src/PythonEngine.h": {
+      "bytes": 10802,
+      "sha256": "a71f9eddec2de6dcd1f53de803515528d3e12438c4e6269c1e47c84c8752ff91"
+    },
+    "candidate/core/src/server/game/Entities/Player/Player.h": {
+      "bytes": 138600,
+      "sha256": "22b7e3027942142483ee51f08d674d6572f0493c4305901afa54eec53268eb79"
+    },
+    "candidate/core/src/server/game/Entities/Player/PlayerMisc.cpp": {
+      "bytes": 26474,
+      "sha256": "e46fb6445ad3b5e8c11c89d6ce0fa135df19db4679b6a33e7a6be8eb3cf32146"
+    },
+    "candidate/core/src/server/game/Entities/Player/PlayerQuest.cpp": {
+      "bytes": 113119,
+      "sha256": "df787559c12084a0a838672371595daac575a1469cb0b106bdce82798d93b50d"
+    },
+    "candidate/core/src/server/game/Events/GameEventMgr.h": {
+      "bytes": 10041,
+      "sha256": "e714d42d58d39a8b56f071b13d046a3586eede936928ccc06025e0aa4e2f5630"
+    },
+    "candidate/core/src/server/game/Mails/Mail.cpp": {
+      "bytes": 15700,
+      "sha256": "04bab2f54b7498cd197430bd888b7786fceb0ee58e0517bbcafb477875a129f4"
+    },
+    "candidate/core/src/server/game/Mails/Mail.h": {
+      "bytes": 9118,
+      "sha256": "2507c77ea7a98262c38ed31d3b7af70be0f3a83c6bd7713393a51c86ee7c4952"
+    },
+    "candidate/core/src/server/game/Scripting/ScriptDefines/AllMapScript.cpp": {
+      "bytes": 7724,
+      "sha256": "7c828ee72b50dcee54ea4c402222844214de4f02ace76a5f512403dc9cb45362"
+    },
+    "candidate/core/src/server/game/Scripting/ScriptDefines/PlayerScript.cpp": {
+      "bytes": 58397,
+      "sha256": "12d3f8d2d4f13103621ee00354d8d31b93253d9c07828d4d930a9ee8fb9048f2"
+    },
+    "candidate/core/src/server/game/Scripting/ScriptDefines/PlayerScript.h": {
+      "bytes": 48860,
+      "sha256": "54e96ac9cc3890c1cc359274581771f22afd1f1738c1557b6fba003dea525cf7"
+    },
+    "candidate/core/src/server/game/Scripting/ScriptMgr.h": {
+      "bytes": 57289,
+      "sha256": "e90c725a216e9e3cf34deeb20de646d88fe7104360b33f9b1a6ece8f3bd63f26"
+    },
+    "candidate/first_current_input.py": {
+      "bytes": 20235,
+      "sha256": "7dd587d90b3b69c52650623b6bf2894ed20402a2bcb5177d04200e95f56ec925"
+    },
+    "candidate/ingest_capture.py": {
+      "bytes": 1075,
+      "sha256": "5b55cb0bdb4e5806b904539bef234ac0f7afa63e3ecd092e8dde0da8016695bb"
+    },
+    "candidate/normalize_current_quest.py": {
+      "bytes": 27465,
+      "sha256": "11d68645b9d789717029e2e456bc487f0829fa2e35d5933de3b4d9242f1592d1"
+    },
+    "candidate/ordinary-kill-census-pin.json": {
+      "bytes": 297,
+      "sha256": "7781c179fb689364ca46e423736f4fb4019ba1c4681eb1485dca634c9e5480c0"
+    },
+    "candidate/ordinary_kill_proof.py": {
+      "bytes": 17884,
+      "sha256": "598bda2aa39a72810c2f34f9129dd216dba93a3eeb6aae3e691f739ba562ff69"
+    },
+    "candidate/producer/EIGHT-STORE-MAP.json": {
+      "bytes": 43846,
+      "sha256": "900120c3d6c3b4bc962459b54aa4d3150fe8c5c19881c15a5faaab251f0ed3f3"
+    },
+    "candidate/producer/compile_content_graph.py": {
+      "bytes": 12665,
+      "sha256": "3ce50a138e6b0b35dcba4ec376f2914a3dce70a5d5270979a15cd47e0c9e6ad3"
+    },
+    "candidate/producer/dbc_overlay.py": {
+      "bytes": 12234,
+      "sha256": "7eb582be2080131227781a19706309183b073f6c699ca500260bda354818c930"
+    },
+    "candidate/producer/effective_data.py": {
+      "bytes": 14803,
+      "sha256": "10900d4f7832f4f73a317ef74ea1a47d2dc1cd4cded20ba9d375633737137b58"
+    },
+    "candidate/producer/generation.py": {
+      "bytes": 18538,
+      "sha256": "c2710b739e2fa1f84d8f26f647a40e33483120da8ef187cf18a8d74eabce7ac8"
+    },
+    "candidate/producer/ingest_capture.py": {
+      "bytes": 1075,
+      "sha256": "5b55cb0bdb4e5806b904539bef234ac0f7afa63e3ecd092e8dde0da8016695bb"
+    },
+    "candidate/producer/schemas/common-v1.schema.json": {
+      "bytes": 2313,
+      "sha256": "8db4dbd76294847ad342a92b860645fadd720ed1ec57244949b8890d806fea39"
+    },
+    "candidate/producer/schemas/content-graph-v1.schema.json": {
+      "bytes": 6823,
+      "sha256": "570da9fd213a4da09025ee92ec99e03e709156f5357a188ea7c58773db2e5b67"
+    },
+    "candidate/producer/schemas/content-manifest-v1.schema.json": {
+      "bytes": 2791,
+      "sha256": "e21669570257cf77a94f2113e5338edbf8835e0625d31400e10c58f1fc994cf3"
+    },
+    "candidate/producer/schemas/item-source-v1.schema.json": {
+      "bytes": 4044,
+      "sha256": "ec441175522ec3b312e841012b5669b6c1bdf5fd6ec35c4e0670952247b0d2e3"
+    },
+    "candidate/producer/verify_generation.py": {
+      "bytes": 55443,
+      "sha256": "30f5655a05f89f1da14bf6214d6f7dedddee603d846b6618f1e18fdcf432bf4c"
+    },
+    "candidate/runtime/population/lib/capture_native_acquisition.py": {
+      "bytes": 58506,
+      "sha256": "3cfa72f7cbbc7e8b2647ab9dbf8fa8fbea7abee2ba1cef125d4dcb740f214968"
+    },
+    "candidate/runtime/population/lib/gear_policy.py": {
+      "bytes": 35789,
+      "sha256": "8a2bfc8a90da3c7af5856c22c999041024f9320e68e974e764a2d0833509a8b8"
+    },
+    "candidate/runtime/population/lib/ingest_capture.py": {
+      "bytes": 1075,
+      "sha256": "5b55cb0bdb4e5806b904539bef234ac0f7afa63e3ecd092e8dde0da8016695bb"
+    },
+    "candidate/runtime/population/lib/native_custody_ack.py": {
+      "bytes": 8597,
+      "sha256": "20368a7e031d12e8d80003b49a8faf052b38244424f41f23773edf97f886028f"
+    },
+    "candidate/runtime/population/lib/native_seed_policy.py": {
+      "bytes": 26176,
+      "sha256": "95fb323b51ec6771fce9f2f393b1dbe6573b74682720fa6773ccbfab8e0bf094"
+    },
+    "candidate/runtime/population/lib/quest_policy.py": {
+      "bytes": 21599,
+      "sha256": "8855b60d14557bb7c887050dd6afa5ef089889d1a8343f6b7274e88c26834f53"
+    },
+    "candidate/runtime/population/scripts/population_bootstrap.py": {
+      "bytes": 29648,
+      "sha256": "20d3d4387d63cd46dafd5de1e77d0606ac715b249ff639923a147b5a48768f24"
+    },
+    "evidence/native/CURRENT-HANDLER-SOURCE-MAP.json": {
+      "bytes": 33088,
+      "sha256": "4389751459b9bf752163b3568bd855198bca4542f16bb823a4c432b9f66f2203"
+    },
+    "physical_export.py": {
+      "bytes": 37315,
+      "sha256": "ee02d3db61c2abd431330f95b1c554a2ead653074d97216a2b7aa3b552c1dbdf"
+    },
+    "ORIGIN.json": {
+      "bytes": 8900,
+      "sha256": "4478e1d5da9d55368d035651237d51ef5828978691b194da682e04e2f46bb46a"
+    },
+    "OWNERS.json": {
+      "bytes": 579,
+      "sha256": "2aaa42d3ad6c3ef5f81ff40d4bb8d05482101ba52a6a37370e23cdda1c3663e0"
+    },
+    "implementation/REPORT.md": {
+      "bytes": 6093,
+      "sha256": "5bcaf31479fcf7ac914a41500915862ecf7dd4a8287e6b11579470e0788049d2"
+    },
+    "implementation/RESULT.json": {
+      "bytes": 5706,
+      "sha256": "1d5b4a7d6618b98aef5bfb596e3f2be97bf9e2a4ef97913c1689ced6e478a8b6"
+    },
+    "implementation/SOURCE-CLOSURE-INVOCATION.md": {
+      "bytes": 2989,
+      "sha256": "ecd26a40d62f67f070b53c5434357077d5edce6d7fd7570a1bd626a2dddc3c73"
+    },
+    "implementation/planned-source-closure-nativecbaa-physical-20261021.json": {
+      "bytes": 105465,
+      "sha256": "50ed3753ea0d456c55e76e3b46445651b0d031c44331f87c10355e46cafeb028"
+    },
+    "implementation/test_ordinary_kill.py": {
+      "bytes": 9784,
+      "sha256": "258e99fd2ce38bdd35a968db17df7afa6d18b1d45b599a94c5c3b72bdf1898c5"
+    },
+    "implementation/test_pipeline.py": {
+      "bytes": 11979,
+      "sha256": "943f6ca02ad48b274bccb62bc2eb20fa7553fe7832c7ac00a56f580f80f3ad2a"
+    },
+    "implementation/original-selected-vectors.json": {
+      "bytes": 271062,
+      "sha256": "c89fef734e8955a1574b9752ce5935d8499d2ab48e2911a8bd76304428111441"
+    },
+    "oracle/VERIFIED.json": {
+      "bytes": 6044,
+      "sha256": "973442d02411f1bda671ed588905b272820dd6549a814cbff9a3f792946475f7"
+    },
+    "oracle/test_successor_census.py": {
+      "bytes": 5965,
+      "sha256": "e1568b45067a39c658310608de4f923311c5b337bf4a220768326de2b5e4a916"
+    },
+    "oracle/reviewed-native-delta.patch": {
+      "bytes": 4888,
+      "sha256": "74ba653c691113083be43684a8486e8fd3783687a56eee169813f90d9659e297"
+    },
+    "oracle/verifier-pin.patch": {
+      "bytes": 1345,
+      "sha256": "c07508785d1e6834135e9fa465cacba4b17003bc8db1d28d85a67154baa978a3"
+    },
+    "oracle/tests.log": {
+      "bytes": 1077,
+      "sha256": "c609d9b35e4d13e5836d1529a80783fe32a81f82864278fcfd00933e80b4e883"
+    },
+    "review/check_successor.py": {
+      "bytes": 1629,
+      "sha256": "ac0d4e1178f1987c4c8e3dca73d5a45d06128de996886743ea6fa1bd3e132969"
+    },
+    "review/compact-tests.log": {
+      "bytes": 1844,
+      "sha256": "fb281337812f55f5db0b5745b51d296fade2b14d787dce75ea5772cd6ac67ecf"
+    },
+    "review/source-checks.json": {
+      "bytes": 726,
+      "sha256": "0bb109d89cd145221c63f500190b29ab085733603a1958aa188844c228e61dc3"
+    },
+    "review/scoped.diff": {
+      "bytes": 8083,
+      "sha256": "69e75e0b35b64927c3db20b89749282642109444b07ca8d5befcf394bf4ad26d"
+    },
+    "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/source-proof-ordinary-kill/census/successor-native-held/player-script-census.json": {
+      "bytes": 417604,
+      "sha256": "9786368e5f2902a7769e1cecd4727f50e63dcc184bfd641c77bb45a0c71da9eb"
+    },
+    "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/source-proof-ordinary-kill/census/successor-native-held/selected-source-inventory.json": {
+      "bytes": 3783478,
+      "sha256": "154cb70bb57ecbbbac7798a860f60c4f03dfa1fcffbfa21e784181521373b26b"
+    },
+    "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/source-proof-ordinary-kill/census/successor-native-held/engine-observation-capabilities.json": {
+      "bytes": 114374,
+      "sha256": "c36e90705965d09eac543c194f2bbecf01036fd5b7a2c4e50fc89e61a92f15cb"
+    },
+    "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/source-proof-ordinary-kill/census/successor-native-held/revalidation.json": {
+      "bytes": 223933,
+      "sha256": "738730086bd076b7838df07e8034ad8bdffc2b01b1f40f587baf618f18a8979a"
+    },
+    "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/source-proof-ordinary-kill/census/successor-native-held/SOURCE-CLOSURE.md": {
+      "bytes": 8724,
+      "sha256": "840c8dda6d7db7d2a64b184632c2ffa459a8a1c69b2f6a483df367fd785c73b8"
+    }
+  },
+  "writes": [
+    "review/check_successor.py",
+    "review/compact-tests.log",
+    "review/scoped.diff",
+    "review/source-checks.json",
+    "review/REPORT.md",
+    "review/RESULT.json"
+  ],
+  "resources": {
+    "remote": 0,
+    "network": 0,
+    "SQL": 0,
+    "native_build": 0,
+    "runtime_effect": 0,
+    "tracker_writes": 0,
+    "retained_owner": "parent CPI-225 delivery",
+    "cleanup_condition": "Retain source-review evidence through original-caller acceptance and rollback reconciliation"
+  }
+}

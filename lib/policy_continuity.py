@@ -24,19 +24,10 @@ def atomic(path,data,mode):
     finally:os.close(fd)
 
 def eligible(old,new,canonical):
-    # Python-only reloads replace controller/config classes but retain shared
-    # manifest, capability, state, and model modules for continuity.
-    if old is None:return False
+    if old is None or type(old) is not type(new):return False
     if old._recovery_pending or old._recovery_keys:return False
     if old.manifest!=new.manifest or old.capabilities!=new.capabilities or old.state!=new.state or old.state is new.state:return False
-    old_fields = {f.name for f in fields(old.config)}
-    if any(
-        f.name in old_fields
-        and getattr(old.config, f.name) != getattr(new.config, f.name)
-        for f in fields(new.config)
-        if f.name not in POLICY_FIELDS
-    ):
-        return False
+    if any(getattr(old.config,f.name)!=getattr(new.config,f.name) for f in fields(old.config) if f.name not in POLICY_FIELDS):return False
     excluded={canonical,old.config.newcomer_schedule_path,new.config.newcomer_schedule_path}-{None}
     # New controller's request-config fence is removed by stage before comparison.
     a={p:h for p,h in old._artifact_digests.items() if p not in excluded}

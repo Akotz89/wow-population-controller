@@ -1,0 +1,49 @@
+{
+  "schema": "core1-successor-fdinfo-focused-review-v1",
+  "verdict": "source-clear",
+  "findings": [],
+  "source_sha256": "6e64d9bb085a12693c6bf301e3e402d7280444725b1ddec0da98dd59cec8c4e2",
+  "pins_sha256": "9f1ab57d5e87782cc02cdf978d74b16c0bc619afb7b0677d4c0788e5a8b0a521",
+  "delta_sha256": "1c48f4ccb96a47b49bae57f11f6e545da6ddde9903070134284432bdf7ce6572",
+  "prior_source_sha256": "b82e442ddcfe5305eda792f57d5f8f1e579fd8c1b103b88172aa3b8191ae21a7",
+  "active_helper_sha256": "460c3c109c95f63d86a05ddfceff230fb3dcfaa2311d4d22030fef2350ec4cd4",
+  "changed_functions": [
+    "Linux.owned_log_prefix"
+  ],
+  "checks": {
+    "tests_run": 22,
+    "passed": true,
+    "real_fd_cases": [
+      "matching-and-append",
+      "missing-publication",
+      "foreign-inode",
+      "rewritten-prefix",
+      "second-writer"
+    ],
+    "additional_fallback_idempotence": true,
+    "original_history_preserved": true,
+    "no_fabricated_journal_rows": true,
+    "explicit_missing_contemporaneous_log_inventory": true,
+    "source_sha256": "6e64d9bb085a12693c6bf301e3e402d7280444725b1ddec0da98dd59cec8c4e2",
+    "remote_effects": false,
+    "denied_metadata_cases": [
+      "readonly-before-denied-stat",
+      "different-inode-before-denied-stat",
+      "matching-writable-inode-denied-stat-refuses",
+      "unreadable-fdinfo-refuses"
+    ]
+  },
+  "verified_manifest_matches": true,
+  "actual_production_scan_untested": true,
+  "live_adoption_verified": false,
+  "runtime_rollback_verified": false,
+  "dataset_accepted": false,
+  "gameplay_verified": false,
+  "remote_effects": false,
+  "settings": {
+    "requested_model": "gpt-6.1-sol",
+    "requested_effort": "medium",
+    "host_reported_model": "gpt-6.1-sol",
+    "observed_effective_effort": null
+  }
+}

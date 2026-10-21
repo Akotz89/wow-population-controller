@@ -1,0 +1,2389 @@
+{
+  "bindings": {
+    "candidate_world": {
+      "bytes": 116989360,
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-native-held-custody-recovery-20261021/attempts/01/run/artifacts/view/task/build-design/output/worldserver",
+      "sha256": "cbaa4a4ba3bcf83785444f90567d6d2a61bf390d5fa1594f79c038413fa585ce"
+    },
+    "composition": {
+      "bytes": 1092619,
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-native-held-custody-recovery-20261021/attempts/01/composition.json",
+      "sha256": "d866aa6b28761b769de8f7b5bb3d76a66a89389ba5746bbe47372425f4c55b7b"
+    },
+    "loaded_world": null,
+    "predecessor_capabilities": {
+      "bytes": 111746,
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/source-proof-ordinary-kill/census/engine-observation-capabilities.json",
+      "sha256": "ee46f6ec22c7d22b257e6fc8fc707d1ab548f52c97a1299fb9bdc584d23284ef"
+    },
+    "source_identity": "f4764eb77295c24027d407bd7476041e5796b625602031549b71465993ce037b",
+    "world_sha256": "cbaa4a4ba3bcf83785444f90567d6d2a61bf390d5fa1594f79c038413fa585ce"
+  },
+  "export_declarations": [
+    {
+      "line": 18,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "bp::class_<Quest, boost::noncopyable> quest(\"Quest\", bp::no_init);"
+    },
+    {
+      "line": 19,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "RegisterBorrowedType<Quest>(quest);"
+    },
+    {
+      "line": 20,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "quest.def(\"GetQuestId\", &Quest::GetQuestId, BorrowedPolicy<>());"
+    },
+    {
+      "line": 21,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "quest.def(\"GetQuestLevel\", &Quest::GetQuestLevel, BorrowedPolicy<>());"
+    },
+    {
+      "line": 22,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "quest.def(\"GetTitle\", &Quest::GetTitle, CopiedString());"
+    },
+    {
+      "line": 24,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "bp::class_<Corpse, bp::bases<WorldObject>, boost::noncopyable> corpse(\"Corpse\", bp::no_init);"
+    },
+    {
+      "line": 25,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "RegisterBorrowedType<Corpse>(corpse);"
+    },
+    {
+      "line": 26,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "corpse.def(\"GetOwnerGUID\", &Corpse::GetOwnerGUID, BorrowedPolicy<>());"
+    },
+    {
+      "line": 28,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "bp::class_<Spell, boost::noncopyable> spell(\"Spell\", bp::no_init);"
+    },
+    {
+      "line": 29,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "RegisterBorrowedType<Spell>(spell, true);"
+    },
+    {
+      "line": 30,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "spell.def(\"GetCaster\", &Spell::GetCaster, BorrowedReturn());"
+    },
+    {
+      "line": 31,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "spell.def(\"GetSpellInfo\", &Spell::GetSpellInfo, BorrowedReturn());"
+    },
+    {
+      "line": 33,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "bp::class_<Aura, boost::noncopyable> aura(\"Aura\", bp::no_init);"
+    },
+    {
+      "line": 34,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "RegisterBorrowedType<Aura>(aura, true);"
+    },
+    {
+      "line": 35,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "aura.def(\"GetId\", &Aura::GetId, BorrowedPolicy<>());"
+    },
+    {
+      "line": 36,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "aura.def(\"GetCaster\", &Aura::GetCaster, BorrowedReturn());"
+    },
+    {
+      "line": 37,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "aura.def(\"GetSpellInfo\", &Aura::GetSpellInfo, BorrowedReturn());"
+    },
+    {
+      "line": 39,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "bp::class_<AuraApplication, boost::noncopyable> auraApplication(\"AuraApplication\", bp::no_init);"
+    },
+    {
+      "line": 40,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "RegisterBorrowedType<AuraApplication>(auraApplication, true);"
+    },
+    {
+      "line": 41,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "auraApplication.def(\"GetTarget\", &AuraApplication::GetTarget, BorrowedReturn());"
+    },
+    {
+      "line": 43,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "bp::class_<WorldSession, boost::noncopyable> session(\"WorldSession\", bp::no_init);"
+    },
+    {
+      "line": 44,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "RegisterBorrowedType<WorldSession>(session);"
+    },
+    {
+      "line": 45,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "session.def(\"GetAccountId\", &WorldSession::GetAccountId, BorrowedPolicy<>());"
+    },
+    {
+      "line": 46,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "session.def(\"GetSecurity\", +[](WorldSession const& value) { return static_cast<uint32>(value.GetSecurity()); }, BorrowedPolicy<>());"
+    },
+    {
+      "line": 47,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "session.def(\"GetPlayer\", +[](WorldSession const& value)"
+    },
+    {
+      "line": 53,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "bp::class_<Group, boost::noncopyable> group(\"Group\", bp::no_init);"
+    },
+    {
+      "line": 54,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "RegisterBorrowedType<Group>(group, true);"
+    },
+    {
+      "line": 55,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "group.def(\"GetLeaderGUID\", &Group::GetLeaderGUID, BorrowedPolicy<>());"
+    },
+    {
+      "line": 56,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "group.def(\"GetMembersCount\", &Group::GetMembersCount, BorrowedPolicy<>());"
+    },
+    {
+      "line": 58,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "bp::class_<Guild, boost::noncopyable> guild(\"Guild\", bp::no_init);"
+    },
+    {
+      "line": 59,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "RegisterBorrowedType<Guild>(guild, true);"
+    },
+    {
+      "line": 60,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "guild.def(\"GetId\", &Guild::GetId, BorrowedPolicy<>());"
+    },
+    {
+      "line": 61,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "guild.def(\"GetName\", &Guild::GetName, CopiedString());"
+    },
+    {
+      "line": 62,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "text": "guild.def(\"GetLeaderGUID\", &Guild::GetLeaderGUID, BorrowedPolicy<>());"
+    },
+    {
+      "line": 17,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CreatureExport.cpp",
+      "text": "bp::class_<Creature, bp::bases<Unit>, boost::noncopyable> creature_class(\"Creature\", bp::no_init);"
+    },
+    {
+      "line": 18,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CreatureExport.cpp",
+      "text": "RegisterBorrowedType<Creature>(creature_class);"
+    },
+    {
+      "line": 20,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CreatureExport.cpp",
+      "text": "creature_class.def(\"GetEntry\", &Creature::GetEntry, BorrowedPolicy<>());"
+    },
+    {
+      "line": 21,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CreatureExport.cpp",
+      "text": "creature_class.def(\"Despawn\", &Despawn, BorrowedPolicy<>(),"
+    },
+    {
+      "line": 23,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CreatureExport.cpp",
+      "text": "creature_class.def(\"Respawn\", &Respawn, BorrowedPolicy<>());"
+    },
+    {
+      "line": 24,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CreatureExport.cpp",
+      "text": "creature_class.def(\"Say\", &Say, BorrowedPolicy<>());"
+    },
+    {
+      "line": 25,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CreatureExport.cpp",
+      "text": "creature_class.def(\"Yell\", &Yell, BorrowedPolicy<>());"
+    },
+    {
+      "line": 26,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CreatureExport.cpp",
+      "text": "creature_class.def(\"GetGUID\", &GetGUIDLow, BorrowedPolicy<>());"
+    },
+    {
+      "line": 90,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "template<typename T> bp::class_<T, boost::noncopyable> Record(char const* name, bool gameplayOwned = false)"
+    },
+    {
+      "line": 92,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "bp::class_<T, boost::noncopyable> result(name, bp::no_init);"
+    },
+    {
+      "line": 93,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "RegisterBorrowedType<T>(result, gameplayOwned);"
+    },
+    {
+      "line": 98,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "void ReadField(bp::class_<T, boost::noncopyable>& record, char const* name, Value T::*member)"
+    },
+    {
+      "line": 109,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "buffer.def(\"Size\", &ByteBuffer::size, BorrowedPolicy<>());"
+    },
+    {
+      "line": 110,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "buffer.def(\"GetBytes\", &BufferBytes, BorrowedPolicy<>());"
+    },
+    {
+      "line": 111,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "buffer.def(\"AppendBytes\", &AppendBytes, BorrowedPolicy<>());"
+    },
+    {
+      "line": 112,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "buffer.def(\"GetReadPosition\", static_cast<std::size_t (ByteBuffer::*)() const>(&ByteBuffer::rpos), BorrowedPolicy<>());"
+    },
+    {
+      "line": 113,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "buffer.def(\"SetReadPosition\", &SetReadPosition, BorrowedPolicy<>());"
+    },
+    {
+      "line": 114,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "buffer.def(\"ReadUInt8\", &Read<uint8>, BorrowedPolicy<>());"
+    },
+    {
+      "line": 115,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "buffer.def(\"ReadUInt16\", &Read<uint16>, BorrowedPolicy<>());"
+    },
+    {
+      "line": 116,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "buffer.def(\"ReadUInt32\", &Read<uint32>, BorrowedPolicy<>());"
+    },
+    {
+      "line": 117,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "buffer.def(\"ReadUInt64\", &Read<uint64>, BorrowedPolicy<>());"
+    },
+    {
+      "line": 118,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "buffer.def(\"ReadFloat\", &Read<float>, BorrowedPolicy<>());"
+    },
+    {
+      "line": 119,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "buffer.def(\"GetUInt8\", &Get<uint8>, BorrowedPolicy<>());"
+    },
+    {
+      "line": 120,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "buffer.def(\"GetUInt16\", &Get<uint16>, BorrowedPolicy<>());"
+    },
+    {
+      "line": 121,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "buffer.def(\"GetUInt32\", &Get<uint32>, BorrowedPolicy<>());"
+    },
+    {
+      "line": 122,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "buffer.def(\"PutUInt8\", &Put<uint8>, BorrowedPolicy<>());"
+    },
+    {
+      "line": 123,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "buffer.def(\"PutUInt16\", &Put<uint16>, BorrowedPolicy<>());"
+    },
+    {
+      "line": 124,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "buffer.def(\"PutUInt32\", &Put<uint32>, BorrowedPolicy<>());"
+    },
+    {
+      "line": 125,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "buffer.def(\"AppendUInt8\", +[](ByteBuffer& value, uint8 data) { value.append<uint8>(data); }, BorrowedPolicy<>());"
+    },
+    {
+      "line": 126,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "buffer.def(\"AppendUInt16\", +[](ByteBuffer& value, uint16 data) { value.append<uint16>(data); }, BorrowedPolicy<>());"
+    },
+    {
+      "line": 127,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "buffer.def(\"AppendUInt32\", +[](ByteBuffer& value, uint32 data) { value.append<uint32>(data); }, BorrowedPolicy<>());"
+    },
+    {
+      "line": 129,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "bp::class_<WorldPacket, bp::bases<ByteBuffer>, boost::noncopyable> packet(\"WorldPacket\", bp::no_init);"
+    },
+    {
+      "line": 130,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "RegisterBorrowedType<WorldPacket>(packet);"
+    },
+    {
+      "line": 131,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "packet.def(\"GetOpcode\", &WorldPacket::GetOpcode, BorrowedPolicy<>());"
+    },
+    {
+      "line": 132,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "packet.def(\"SetOpcode\", &WorldPacket::SetOpcode, BorrowedPolicy<>());"
+    },
+    {
+      "line": 135,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "effect.def(\"GetId\", &AuraEffect::GetId, BorrowedPolicy<>());"
+    },
+    {
+      "line": 136,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "effect.def(\"GetEffIndex\", &AuraEffect::GetEffIndex, BorrowedPolicy<>());"
+    },
+    {
+      "line": 137,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "effect.def(\"GetAmount\", &AuraEffect::GetAmount, BorrowedPolicy<>());"
+    },
+    {
+      "line": 138,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "effect.def(\"SetAmount\", &AuraEffect::SetAmount, BorrowedPolicy<>());"
+    },
+    {
+      "line": 139,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "effect.def(\"GetMiscValue\", &AuraEffect::GetMiscValue, BorrowedPolicy<>());"
+    },
+    {
+      "line": 140,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "effect.def(\"GetCaster\", &AuraEffect::GetCaster, BorrowedReturn());"
+    },
+    {
+      "line": 141,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "effect.def(\"GetBase\", &AuraEffect::GetBase, BorrowedReturn());"
+    },
+    {
+      "line": 142,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "effect.def(\"GetSpellInfo\", &AuraEffect::GetSpellInfo, BorrowedReturn());"
+    },
+    {
+      "line": 145,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "arena.def(\"GetId\", &ArenaTeam::GetId, BorrowedPolicy<>());"
+    },
+    {
+      "line": 146,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "arena.def(\"GetType\", &ArenaTeam::GetType, BorrowedPolicy<>());"
+    },
+    {
+      "line": 147,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "arena.def(\"GetName\", &ArenaTeam::GetName, CopiedString());"
+    },
+    {
+      "line": 148,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "arena.def(\"GetCaptain\", &ArenaTeam::GetCaptain, BorrowedPolicy<>());"
+    },
+    {
+      "line": 149,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "arena.def(\"GetRating\", &ArenaTeam::GetRating, BorrowedPolicy<>());"
+    },
+    {
+      "line": 152,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "battleground.def(\"GetName\", &Battleground::GetName, BorrowedPolicy<>());"
+    },
+    {
+      "line": 153,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "battleground.def(\"GetMapId\", &Battleground::GetMapId, BorrowedPolicy<>());"
+    },
+    {
+      "line": 154,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "battleground.def(\"GetInstanceID\", &Battleground::GetInstanceID, BorrowedPolicy<>());"
+    },
+    {
+      "line": 155,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "battleground.def(\"GetPlayersSize\", &Battleground::GetPlayersSize, BorrowedPolicy<>());"
+    },
+    {
+      "line": 156,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "battleground.def(\"GetStatus\", +[](Battleground const& value) { return static_cast<uint32>(value.GetStatus()); }, BorrowedPolicy<>());"
+    },
+    {
+      "line": 157,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "battleground.def(\"GetWinner\", +[](Battleground const& value) { return static_cast<uint32>(value.GetWinner()); }, BorrowedPolicy<>());"
+    },
+    {
+      "line": 160,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "channel.def(\"GetName\", &Channel::GetName, CopiedString());"
+    },
+    {
+      "line": 161,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "channel.def(\"GetChannelId\", &Channel::GetChannelId, BorrowedPolicy<>());"
+    },
+    {
+      "line": 162,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "channel.def(\"GetNumPlayers\", &Channel::GetNumPlayers, BorrowedPolicy<>());"
+    },
+    {
+      "line": 163,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "channel.def(\"GetFlags\", &Channel::GetFlags, BorrowedPolicy<>());"
+    },
+    {
+      "line": 164,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "channel.def(\"IsLFG\", &Channel::IsLFG, BorrowedPolicy<>());"
+    },
+    {
+      "line": 167,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "instance.def(\"GetMap\", +[](InstanceScript const& value) { return value.instance; }, BorrowedReturn());"
+    },
+    {
+      "line": 168,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "instance.def(\"GetBossState\", +[](InstanceScript const& value, uint32 id) { return static_cast<uint32>(value.GetBossState(id)); }, BorrowedPolicy<>());"
+    },
+    {
+      "line": 169,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "instance.def(\"SetBossState\", +[](InstanceScript& value, uint32 id, uint32 state)"
+    },
+    {
+      "line": 174,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "instance.def(\"GetData\", +[](InstanceScript const& value, uint32 id) { return value.GetData(id); }, BorrowedPolicy<>());"
+    },
+    {
+      "line": 175,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "instance.def(\"SetData\", +[](InstanceScript& value, uint32 id, uint32 data) { value.SetData(id, data); }, BorrowedPolicy<>());"
+    },
+    {
+      "line": 199,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "manager.def(\"GetPlayer\", &AchievementMgr::GetPlayer, BorrowedReturn());"
+    },
+    {
+      "line": 200,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "manager.def(\"HasAchieved\", &AchievementMgr::HasAchieved, BorrowedPolicy<>());"
+    },
+    {
+      "line": 201,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "manager.def(\"GetCriteriaProgress\", &AchievementMgr::GetCriteriaProgress, BorrowedReturn());"
+    },
+    {
+      "line": 203,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "globalManager.def(\"IsRealmCompleted\", &AchievementGlobalMgr::IsRealmCompleted, BorrowedPolicy<>());"
+    },
+    {
+      "line": 204,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "globalManager.def(\"GetAchievement\", &AchievementGlobalMgr::GetAchievement, BorrowedReturn());"
+    },
+    {
+      "line": 221,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "faction.def(\"IsFriendlyTo\", &FactionTemplateEntry::IsFriendlyTo, BorrowedPolicy<>());"
+    },
+    {
+      "line": 222,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "faction.def(\"IsHostileTo\", &FactionTemplateEntry::IsHostileTo, BorrowedPolicy<>());"
+    },
+    {
+      "line": 230,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "map.def(\"IsDungeon\", &MapEntry::IsDungeon, BorrowedPolicy<>());"
+    },
+    {
+      "line": 231,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "map.def(\"IsRaid\", &MapEntry::IsRaid, BorrowedPolicy<>());"
+    },
+    {
+      "line": 250,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "requirements.def(\"GetQuests\", +[](DungeonProgressionRequirements const& value) { return Converter::ToPython(value.quests); }, BorrowedPolicy<>());"
+    },
+    {
+      "line": 251,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "requirements.def(\"GetItems\", +[](DungeonProgressionRequirements const& value) { return Converter::ToPython(value.items); }, BorrowedPolicy<>());"
+    },
+    {
+      "line": 252,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "requirements.def(\"GetAchievements\", +[](DungeonProgressionRequirements const& value) { return Converter::ToPython(value.achievements); }, BorrowedPolicy<>());"
+    },
+    {
+      "line": 283,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "loot.def(\"SetGold\", +[](Loot& value, uint32 gold) { value.gold = gold; }, BorrowedPolicy<>());"
+    },
+    {
+      "line": 284,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "loot.def(\"ItemCount\", +[](Loot const& value) { return value.items.size(); }, BorrowedPolicy<>());"
+    },
+    {
+      "line": 285,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "loot.def(\"GetItem\", +[](Loot& value, std::size_t index) -> LootItem*"
+    },
+    {
+      "line": 290,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "loot.def(\"empty\", &Loot::empty, BorrowedPolicy<>());"
+    },
+    {
+      "line": 312,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "movement.def(\"GetPositionX\", +[](MovementInfo const& value) { return value.pos.GetPositionX(); }, BorrowedPolicy<>());"
+    },
+    {
+      "line": 313,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "movement.def(\"GetPositionY\", +[](MovementInfo const& value) { return value.pos.GetPositionY(); }, BorrowedPolicy<>());"
+    },
+    {
+      "line": 314,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "movement.def(\"GetPositionZ\", +[](MovementInfo const& value) { return value.pos.GetPositionZ(); }, BorrowedPolicy<>());"
+    },
+    {
+      "line": 315,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "movement.def(\"GetOrientation\", +[](MovementInfo const& value) { return value.pos.GetOrientation(); }, BorrowedPolicy<>());"
+    },
+    {
+      "line": 330,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "talent.def(\"GetRankSpell\", +[](TalentEntry const& value, std::size_t rank)"
+    },
+    {
+      "line": 338,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "itemSet.def(\"GetSpell\", +[](ItemSetEffect const& value, std::size_t index) -> SpellInfo const*"
+    },
+    {
+      "line": 347,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "scaling.def(\"GetArmorMod\", &ScalingStatValuesEntry::getArmorMod, BorrowedPolicy<>());"
+    },
+    {
+      "line": 348,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "scaling.def(\"GetDPSMod\", &ScalingStatValuesEntry::getDPSMod, BorrowedPolicy<>());"
+    },
+    {
+      "line": 349,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "scaling.def(\"GetStatMultiplier\", &ScalingStatValuesEntry::getssdMultiplier, BorrowedPolicy<>());"
+    },
+    {
+      "line": 351,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "rewarder.def(\"GetVictim\", &KillRewarder::GetVictim, BorrowedReturn());"
+    },
+    {
+      "line": 352,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "text": "rewarder.def(\"GetKiller\", &KillRewarder::GetKiller, BorrowedReturn());"
+    },
+    {
+      "line": 16,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/GameObjectExport.cpp",
+      "text": "bp::class_<GameObject, bp::bases<WorldObject>, boost::noncopyable> gameobject_class(\"GameObject\", bp::no_init);"
+    },
+    {
+      "line": 17,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/GameObjectExport.cpp",
+      "text": "RegisterBorrowedType<GameObject>(gameobject_class);"
+    },
+    {
+      "line": 19,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/GameObjectExport.cpp",
+      "text": "gameobject_class.def(\"GetEntry\", &GameObject::GetEntry, BorrowedPolicy<>());"
+    },
+    {
+      "line": 20,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/GameObjectExport.cpp",
+      "text": "gameobject_class.def(\"GetName\", &GameObject::GetName, BorrowedPolicy<bp::return_value_policy<bp::copy_const_reference>>());"
+    },
+    {
+      "line": 21,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/GameObjectExport.cpp",
+      "text": "gameobject_class.def(\"Respawn\", &Respawn, BorrowedPolicy<>());"
+    },
+    {
+      "line": 22,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/GameObjectExport.cpp",
+      "text": "gameobject_class.def(\"Delete\", &GameObject::Delete, BorrowedPolicy<>());"
+    },
+    {
+      "line": 23,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/GameObjectExport.cpp",
+      "text": "gameobject_class.def(\"Use\", &Use, BorrowedPolicy<>());"
+    },
+    {
+      "line": 24,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/GameObjectExport.cpp",
+      "text": "gameobject_class.def(\"GetGoState\", &GameObject::GetGoState, BorrowedPolicy<>());"
+    },
+    {
+      "line": 25,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/GameObjectExport.cpp",
+      "text": "gameobject_class.def(\"SetGoState\", &GameObject::SetGoState, BorrowedPolicy<>());"
+    },
+    {
+      "line": 26,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/GameObjectExport.cpp",
+      "text": "gameobject_class.def(\"IsSpawned\", &GameObject::isSpawned, BorrowedPolicy<>());"
+    },
+    {
+      "line": 27,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/GameObjectExport.cpp",
+      "text": "gameobject_class.def(\"GetGUID\", &GetGUIDLow, BorrowedPolicy<>());"
+    },
+    {
+      "line": 15,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ItemExport.cpp",
+      "text": "bp::class_<ItemTemplate> item_template_struct(\"ItemTemplate\", bp::no_init);"
+    },
+    {
+      "line": 16,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ItemExport.cpp",
+      "text": "RegisterBorrowedType<ItemTemplate>(item_template_struct);"
+    },
+    {
+      "line": 40,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ItemExport.cpp",
+      "text": "bp::class_<Item, boost::noncopyable> item_class(\"Item\", bp::no_init);"
+    },
+    {
+      "line": 41,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ItemExport.cpp",
+      "text": "RegisterBorrowedType<Item>(item_class, true);"
+    },
+    {
+      "line": 44,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ItemExport.cpp",
+      "text": "item_class.def(\"GetTemplate\", &Item::GetTemplate, BorrowedPolicy<bp::return_internal_reference<>>());"
+    },
+    {
+      "line": 47,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ItemExport.cpp",
+      "text": "item_class.def(\"GetEntry\", &Item::GetEntry, BorrowedPolicy<>());"
+    },
+    {
+      "line": 48,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ItemExport.cpp",
+      "text": "item_class.def(\"GetCount\", &Item::GetCount, BorrowedPolicy<>());"
+    },
+    {
+      "line": 49,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ItemExport.cpp",
+      "text": "item_class.def(\"GetSlot\", &Item::GetSlot, BorrowedPolicy<>());"
+    },
+    {
+      "line": 50,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ItemExport.cpp",
+      "text": "item_class.def(\"GetBagSlot\", &Item::GetBagSlot, BorrowedPolicy<>());"
+    },
+    {
+      "line": 53,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "bp::class_<Map, boost::noncopyable> map_class(\"Map\", bp::no_init);"
+    },
+    {
+      "line": 54,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "RegisterBorrowedType<Map>(map_class, true);"
+    },
+    {
+      "line": 57,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "map_class.def(\"GetId\", &Map::GetId, BorrowedPolicy<>());"
+    },
+    {
+      "line": 58,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "map_class.def(\"GetMapName\", &Map::GetMapName, BorrowedPolicy<>());"
+    },
+    {
+      "line": 61,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "map_class.def(\"Instanceable\", &Map::Instanceable, BorrowedPolicy<>());"
+    },
+    {
+      "line": 62,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "map_class.def(\"IsDungeon\", &Map::IsDungeon, BorrowedPolicy<>());"
+    },
+    {
+      "line": 63,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "map_class.def(\"IsNonRaidDungeon\", &Map::IsNonRaidDungeon, BorrowedPolicy<>());"
+    },
+    {
+      "line": 64,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "map_class.def(\"IsRaid\", &Map::IsRaid, BorrowedPolicy<>());"
+    },
+    {
+      "line": 65,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "map_class.def(\"IsRaidOrHeroicDungeon\", &Map::IsRaidOrHeroicDungeon, BorrowedPolicy<>());"
+    },
+    {
+      "line": 66,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "map_class.def(\"IsHeroic\", &Map::IsHeroic, BorrowedPolicy<>());"
+    },
+    {
+      "line": 67,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "map_class.def(\"Is25ManRaid\", &Map::Is25ManRaid, BorrowedPolicy<>());"
+    },
+    {
+      "line": 68,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "map_class.def(\"IsBattleground\", &Map::IsBattleground, BorrowedPolicy<>());"
+    },
+    {
+      "line": 69,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "map_class.def(\"IsBattleArena\", &Map::IsBattleArena, BorrowedPolicy<>());"
+    },
+    {
+      "line": 70,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "map_class.def(\"IsBattlegroundOrArena\", &Map::IsBattlegroundOrArena, BorrowedPolicy<>());"
+    },
+    {
+      "line": 71,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "map_class.def(\"IsWorldMap\", &Map::IsWorldMap, BorrowedPolicy<>());"
+    },
+    {
+      "line": 74,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "map_class.def(\"GetCreature\", &Map::GetCreature, BorrowedPolicy<bp::return_value_policy<bp::reference_existing_object>>());"
+    },
+    {
+      "line": 75,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "map_class.def(\"GetGameObject\", &Map::GetGameObject, BorrowedPolicy<bp::return_value_policy<bp::reference_existing_object>>());"
+    },
+    {
+      "line": 77,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "map_class.def(\"LoadGrid\", &LoadGrid, BorrowedPolicy<>());"
+    },
+    {
+      "line": 78,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "bp::def(\"GetMap\", &GetMap, BorrowedPolicy<bp::return_value_policy<bp::reference_existing_object>>());"
+    },
+    {
+      "line": 79,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "bp::def(\"GetPlayer\", &GetPlayer, BorrowedPolicy<bp::return_value_policy<bp::reference_existing_object>>());"
+    },
+    {
+      "line": 80,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "bp::def(\"GetPlayer\", &GetPlayerRaw, BorrowedPolicy<bp::return_value_policy<bp::reference_existing_object>>());"
+    },
+    {
+      "line": 83,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "map_class.def(\"GetHeight\", static_cast<float (Map::*)(float, float, float, bool, float) const>(&Map::GetHeight), BorrowedPolicy<>(),"
+    },
+    {
+      "line": 86,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "map_class.def(\"GetAreaId\", &Map::GetAreaId, BorrowedPolicy<>());"
+    },
+    {
+      "line": 87,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "text": "map_class.def(\"GetZoneId\", &Map::GetZoneId, BorrowedPolicy<>());"
+    },
+    {
+      "line": 15,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "bp::class_<Object, boost::noncopyable> object_class(\"Object\", bp::no_init);"
+    },
+    {
+      "line": 16,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "RegisterBorrowedType<Object>(object_class, true);"
+    },
+    {
+      "line": 19,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "object_class.def(\"GetObjectGUID\", static_cast<ObjectGuid (Object::*)() const>(&Object::GetGUID), BorrowedPolicy<>());"
+    },
+    {
+      "line": 20,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "object_class.def(\"GetEntry\", &Object::GetEntry, BorrowedPolicy<>());"
+    },
+    {
+      "line": 21,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "object_class.def(\"GetTypeId\", &Object::GetTypeId, BorrowedPolicy<>());"
+    },
+    {
+      "line": 22,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "object_class.def(\"isType\", &Object::isType, BorrowedPolicy<>());"
+    },
+    {
+      "line": 25,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "object_class.def(\"IsInWorld\", &Object::IsInWorld, BorrowedPolicy<>());"
+    },
+    {
+      "line": 26,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "object_class.def(\"IsItem\", &Object::IsItem, BorrowedPolicy<>());"
+    },
+    {
+      "line": 27,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "object_class.def(\"IsUnit\", &Object::IsUnit, BorrowedPolicy<>());"
+    },
+    {
+      "line": 28,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "object_class.def(\"IsPlayer\", &Object::IsPlayer, BorrowedPolicy<>());"
+    },
+    {
+      "line": 29,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "object_class.def(\"IsCreature\", &Object::IsCreature, BorrowedPolicy<>());"
+    },
+    {
+      "line": 30,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "object_class.def(\"IsGameObject\", &Object::IsGameObject, BorrowedPolicy<>());"
+    },
+    {
+      "line": 31,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "object_class.def(\"IsDynamicObject\", &Object::IsDynamicObject, BorrowedPolicy<>());"
+    },
+    {
+      "line": 32,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "object_class.def(\"IsCorpse\", &Object::IsCorpse, BorrowedPolicy<>());"
+    },
+    {
+      "line": 35,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "object_class.def(\"GetUInt32Value\", &PyEng::ObjectAdapter::GetUInt32Value, BorrowedPolicy<>());"
+    },
+    {
+      "line": 36,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "object_class.def(\"GetFloatValue\", &PyEng::ObjectAdapter::GetFloatValue, BorrowedPolicy<>());"
+    },
+    {
+      "line": 37,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "object_class.def(\"SetUInt32Value\", &PyEng::ObjectAdapter::SetUInt32Value, BorrowedPolicy<>());"
+    },
+    {
+      "line": 38,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "object_class.def(\"SetFloatValue\", &PyEng::ObjectAdapter::SetFloatValue, BorrowedPolicy<>());"
+    },
+    {
+      "line": 41,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "object_class.def(\"HasFlag\", &PyEng::ObjectAdapter::HasFlag, BorrowedPolicy<>());"
+    },
+    {
+      "line": 42,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "object_class.def(\"SetFlag\", &PyEng::ObjectAdapter::SetFlag, BorrowedPolicy<>());"
+    },
+    {
+      "line": 43,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "object_class.def(\"RemoveFlag\", &PyEng::ObjectAdapter::RemoveFlag, BorrowedPolicy<>());"
+    },
+    {
+      "line": 52,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "bp::class_<WorldObject, bp::bases<Object, WorldLocation>, boost::noncopyable> worldobject_class(\"WorldObject\","
+    },
+    {
+      "line": 54,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "RegisterBorrowedType<WorldObject>(worldobject_class);"
+    },
+    {
+      "line": 57,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "worldobject_class.def(\"GetName\", &WorldObject::GetName, BorrowedPolicy<bp::return_value_policy<bp::copy_const_reference>>());"
+    },
+    {
+      "line": 60,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "worldobject_class.def(\"GetInstanceId\", &WorldObject::GetInstanceId, BorrowedPolicy<>());"
+    },
+    {
+      "line": 61,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "worldobject_class.def(\"GetAreaId\", &WorldObject::GetAreaId, BorrowedPolicy<>());"
+    },
+    {
+      "line": 62,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "worldobject_class.def(\"GetZoneId\", &WorldObject::GetZoneId, BorrowedPolicy<>());"
+    },
+    {
+      "line": 63,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "text": "worldobject_class.def(\"GetMap\", &WorldObject::GetMap, BorrowedPolicy<bp::return_value_policy<bp::reference_existing_object>>());"
+    },
+    {
+      "line": 11,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "bp::class_<ObjectGuid> objectguid_class(\"ObjectGuid\");"
+    },
+    {
+      "line": 14,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "objectguid_class.def(bp::init<>());"
+    },
+    {
+      "line": 15,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "objectguid_class.def(bp::init<uint64>(bp::arg(\"rawValue\")));"
+    },
+    {
+      "line": 18,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "objectguid_class.def(\"GetRawValue\", &ObjectGuid::GetRawValue);"
+    },
+    {
+      "line": 19,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "objectguid_class.def(\"GetCounter\", &ObjectGuid::GetCounter);"
+    },
+    {
+      "line": 20,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "objectguid_class.def(\"IsEmpty\", &ObjectGuid::IsEmpty);"
+    },
+    {
+      "line": 21,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "objectguid_class.def(\"Clear\", &ObjectGuid::Clear);"
+    },
+    {
+      "line": 24,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "objectguid_class.def(\"IsPlayer\", &ObjectGuid::IsPlayer);"
+    },
+    {
+      "line": 25,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "objectguid_class.def(\"IsCreature\", &ObjectGuid::IsCreature);"
+    },
+    {
+      "line": 26,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "objectguid_class.def(\"IsGameObject\", &ObjectGuid::IsGameObject);"
+    },
+    {
+      "line": 27,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "objectguid_class.def(\"IsItem\", &ObjectGuid::IsItem);"
+    },
+    {
+      "line": 28,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "objectguid_class.def(\"IsPet\", &ObjectGuid::IsPet);"
+    },
+    {
+      "line": 29,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "objectguid_class.def(\"IsVehicle\", &ObjectGuid::IsVehicle);"
+    },
+    {
+      "line": 30,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "objectguid_class.def(\"IsUnit\", &ObjectGuid::IsUnit);"
+    },
+    {
+      "line": 33,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "objectguid_class.def(bp::self == bp::self);"
+    },
+    {
+      "line": 34,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "objectguid_class.def(bp::self != bp::self);"
+    },
+    {
+      "line": 35,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "objectguid_class.def(bp::self < bp::self);"
+    },
+    {
+      "line": 38,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "objectguid_class.def(\"ToString\", &ObjectGuid::ToString);"
+    },
+    {
+      "line": 39,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "objectguid_class.def(\"__str__\", &ObjectGuid::ToString);"
+    },
+    {
+      "line": 40,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "objectguid_class.def(\"__repr__\", &ObjectGuid::ToString);"
+    },
+    {
+      "line": 41,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "text": "objectguid_class.def(\"__hash__\", &ObjectGuid::GetRawValue);"
+    },
+    {
+      "line": 18,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "bp::class_<Player, bp::bases<Unit>, boost::noncopyable> player_class(\"Player\", bp::no_init);"
+    },
+    {
+      "line": 19,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "RegisterBorrowedType<Player>(player_class);"
+    },
+    {
+      "line": 22,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "player_class.def(\"GetGUID\", &GetGUIDLow, BorrowedPolicy<>());"
+    },
+    {
+      "line": 23,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "player_class.def(\"GetAccountId\", &GetAccountId, BorrowedPolicy<>());"
+    },
+    {
+      "line": 26,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "player_class.def(\"GiveXP\", &GiveXP, BorrowedPolicy<>(),"
+    },
+    {
+      "line": 29,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "player_class.def(\"GiveLevel\", &Player::GiveLevel, BorrowedPolicy<>());"
+    },
+    {
+      "line": 30,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "player_class.def(\"SetXP\", &SetXP, BorrowedPolicy<>());"
+    },
+    {
+      "line": 33,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "player_class.def(\"Say\", &Say, BorrowedPolicy<>());"
+    },
+    {
+      "line": 34,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "player_class.def(\"Yell\", &Yell, BorrowedPolicy<>());"
+    },
+    {
+      "line": 35,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "player_class.def(\"SendNotification\", &SendNotification, BorrowedPolicy<>());"
+    },
+    {
+      "line": 36,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "player_class.def(\"SendSysMessage\", &SendSysMessage, BorrowedPolicy<>());"
+    },
+    {
+      "line": 39,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "player_class.def(\"HasItem\", &HasItem, BorrowedPolicy<>());"
+    },
+    {
+      "line": 40,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "player_class.def(\"AddItem\", &AddItem, BorrowedPolicy<>());"
+    },
+    {
+      "line": 41,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "player_class.def(\"DestroyItem\", &DestroyItem, BorrowedPolicy<>());"
+    },
+    {
+      "line": 42,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "player_class.def(\"RemoveItem\", &RemoveItem, BorrowedPolicy<>());"
+    },
+    {
+      "line": 45,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "player_class.def(\"GetMoney\", &Player::GetMoney, BorrowedPolicy<>());"
+    },
+    {
+      "line": 46,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "player_class.def(\"SetMoney\", &Player::SetMoney, BorrowedPolicy<>());"
+    },
+    {
+      "line": 47,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "player_class.def(\"ModifyMoney\", &ModifyMoney, BorrowedPolicy<>());"
+    },
+    {
+      "line": 50,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "player_class.def(\"TeleportTo\", &TeleportTo, BorrowedPolicy<>());"
+    },
+    {
+      "line": 53,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "player_class.def(\"HasQuest\", &Player::HasQuest, BorrowedPolicy<>());"
+    },
+    {
+      "line": 54,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "text": "player_class.def(\"CompleteQuest\", &Player::CompleteQuest, BorrowedPolicy<>());"
+    },
+    {
+      "line": 14,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PositionExport.cpp",
+      "text": "bp::class_<Position> position_struct(\"Position\", bp::no_init);"
+    },
+    {
+      "line": 17,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PositionExport.cpp",
+      "text": "position_struct.def(\"GetPositionX\", &Position::GetPositionX, BorrowedPolicy<>());"
+    },
+    {
+      "line": 18,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PositionExport.cpp",
+      "text": "position_struct.def(\"GetPositionY\", &Position::GetPositionY, BorrowedPolicy<>());"
+    },
+    {
+      "line": 19,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PositionExport.cpp",
+      "text": "position_struct.def(\"GetPositionZ\", &Position::GetPositionZ, BorrowedPolicy<>());"
+    },
+    {
+      "line": 20,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PositionExport.cpp",
+      "text": "position_struct.def(\"GetOrientation\", &Position::GetOrientation, BorrowedPolicy<>());"
+    },
+    {
+      "line": 23,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PositionExport.cpp",
+      "text": "position_struct.def(\"GetExactDist2d\","
+    },
+    {
+      "line": 25,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PositionExport.cpp",
+      "text": "position_struct.def(\"GetExactDist\","
+    },
+    {
+      "line": 27,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PositionExport.cpp",
+      "text": "position_struct.def(\"GetExactDist2dSq\","
+    },
+    {
+      "line": 29,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PositionExport.cpp",
+      "text": "position_struct.def(\"GetExactDistSq\","
+    },
+    {
+      "line": 31,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PositionExport.cpp",
+      "text": "position_struct.def(\"GetExactDist2dTo\","
+    },
+    {
+      "line": 33,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PositionExport.cpp",
+      "text": "position_struct.def(\"GetExactDistTo\","
+    },
+    {
+      "line": 35,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PositionExport.cpp",
+      "text": "position_struct.def(\"GetExactDist2dSqTo\","
+    },
+    {
+      "line": 37,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PositionExport.cpp",
+      "text": "position_struct.def(\"GetExactDistSqTo\","
+    },
+    {
+      "line": 41,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PositionExport.cpp",
+      "text": "position_struct.def(\"GetAngle\", static_cast<float (Position::*)(float, float) const>(&Position::GetAngle), BorrowedPolicy<>());"
+    },
+    {
+      "line": 44,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PositionExport.cpp",
+      "text": "position_struct.def(\"IsPositionValid\", &Position::IsPositionValid, BorrowedPolicy<>());"
+    },
+    {
+      "line": 53,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PositionExport.cpp",
+      "text": "bp::class_<WorldLocation, bp::bases<Position>> worldlocation_class(\"WorldLocation\", bp::no_init);"
+    },
+    {
+      "line": 56,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PositionExport.cpp",
+      "text": "worldlocation_class.def(\"GetMapId\", &WorldLocation::GetMapId, BorrowedPolicy<>());"
+    },
+    {
+      "line": 57,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PositionExport.cpp",
+      "text": "worldlocation_class.def(\"SetMapId\", &WorldLocation::SetMapId, BorrowedPolicy<>());"
+    },
+    {
+      "line": 17,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/SpellExport.cpp",
+      "text": "bp::class_<SpellInfo> spellinfo_class(\"SpellInfo\", bp::no_init);"
+    },
+    {
+      "line": 18,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/SpellExport.cpp",
+      "text": "RegisterBorrowedType<SpellInfo>(spellinfo_class);"
+    },
+    {
+      "line": 48,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/SpellExport.cpp",
+      "text": "spellinfo_class.def(\"IsPassive\", &SpellInfo::IsPassive, BorrowedPolicy<>());"
+    },
+    {
+      "line": 49,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/SpellExport.cpp",
+      "text": "spellinfo_class.def(\"IsChanneled\", &SpellInfo::IsChanneled, BorrowedPolicy<>());"
+    },
+    {
+      "line": 50,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/SpellExport.cpp",
+      "text": "spellinfo_class.def(\"IsPositive\", &SpellInfo::IsPositive, BorrowedPolicy<>());"
+    },
+    {
+      "line": 53,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/SpellExport.cpp",
+      "text": "spellinfo_class.def(\"GetDuration\", &SpellInfo::GetDuration, BorrowedPolicy<>());"
+    },
+    {
+      "line": 54,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/SpellExport.cpp",
+      "text": "spellinfo_class.def(\"GetMaxRange\", &SpellInfo::GetMaxRange, BorrowedPolicy<>(),"
+    },
+    {
+      "line": 57,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/SpellExport.cpp",
+      "text": "spellinfo_class.def(\"CalcCastTime\", &SpellInfo::CalcCastTime, BorrowedPolicy<>(),"
+    },
+    {
+      "line": 66,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/SpellExport.cpp",
+      "text": "bp::class_<SpellCastTargets> spellcast_targets_class(\"SpellCastTargets\", bp::no_init);"
+    },
+    {
+      "line": 67,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/SpellExport.cpp",
+      "text": "RegisterBorrowedType<SpellCastTargets>(spellcast_targets_class, true);"
+    },
+    {
+      "line": 70,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/SpellExport.cpp",
+      "text": "spellcast_targets_class.def(\"GetUnitTarget\", &SpellCastTargets::GetUnitTarget,"
+    },
+    {
+      "line": 72,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/SpellExport.cpp",
+      "text": "spellcast_targets_class.def(\"GetObjectTarget\", &SpellCastTargets::GetObjectTarget,"
+    },
+    {
+      "line": 74,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/SpellExport.cpp",
+      "text": "spellcast_targets_class.def(\"GetCorpseTarget\", &SpellCastTargets::GetCorpseTarget,"
+    },
+    {
+      "line": 76,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/SpellExport.cpp",
+      "text": "spellcast_targets_class.def(\"GetItemTarget\", &SpellCastTargets::GetItemTarget,"
+    },
+    {
+      "line": 80,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/SpellExport.cpp",
+      "text": "spellcast_targets_class.def(\"GetUnitTargetGUID\", &SpellCastTargets::GetUnitTargetGUID, BorrowedPolicy<>());"
+    },
+    {
+      "line": 81,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/SpellExport.cpp",
+      "text": "spellcast_targets_class.def(\"GetObjectTargetGUID\", &SpellCastTargets::GetObjectTargetGUID, BorrowedPolicy<>());"
+    },
+    {
+      "line": 82,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/SpellExport.cpp",
+      "text": "spellcast_targets_class.def(\"GetCorpseTargetGUID\", &SpellCastTargets::GetCorpseTargetGUID, BorrowedPolicy<>());"
+    },
+    {
+      "line": 83,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/SpellExport.cpp",
+      "text": "spellcast_targets_class.def(\"GetItemTargetGUID\", &SpellCastTargets::GetItemTargetGUID, BorrowedPolicy<>());"
+    },
+    {
+      "line": 17,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "bp::class_<Unit, bp::bases<WorldObject>, boost::noncopyable> unit_class(\"Unit\", bp::no_init);"
+    },
+    {
+      "line": 18,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "RegisterBorrowedType<Unit>(unit_class);"
+    },
+    {
+      "line": 21,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"GetGUID\", &GetGUIDLow, BorrowedPolicy<>());"
+    },
+    {
+      "line": 22,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"GetName\", &Unit::GetName, BorrowedPolicy<bp::return_value_policy<bp::copy_const_reference>>());"
+    },
+    {
+      "line": 23,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"GetGender\", &Unit::getGender, BorrowedPolicy<>());"
+    },
+    {
+      "line": 24,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"GetRace\", &Unit::getRace, bp::arg(\"original\") = false, BorrowedPolicy<>());"
+    },
+    {
+      "line": 25,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"GetClass\", &Unit::getClass, BorrowedPolicy<>());"
+    },
+    {
+      "line": 26,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"GetLevel\", &Unit::GetLevel, BorrowedPolicy<>());"
+    },
+    {
+      "line": 29,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"GetHealth\", &Unit::GetHealth, BorrowedPolicy<>());"
+    },
+    {
+      "line": 30,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"GetMaxHealth\", &Unit::GetMaxHealth, BorrowedPolicy<>());"
+    },
+    {
+      "line": 31,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"SetHealth\", &Unit::SetHealth, bp::args(\"val\"), BorrowedPolicy<>());"
+    },
+    {
+      "line": 32,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"GetPower\", &PyEng::UnitAdapter::GetPower, bp::args(\"power\"), BorrowedPolicy<>());"
+    },
+    {
+      "line": 33,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"GetMaxPower\", &PyEng::UnitAdapter::GetMaxPower, bp::args(\"power\"), BorrowedPolicy<>());"
+    },
+    {
+      "line": 36,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"IsInCombat\", &Unit::IsInCombat, BorrowedPolicy<>());"
+    },
+    {
+      "line": 37,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"IsPolymorphed\", &Unit::IsPolymorphed, BorrowedPolicy<>());"
+    },
+    {
+      "line": 38,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"isFrozen\", &Unit::isFrozen, BorrowedPolicy<>());"
+    },
+    {
+      "line": 39,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"IsInFlight\", &Unit::IsInFlight, BorrowedPolicy<>());"
+    },
+    {
+      "line": 40,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"IsLevitating\", &Unit::IsLevitating, BorrowedPolicy<>());"
+    },
+    {
+      "line": 41,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"IsWalking\", &Unit::IsWalking, BorrowedPolicy<>());"
+    },
+    {
+      "line": 42,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"IsMoving\", &Unit::isMoving, BorrowedPolicy<>());"
+    },
+    {
+      "line": 43,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"IsSwimming\", &Unit::isSwimming, BorrowedPolicy<>());"
+    },
+    {
+      "line": 44,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"IsFlying\", &Unit::IsFlying, BorrowedPolicy<>());"
+    },
+    {
+      "line": 45,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"IsFalling\", &Unit::IsFalling, BorrowedPolicy<>());"
+    },
+    {
+      "line": 46,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"IsRooted\", &Unit::IsRooted, BorrowedPolicy<>());"
+    },
+    {
+      "line": 47,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"IsStopped\", &Unit::IsStopped, BorrowedPolicy<>());"
+    },
+    {
+      "line": 50,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"IsAlive\", &Unit::IsAlive, BorrowedPolicy<>());"
+    },
+    {
+      "line": 51,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "text": "unit_class.def(\"IsDead\", &Unit::isDead, BorrowedPolicy<>());"
+    },
+    {
+      "line": 64,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Functions/HookAPI.cpp",
+      "text": "bp::def(\"Schedule\", &Schedule);"
+    },
+    {
+      "line": 67,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Functions/HookAPI.cpp",
+      "text": "bp::def(\"Register\", &RegisterGlobal);"
+    },
+    {
+      "line": 70,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Functions/HookAPI.cpp",
+      "text": "bp::def(\"Register\", &RegisterEntry);"
+    },
+    {
+      "line": 13,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Functions/MutableTypes.cpp",
+      "text": "bp::class_<MutableT>(name, bp::no_init)"
+    },
+    {
+      "line": 14,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Functions/MutableTypes.cpp",
+      "text": ".def(\"get\", &MutableT::get, \"Get the current value\")"
+    },
+    {
+      "line": 15,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Functions/MutableTypes.cpp",
+      "text": ".def(\"set\", &MutableT::set, bp::arg(\"value\"), \"Set a new value\")"
+    },
+    {
+      "line": 16,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Functions/MutableTypes.cpp",
+      "text": ".def(int_converter, &MutableT::get, \"Convert to Python value\")"
+    },
+    {
+      "line": 17,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Functions/MutableTypes.cpp",
+      "text": ".def(\"__repr__\", &MutableT::repr);"
+    },
+    {
+      "line": 38,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Functions/MutableTypes.cpp",
+      "text": "bp::class_<MutableValue>(\"MutableValue\", bp::no_init)"
+    },
+    {
+      "line": 39,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Functions/MutableTypes.cpp",
+      "text": ".def(\"get\", &MutableValue::get)"
+    },
+    {
+      "line": 40,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Functions/MutableTypes.cpp",
+      "text": ".def(\"set\", &MutableValue::set);"
+    },
+    {
+      "line": 41,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Functions/MutableTypes.cpp",
+      "text": "bp::class_<NativeReference>(\"NativeReference\", bp::no_init)"
+    },
+    {
+      "line": 42,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Functions/MutableTypes.cpp",
+      "text": ".def(\"GetTypeName\", &NativeReference::GetTypeName)"
+    },
+    {
+      "line": 43,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Functions/MutableTypes.cpp",
+      "text": ".def(\"IsValid\", &NativeReference::IsValid)"
+    },
+    {
+      "line": 44,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Functions/MutableTypes.cpp",
+      "text": ".def(\"__repr__\", &NativeReference::repr);"
+    },
+    {
+      "line": 24,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Functions/SafeEventAPI.cpp",
+      "text": "bp::def(\"RegisterEvent\", &RegisterEvent);"
+    },
+    {
+      "line": 210,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PartyModule.cpp",
+      "text": "boost::python::class_<OwnerContext>(\"PartyOwnerContext\", boost::python::no_init);"
+    },
+    {
+      "line": 211,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PartyModule.cpp",
+      "text": "boost::python::class_<DecisionHandle>(\"PartyDecisionHandle\", boost::python::no_init)"
+    },
+    {
+      "line": 212,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PartyModule.cpp",
+      "text": ".def(\"__setattr__\", RejectDecisionWrite)"
+    },
+    {
+      "line": 213,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PartyModule.cpp",
+      "text": ".def(\"__delattr__\", RejectDecisionDelete);"
+    },
+    {
+      "line": 214,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PartyModule.cpp",
+      "text": "boost::python::def(\"party_decision_observe\", ObserveDecision);"
+    },
+    {
+      "line": 215,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PartyModule.cpp",
+      "text": "boost::python::def(\"party_decision_submit\", SubmitDecision);"
+    },
+    {
+      "line": 216,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PartyModule.cpp",
+      "text": "boost::python::def(\"party_decision_context_snapshot\", SnapshotDecisionContext);"
+    },
+    {
+      "line": 217,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PartyModule.cpp",
+      "text": "boost::python::def(\"party_capture_context\", CaptureContext);"
+    },
+    {
+      "line": 218,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PartyModule.cpp",
+      "text": "boost::python::def(\"party_with_context\", WithContext);"
+    },
+    {
+      "line": 219,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PartyModule.cpp",
+      "text": "boost::python::def(\"party_read_current\", ReadCurrentParty);"
+    },
+    {
+      "line": 220,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PartyModule.cpp",
+      "text": "boost::python::def(\"party_read_inventory\", ReadInventory);"
+    },
+    {
+      "line": 221,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PartyModule.cpp",
+      "text": "boost::python::def(\"party_equip\", Equip);"
+    },
+    {
+      "line": 222,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PartyModule.cpp",
+      "text": "boost::python::def(\"party_trade\", Trade);"
+    },
+    {
+      "line": 223,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PartyModule.cpp",
+      "text": "boost::python::def(\"party_sell_vendor\", SellVendor);"
+    },
+    {
+      "line": 224,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PartyModule.cpp",
+      "text": "boost::python::def(\"party_request_item_use\", RequestItemUse);"
+    },
+    {
+      "line": 225,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PartyModule.cpp",
+      "text": "boost::python::def(\"party_send_mail_batch\", SendMailBatch);"
+    },
+    {
+      "line": 963,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"strategic_set_quest_acquisition_capture\", SetQuestAcquisitionCapture,"
+    },
+    {
+      "line": 965,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"strategic_read_quest_acquisition_snapshot\", ReadQuestAcquisitionSnapshot,"
+    },
+    {
+      "line": 968,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"strategic_ack_quest_acquisition_records\", AcknowledgeQuestAcquisition,"
+    },
+    {
+      "line": 970,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"strategic_read_acquisition_catalog\", ReadAcquisitionCatalog);"
+    },
+    {
+      "line": 971,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"strategic_read_vendor_offers\", ReadVendorOffers);"
+    },
+    {
+      "line": 972,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"strategic_buy_vendor_item\", BuyVendorItem);"
+    },
+    {
+      "line": 973,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"strategic_read_quest_snapshot\", ReadQuestSnapshot,"
+    },
+    {
+      "line": 976,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"strategic_read_source_predicates\", ReadSourcePredicates, (boost::python::arg(\"identity_key\"), boost::python::arg(\"query\")));"
+    },
+    {
+      "line": 977,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"strategic_read_gear_snapshot\", ReadGearSnapshot,"
+    },
+    {
+      "line": 980,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"strategic_read_gear_resources\", ReadGearResources,"
+    },
+    {
+      "line": 983,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"strategic_set_quest_goal\", SetQuestGoal,"
+    },
+    {
+      "line": 987,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"strategic_renew_quest_goals\", RenewQuestGoals);"
+    },
+    {
+      "line": 988,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"population_read_owner_high_water\", ReadOwnerHighWater);"
+    },
+    {
+      "line": 989,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"population_read_earned_snapshot\", ReadEarnedSnapshot);"
+    },
+    {
+      "line": 990,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"population_reserve_identity\", ReserveIdentity);"
+    },
+    {
+      "line": 991,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"population_ensure_account\", EnsureAccount);"
+    },
+    {
+      "line": 992,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"population_ensure_character\", EnsureCharacter);"
+    },
+    {
+      "line": 993,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"population_bind_identity_once\", BindIdentityOnce);"
+    },
+    {
+      "line": 994,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"population_set_admission\", SetAdmission);"
+    },
+    {
+      "line": 995,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"population_apply_progression_policy\", ApplyProgressionPolicy);"
+    },
+    {
+      "line": 996,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"population_request_session\", RequestSession);"
+    },
+    {
+      "line": 997,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"population_release_session\", ReleaseSession);"
+    },
+    {
+      "line": 998,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"population_read_capacity_snapshot\", ReadCapacitySnapshot);"
+    },
+    {
+      "line": 999,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"population_read_phase_snapshot\", ReadPhaseSnapshot);"
+    },
+    {
+      "line": 1000,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "text": "boost::python::def(\"population_fail_closed\", FailClosedBinding);"
+    },
+    {
+      "line": 53,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PythonModule.cpp",
+      "text": "// NOTE: Must match BOOST_PYTHON_MODULE name below"
+    },
+    {
+      "line": 61,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PythonModule.cpp",
+      "text": "BOOST_PYTHON_MODULE(azerothcore)"
+    }
+  ],
+  "findings": {
+    "InstanceScript": "Borrowed native gameplay type with GetMap/GetBossState/SetBossState/GetData/SetData; no PythonEngine or hookMap bridge.",
+    "Register": "HookAPI exports void RegisterGlobal/RegisterEntry; calls RegisterHook and mutates callback registry. It returns no registry/engine/namespace object.",
+    "RegisterEvent": "SafeEventAPI exports void RegisterEvent; calls RegisterSafeEvent for separate safeEventMap. It returns no registry/engine/namespace object.",
+    "Schedule": "Queues callbacks; mutator, not passive observer.",
+    "callback_storage": "PythonEngine private hookMap (HookInfo -> entryId -> CallbackList), shared hookMutex; HasRegisteredCallbacks calls actual private HasCallbacks.",
+    "current_callable_state": "Not invoked by this lane. Parent actual finite module inventory is separate evidence; no inference from global config.",
+    "declaration_map": "PyEng::Hooks::GetHookMap/GetHookByName resolves static forwarded names to HookInfo, not callbacks.",
+    "declaration_map_is_callback_map": false,
+    "existing_passive_exports": "strategic_read_acquisition_catalog + strategic_read_source_predicates emit/fingerprint only four hook names; fifth absent from both C++ native handler enumeration and Python callback lists.",
+    "fifth_hook": {
+      "fallback": true,
+      "fallback_is_unconditional": false,
+      "forwarded": true,
+      "id": 131,
+      "name": "PLAYER_PASSED_QUEST_KILLED_MONSTER_CREDIT",
+      "native_dispatch_entry": 0,
+      "native_override": "PythonPlayerScript::OnPlayerPassedQuestKilledMonsterCredit"
+    },
+    "namespace": "ExecuteCode executes in private main_namespace. Source files, namespace globals, or current function names are not an authoritative mirror of already-registered callbacks.",
+    "public_cpp_observer": "PythonEngine::HasRegisteredCallbacks(HookInfo,uint32) const is available to native C++ only in selected binding surface.",
+    "python_public_passive_registry_api_found": false,
+    "status": "python status returns enabled/Busy-or-Ready/Reloading/configured ScriptsPath; no cached callback presence or fifth native handler list."
+  },
+  "lifecycle": {
+    "composition_flags": {
+      "built": false,
+      "deployed": false,
+      "runtime_verified": false
+    },
+    "producer_handoff_state": "BUILD_PACKAGE_VERIFIED_PENDING_PARENT_ACCEPTANCE",
+    "root_bounded_source_package_acceptance": {
+      "dataset_accepted": false,
+      "descriptor": {
+        "bytes": 2980,
+        "path": "/home/aaron/Documents/ChatGPT/wow private server/work/root-resume-20261020/CORE2-HELD-WORLD-ROOT-BOUNDED-ACCEPTANCE.json",
+        "sha256": "7891c49a20d9ab6ab43300ef5e3663c50f5f34001296ab5b3dcdfa28b2267e07"
+      },
+      "effect_accepted": false,
+      "loaded_generation_accepted": false,
+      "package_sha256": "f5d32f0273c0a6c11738b7619b81e960694cff6cb270bd90ae0546a0ac059fd3",
+      "scope": "bounded held-custody source/compiled-package and retained producer acceptance only",
+      "source_identity": "f4764eb77295c24027d407bd7476041e5796b625602031549b71465993ce037b",
+      "world_sha256": "cbaa4a4ba3bcf83785444f90567d6d2a61bf390d5fa1594f79c038413fa585ce"
+    },
+    "root_dataset_accepted": false,
+    "root_package_acceptance": "ACCEPTED_BOUNDED_SOURCE_COMPILED_PACKAGE_ONLY",
+    "runtime_verified": false
+  },
+  "not_performed": [
+    "No remote/network/SQL/runtime/build/compiler actions.",
+    "No Register/RegisterEvent/Schedule invocation or actor capability call.",
+    "No globals-as-cache, file-absence, unsupported ctypes/C++ ABI access or fabricated freeze claim."
+  ],
+  "schema": "core1-current-python-engine-observation-capabilities-v1",
+  "selected_engine_source_files": [
+    {
+      "bytes": 2073,
+      "logical_path": "modules/mod-python-engine/src/AutoRegistryMgr.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/AutoRegistryMgr.h",
+      "sha256": "e638d7d3719ab6995165c7409bd5d5b4d696002474a9b60ca5e362efc1c395ce"
+    },
+    {
+      "bytes": 1230,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Adapters/CreatureAdapter.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Adapters/CreatureAdapter.h",
+      "sha256": "de723e1acea0e9fb67e630837f35bf8b15515220ca5e351f3cb7648da3830569"
+    },
+    {
+      "bytes": 557,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Adapters/GameObjectAdapter.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Adapters/GameObjectAdapter.h",
+      "sha256": "9acb6aec4fec28082bbbcdd34b332900019ec1f1c75991a3d96b281f7d5b59b5"
+    },
+    {
+      "bytes": 225,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Adapters/ItemAdapter.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Adapters/ItemAdapter.h",
+      "sha256": "7569366ce9a6da7f7e9633115425213e25a13c1d6e583e718a269e05a0469f25"
+    },
+    {
+      "bytes": 217,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Adapters/MapAdapter.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Adapters/MapAdapter.h",
+      "sha256": "35e0b712dbf4cc9eac15012a2fd9ce2a3cebb7aed971d512b854ac4f940f132a"
+    },
+    {
+      "bytes": 1520,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Adapters/ObjectAdapter.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Adapters/ObjectAdapter.h",
+      "sha256": "ad77b0e3ce163931d930e8ff5ab936fddd703e8dfe4436a4dfa387d264b951c6"
+    },
+    {
+      "bytes": 3549,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Adapters/PlayerAdapter.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Adapters/PlayerAdapter.h",
+      "sha256": "f5b594d2663aa7f8c3a239ffabc285250bd5fcd8ed2c16a319d3fe22eed73ab4"
+    },
+    {
+      "bytes": 806,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Adapters/UnitAdapter.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Adapters/UnitAdapter.h",
+      "sha256": "239a7938e60f3dae87d5bf0a2e960af30c1f9d028a95f7afaf3aa8d8a179680f"
+    },
+    {
+      "bytes": 3076,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Constants/GameEnums.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Constants/GameEnums.cpp",
+      "sha256": "6a2d153ac208db2c1a66cc6a7948f31ff9ad43a7ecd37e228c009caeca3bbc20"
+    },
+    {
+      "bytes": 2928,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Exports/CallbackDataExport.cpp",
+      "sha256": "59f2af7d3ff746fdd5a7cd2cce9fc97cd9aa64d832298e4bd07d7157bd308273"
+    },
+    {
+      "bytes": 1011,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/CreatureExport.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Exports/CreatureExport.cpp",
+      "sha256": "6450fb0cf9af58f9b6421f69baa3119e8a97340f39fcc48e2b258218cd9272b1"
+    },
+    {
+      "bytes": 20284,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Exports/EventDataExport.cpp",
+      "sha256": "8fdb1a909d089816f08d88a7aca317e13448ea08b14af5b8188059862c7b8f8e"
+    },
+    {
+      "bytes": 1289,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/GameObjectExport.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Exports/GameObjectExport.cpp",
+      "sha256": "067bfadd496c4c2c4cc47d47285035eba169c8b3e1689fe95f58c7ed8b567e9f"
+    },
+    {
+      "bytes": 3374,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ItemExport.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Exports/ItemExport.cpp",
+      "sha256": "e395cdb9c81a4bdedb537f5d150954ab3d29f16e4e4c5409266872c5650edf8c"
+    },
+    {
+      "bytes": 3850,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Exports/MapExport.cpp",
+      "sha256": "ed9890ec71caf6d20e646f64d2918622524ba36b50d29a5f6c82d1e975741d74"
+    },
+    {
+      "bytes": 3125,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Exports/ObjectExport.cpp",
+      "sha256": "66951b880ec5062d66e063a5aaecf8b3a048cb2cf2efe8d1b1bcbaa04e7550c2"
+    },
+    {
+      "bytes": 1521,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Exports/ObjectGuidExport.cpp",
+      "sha256": "ccc9ed3d48ba3580ca2c249844eb5bdef3f0b4fca6b44dfd063affb1a0c59bb2"
+    },
+    {
+      "bytes": 2101,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Exports/PlayerExport.cpp",
+      "sha256": "25b3d2a2213f4669c5295e335068d846ff0333fd0a881afc3568fc0b74ed4331"
+    },
+    {
+      "bytes": 2846,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/PositionExport.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Exports/PositionExport.cpp",
+      "sha256": "7444807d2f4a9449fd6af10e2edc5dfb03e7f0dfe523a4e398a1ebbd6ff00ddb"
+    },
+    {
+      "bytes": 5081,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/SpellExport.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Exports/SpellExport.cpp",
+      "sha256": "e50645843f03f740df88193ea1dc156a2860ed33477b736e272da5d780a17c44"
+    },
+    {
+      "bytes": 2527,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Exports/UnitExport.cpp",
+      "sha256": "152cc97cfd19d7420a1ff035dd57b5e144a8db91ba7c29eeed98852a5517af65"
+    },
+    {
+      "bytes": 2105,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Functions/HookAPI.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Functions/HookAPI.cpp",
+      "sha256": "314f37ef8016c798e1ce6a07c80f65ebe727edfff6cec4cf42a80d6f59b6ad0c"
+    },
+    {
+      "bytes": 1639,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Functions/MutableTypes.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Functions/MutableTypes.cpp",
+      "sha256": "14127645713870cbc0931a52a6126d721d08a9198388f85131a94c148a45167e"
+    },
+    {
+      "bytes": 570,
+      "logical_path": "modules/mod-python-engine/src/Bindings/Functions/SafeEventAPI.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/Functions/SafeEventAPI.cpp",
+      "sha256": "cac4d03f79c92eb272b84aa293625f4ba9e1316f625d58d782058fc48c741633"
+    },
+    {
+      "bytes": 9168,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PartyModule.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/PartyModule.cpp",
+      "sha256": "d5961c2afa6c6263b985ec335fa646c72c39f490a63090f90746706b73c991c7"
+    },
+    {
+      "bytes": 55065,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "sha256": "8d62be32b717a1868a386bed8999b841a334e57a23c56f23566cb68b96b02bb3"
+    },
+    {
+      "bytes": 2694,
+      "logical_path": "modules/mod-python-engine/src/Bindings/PythonModule.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/PythonModule.cpp",
+      "sha256": "33659e5a05cc491464c9581dcb5fef79265cf64aea9c83dc6a321b8b655d49de"
+    },
+    {
+      "bytes": 1871,
+      "logical_path": "modules/mod-python-engine/src/Bridge/PythonAPI.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bridge/PythonAPI.h",
+      "sha256": "9a80f9a665f82575f1c0987831e8dcd667f802a4ce11b3b5b2b5c4daf0605784"
+    },
+    {
+      "bytes": 7504,
+      "logical_path": "modules/mod-python-engine/src/Bridge/PythonBorrowed.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bridge/PythonBorrowed.h",
+      "sha256": "76161990ebed475c2c79096817e26fb235aa27d0abbe0bdfa2eeb856927d57c8"
+    },
+    {
+      "bytes": 9246,
+      "logical_path": "modules/mod-python-engine/src/Bridge/PythonConverter.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bridge/PythonConverter.h",
+      "sha256": "fa70398ec07e2319fee8445f2066c891d5a8be9995b5e612d008f57a108b9fa4"
+    },
+    {
+      "bytes": 3753,
+      "logical_path": "modules/mod-python-engine/src/Bridge/PythonException.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bridge/PythonException.cpp",
+      "sha256": "2f694e4403a32e47ad2a53942000bfade6cc2bf85906898008c4519aff0385bc"
+    },
+    {
+      "bytes": 1646,
+      "logical_path": "modules/mod-python-engine/src/Bridge/PythonException.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bridge/PythonException.h",
+      "sha256": "cf65bfb457e188e201a0b17b07d9f87dcc5453c2f6b9af38bb538af3de59c163"
+    },
+    {
+      "bytes": 506,
+      "logical_path": "modules/mod-python-engine/src/Bridge/PythonGIL.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bridge/PythonGIL.h",
+      "sha256": "90c2f4c564eb167a56317e6e06e714f9f333feaf271504d2adad3e556b76a9bb"
+    },
+    {
+      "bytes": 3592,
+      "logical_path": "modules/mod-python-engine/src/Bridge/PythonMutable.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bridge/PythonMutable.h",
+      "sha256": "73b075e0cf7c66d66998d2753ea5275137da54f7214a6162ec357ddea7138a04"
+    },
+    {
+      "bytes": 1418,
+      "logical_path": "modules/mod-python-engine/src/Bridge/PythonNativeReference.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bridge/PythonNativeReference.h",
+      "sha256": "26ef828ddf7f553af7cb24066b1ed2c0ea201faf669c12fabc49fc3935221305"
+    },
+    {
+      "bytes": 1744,
+      "logical_path": "modules/mod-python-engine/src/Bridge/PythonOutput.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bridge/PythonOutput.h",
+      "sha256": "5705f9f8dacbfa7028ea334340e09d001aaa05144b0a71584fbcf7b44b5fb216"
+    },
+    {
+      "bytes": 549,
+      "logical_path": "modules/mod-python-engine/src/Events/SafeEvent.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Events/SafeEvent.h",
+      "sha256": "c2e740b49daae46331aca5488ba18b005d9d9097f9b0dc5da2f1dc65f874896a"
+    },
+    {
+      "bytes": 1137,
+      "logical_path": "modules/mod-python-engine/src/Events/WorldQueue.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Events/WorldQueue.cpp",
+      "sha256": "5e898f269d40abf31f64f4898c90192230e117a4339fc7ab59879c3451ace72e"
+    },
+    {
+      "bytes": 780,
+      "logical_path": "modules/mod-python-engine/src/Hooks/Defines/AccountHook.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Hooks/Defines/AccountHook.h",
+      "sha256": "ce42da0820a7644616ee0535c737e53dbb7e7727c2faee511e12538320dde45c"
+    },
+    {
+      "bytes": 572,
+      "logical_path": "modules/mod-python-engine/src/Hooks/Defines/AchievementHook.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Hooks/Defines/AchievementHook.h",
+      "sha256": "12964cfc6f3cf22698ae2024b442e9b23d54b009f6b032e6bc45e224932a0c8b"
+    },
+    {
+      "bytes": 700,
+      "logical_path": "modules/mod-python-engine/src/Hooks/Defines/ArenaHook.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Hooks/Defines/ArenaHook.h",
+      "sha256": "43c426bddbf34767389fdae41347bee45e8e7c881b3a20a2227da6c90912bb50"
+    },
+    {
+      "bytes": 569,
+      "logical_path": "modules/mod-python-engine/src/Hooks/Defines/ArenaTeamHook.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Hooks/Defines/ArenaTeamHook.h",
+      "sha256": "180bf704bc61541d5da5ab70f15010547d16978b78f18a528569deaa830db914"
+    },
+    {
+      "bytes": 746,
+      "logical_path": "modules/mod-python-engine/src/Hooks/Defines/CreatureHook.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Hooks/Defines/CreatureHook.h",
+      "sha256": "c766477009a8a398b292bf662326b052a402c7f7176f0120d9728b07b891a468"
+    },
+    {
+      "bytes": 936,
+      "logical_path": "modules/mod-python-engine/src/Hooks/Defines/GameObjectHook.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Hooks/Defines/GameObjectHook.h",
+      "sha256": "95cbf79fcacdd07302a0f9c37cb32acbac0c3120bc2580e5ed8f2a37c96f86d5"
+    },
+    {
+      "bytes": 579,
+      "logical_path": "modules/mod-python-engine/src/Hooks/Defines/ItemHook.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Hooks/Defines/ItemHook.h",
+      "sha256": "5ca47dedbf6fa85eacce7a42274b17c1a38ca932f6741ee88ba8cac575fc57ca"
+    },
+    {
+      "bytes": 516,
+      "logical_path": "modules/mod-python-engine/src/Hooks/Defines/MapHook.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Hooks/Defines/MapHook.h",
+      "sha256": "b3cfde4dc3854f5e4a1b8ce7b72a1b73e08041dd3ad6c13bd64c99daf3b927dd"
+    },
+    {
+      "bytes": 12414,
+      "logical_path": "modules/mod-python-engine/src/Hooks/Defines/PlayerHook.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Hooks/Defines/PlayerHook.h",
+      "sha256": "4dbb9b0639ead451ba9e43a0ff3f859718b7aea5620bb19c6c337e08d7237103"
+    },
+    {
+      "bytes": 614,
+      "logical_path": "modules/mod-python-engine/src/Hooks/Defines/ServerHook.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Hooks/Defines/ServerHook.h",
+      "sha256": "8fc1261cbcda0c9585a09b2b4e0585ceaa7e7f70f5227eac7bc234847aa9e7fb"
+    },
+    {
+      "bytes": 1482,
+      "logical_path": "modules/mod-python-engine/src/Hooks/Defines/UnitHook.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Hooks/Defines/UnitHook.h",
+      "sha256": "86f10be7f4b988925dba773e41d151a9171a90cf37fd6b204f08b8a284074140"
+    },
+    {
+      "bytes": 979,
+      "logical_path": "modules/mod-python-engine/src/Hooks/Defines/WorldHook.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Hooks/Defines/WorldHook.h",
+      "sha256": "5e7913216756d827e9c283630da70b2058b1963072d26294da1aa8bd2bf5f9de"
+    },
+    {
+      "bytes": 27755,
+      "logical_path": "modules/mod-python-engine/src/Hooks/GeneratedHookInventory.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Hooks/GeneratedHookInventory.h",
+      "sha256": "0d128e8f0e0a2f259a6557bfeb8ac6a66615633053608226e41786fffc17cd8e"
+    },
+    {
+      "bytes": 558,
+      "logical_path": "modules/mod-python-engine/src/Hooks/HookDefines.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Hooks/HookDefines.h",
+      "sha256": "dc1ba4504b294586afd67676423eb58d92e37c653d86bfc00e7a5c44449df1c9"
+    },
+    {
+      "bytes": 2062,
+      "logical_path": "modules/mod-python-engine/src/Hooks/HookInfo.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Hooks/HookInfo.h",
+      "sha256": "207b81aa184ab2af527b22d7ee2c1ea2eb397ff3b9a5599680cf6dd8a5ad0aa5"
+    },
+    {
+      "bytes": 3456,
+      "logical_path": "modules/mod-python-engine/src/Hooks/HookMacros.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Hooks/HookMacros.h",
+      "sha256": "fb45ca6f7bec907c1043b2ce04a9eda954e1731ab966fffbf241a8ff43a95627"
+    },
+    {
+      "bytes": 2896,
+      "logical_path": "modules/mod-python-engine/src/Hooks/HookRegistry.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Hooks/HookRegistry.h",
+      "sha256": "21a275c818061cf598c14594310495192f3cdfc6efcd1b6b2c29671ccd28aab6"
+    },
+    {
+      "bytes": 2587,
+      "logical_path": "modules/mod-python-engine/src/Party/PartyBridge.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Party/PartyBridge.cpp",
+      "sha256": "03948b192e67622a25d8a68066013dd4323cb1c62cf61f6316e9f6b7aa865f18"
+    },
+    {
+      "bytes": 5928,
+      "logical_path": "modules/mod-python-engine/src/Party/PartyBridge.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Party/PartyBridge.h",
+      "sha256": "666209cf52e9bbbb730f2b5f64a5897bb72ad36b4061bc253b12bae454dc65e7"
+    },
+    {
+      "bytes": 901,
+      "logical_path": "modules/mod-python-engine/src/Population/PopulationBridge.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Population/PopulationBridge.cpp",
+      "sha256": "4c885e5ff8ec439786d3ca8d3656703ba572118ee2dc48c39626929ee80548cc"
+    },
+    {
+      "bytes": 19016,
+      "logical_path": "modules/mod-python-engine/src/Population/PopulationBridge.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/modules/mod-python-engine/src/Population/PopulationBridge.h",
+      "sha256": "788f3a416f03dcf33526d8af7077ccc94ef935de4ce1ce898665526ae8acafec"
+    },
+    {
+      "bytes": 29102,
+      "logical_path": "modules/mod-python-engine/src/PythonEngine.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/PythonEngine.cpp",
+      "sha256": "b628c7c13dd90b2ca2041bcbbb15c28cfa2612741a0d1e041474ba7764213669"
+    },
+    {
+      "bytes": 10802,
+      "logical_path": "modules/mod-python-engine/src/PythonEngine.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/modules/mod-python-engine/src/PythonEngine.h",
+      "sha256": "a71f9eddec2de6dcd1f53de803515528d3e12438c4e6269c1e47c84c8752ff91"
+    },
+    {
+      "bytes": 974,
+      "logical_path": "modules/mod-python-engine/src/PythonHeaders.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/PythonHeaders.h",
+      "sha256": "66e776ab3d347fb2f4f9fb9f9d9edcc56910b3917bd699838da16b66dbe25d4b"
+    },
+    {
+      "bytes": 2095,
+      "logical_path": "modules/mod-python-engine/src/PythonLoader.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/PythonLoader.cpp",
+      "sha256": "35ea16d8a01eb41e4127cbaa6f1956e3c21976141b9a8f5adeb531a4d5887eb1"
+    },
+    {
+      "bytes": 1929,
+      "logical_path": "modules/mod-python-engine/src/Scripts/AccountScript.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Scripts/AccountScript.cpp",
+      "sha256": "64f1213cd62646ff0c4bc8b6527f689440c9c3f3b6af8b099a2ebe0df623fd16"
+    },
+    {
+      "bytes": 1881,
+      "logical_path": "modules/mod-python-engine/src/Scripts/AchievementScript.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Scripts/AchievementScript.cpp",
+      "sha256": "93861f64090e30ba19f5b3d8ea650a00ffccce01786ee9f0df6fae434c6810e7"
+    },
+    {
+      "bytes": 2108,
+      "logical_path": "modules/mod-python-engine/src/Scripts/ArenaScript.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Scripts/ArenaScript.cpp",
+      "sha256": "c051261a253a77535e003bef134109510c79ee246dd5e2aec38a228825143a78"
+    },
+    {
+      "bytes": 1620,
+      "logical_path": "modules/mod-python-engine/src/Scripts/ArenaTeamScript.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Scripts/ArenaTeamScript.cpp",
+      "sha256": "486d29dffc3e499843ada787d0943f3c410a5bf7ed379f8c1a1eb8d918115c66"
+    },
+    {
+      "bytes": 3988,
+      "logical_path": "modules/mod-python-engine/src/Scripts/CommandScript.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Scripts/CommandScript.cpp",
+      "sha256": "0e28012da279eafa6473ee9336a8ec21a15a7d9d5e02127eb3e43e345e6691fc"
+    },
+    {
+      "bytes": 2792,
+      "logical_path": "modules/mod-python-engine/src/Scripts/CreatureScript.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Scripts/CreatureScript.cpp",
+      "sha256": "8398e108b306dafce7e88476685b42441d42beafb5620ce31939e3a294474c6a"
+    },
+    {
+      "bytes": 3175,
+      "logical_path": "modules/mod-python-engine/src/Scripts/GameObjectScript.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Scripts/GameObjectScript.cpp",
+      "sha256": "63162d6c74ddda886c60c2f44e5b3552796ff1bf6e578f00923560b8acf3fc4d"
+    },
+    {
+      "bytes": 2265,
+      "logical_path": "modules/mod-python-engine/src/Scripts/ItemScript.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Scripts/ItemScript.cpp",
+      "sha256": "0f128c00de99e4473f6af05f94ed8f4e66df7d7f72bd168460d20eaa058e8b07"
+    },
+    {
+      "bytes": 2019,
+      "logical_path": "modules/mod-python-engine/src/Scripts/MapScript.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Scripts/MapScript.cpp",
+      "sha256": "f96614ceebc8ab5f9cf5e274d1d7650a01f0a5ab13fd05f5948d8b5ac0b9cf86"
+    },
+    {
+      "bytes": 52769,
+      "logical_path": "modules/mod-python-engine/src/Scripts/PlayerScript.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Scripts/PlayerScript.cpp",
+      "sha256": "52356448e75406e9b76918846748ddd095a3f6689d454d26c3a85dfb1418c471"
+    },
+    {
+      "bytes": 1825,
+      "logical_path": "modules/mod-python-engine/src/Scripts/ServerScript.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Scripts/ServerScript.cpp",
+      "sha256": "f95e8db935021bb2deff34c0d6cdd511e9ad1669ec9712cccd001d3dc5dafa46"
+    },
+    {
+      "bytes": 5160,
+      "logical_path": "modules/mod-python-engine/src/Scripts/UnitScript.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Scripts/UnitScript.cpp",
+      "sha256": "930c26a62364dfd601bfae9026259d2b0117986378c6ffa264e5c048ead5c153"
+    },
+    {
+      "bytes": 2236,
+      "logical_path": "modules/mod-python-engine/src/Scripts/WorldScript.cpp",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Scripts/WorldScript.cpp",
+      "sha256": "a1633a9c5307e0342ac599c0ed5d5fed4adf056ba935e25dd5c7d6d966b1ddf3"
+    },
+    {
+      "bytes": 1484,
+      "logical_path": "modules/mod-python-engine/src/Utilities/ExceptionHelper.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Utilities/ExceptionHelper.h",
+      "sha256": "614cab4b478110a1dd3210eca9e799393d50345ef0e42d2da5370d91264be7ce"
+    },
+    {
+      "bytes": 1996,
+      "logical_path": "modules/mod-python-engine/src/Utilities/ExecutionResult.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Utilities/ExecutionResult.h",
+      "sha256": "de0c8a50d47e751357d633ea53ce7ca9b1a653ebce728dec3abf7d33d849cc67"
+    },
+    {
+      "bytes": 3610,
+      "logical_path": "modules/mod-python-engine/src/Utilities/StringHelper.h",
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Utilities/StringHelper.h",
+      "sha256": "1726883d0c37ef180ddd40befb1e5ad8d4ca4465affdf384953195eac9d3cc06"
+    }
+  ],
+  "smallest_native_addition": {
+    "alternate": "A generic read-only exported wrapper around the existing C++ HasRegisteredCallbacks could expose equivalent callback presence, but it would still need native enabled fifth-handler identity and generation/custody binding; extending current loops is smaller.",
+    "native_change": "Include PLAYERHOOK_PASSED_QUEST_KILLED_MONSTER_CREDIT in semantic registry loop and acquisition catalogue hook enumeration.",
+    "native_lines": [
+      1504,
+      1626
+    ],
+    "native_source": "modules/mod-playerbots/src/Guide/PythonPopulationBridge.cpp",
+    "python_change": "Include PLAYER_PASSED_QUEST_KILLED_MONSTER_CREDIT in passive state token and catalogue callback facts using existing GetHookByName + HasRegisteredCallbacks, observing entry0 plus exact quest entry as existing API does.",
+    "python_lines": [
+      506,
+      684
+    ],
+    "python_source": "modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+    "scope": "Extend existing four-hook lists to fifth; preserve existing vector and JSON ABI. No unrelated engine framework.",
+    "sufficiency_limit": "Proves a passive point-in-time fifth-registry observation only after actual compiled/loaded/exported validation. It does not fingerprint target/addon/source rows or establish a held effect interval."
+  },
+  "source_only": true,
+  "startup_argument": {
+    "new_process_evidence_observed": false,
+    "predecessor_note": {
+      "bytes": 17396,
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/source-proof-ordinary-kill/census/CONTROLLED-STARTUP-CUSTODY.md",
+      "sha256": "795d94091c949b7a6b2026f75a87e7635f55f7166329a04e2fa0e67fb7bb994c"
+    },
+    "reuse_basis": "All selected engine, ObjectMgr/QuestDef/SQL-script/area-trigger/world-event/quest executor sources and generated loaders are identical. Bridge changes affect held identity metadata/disarm/ACK, not callback map publication, five-hook lists or target/addon source fields.",
+    "root_interval_accepted": false,
+    "status": "CONDITIONAL_ARGUMENT_ONLY"
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "accepted_roster": {
+    "manifest_sha256": "c7824cabf3d736b15dc8f6a5a7e1fc96d54738fe309c777db7c6c22be8281af1",
+    "native_online_limit": 2500,
+    "policy_sha256": "c0968c7969b3b0bf7f52ba82d5a02ea4115ff55f2057ee58787a9acda40bdc80"
+  },
+  "generated_startup_sidecar": {
+    "bytes": 24116,
+    "mode": "0o644",
+    "path": "bin/dc_test_dungeons.json",
+    "sha256": "d9d38eb57c1e8d781b91278f18af60a869cd13ca5a827fb0e79216da876338cc"
+  },
+  "members": {
+    "bin/worldserver": {
+      "bytes": 116989360,
+      "mode": "0o755",
+      "sha256": "cbaa4a4ba3bcf83785444f90567d6d2a61bf390d5fa1594f79c038413fa585ce"
+    },
+    "build-provenance.json": {
+      "bytes": 1240,
+      "mode": "0o644",
+      "sha256": "18501a84587ed9caa7b57fd77f0f446a17a19675ffc76f612e232fcca813e3b5"
+    }
+  },
+  "module": {
+    "bytes": 956856,
+    "matches_handoff": true,
+    "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/attempts/06/run/artifacts/view/task/build-design/output/tagged-module/_pbguide_gear.cpython-314-x86_64-linux-gnu.so",
+    "resolved": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/attempts/06/run/artifacts/view/task/build-design/output/tagged-module/_pbguide_gear.cpython-314-x86_64-linux-gnu.so",
+    "sha256": "53e5a03cf92b6f2dee85cf685efd67a59d10ea0582d06e18681ee6cd9b7e57f0"
+  },
+  "original_python_members": {
+    "population/python/lib/_pbguide_gear.cpython-314-x86_64-linux-gnu.so": {
+      "bytes": 956856,
+      "mode": "0o644",
+      "sha256": "53e5a03cf92b6f2dee85cf685efd67a59d10ea0582d06e18681ee6cd9b7e57f0"
+    },
+    "population/python/lib/capture_native_acquisition.py": {
+      "bytes": 58506,
+      "mode": "0o644",
+      "sha256": "3cfa72f7cbbc7e8b2647ab9dbf8fa8fbea7abee2ba1cef125d4dcb740f214968"
+    },
+    "population/python/lib/gear_policy.py": {
+      "bytes": 41661,
+      "mode": "0o644",
+      "sha256": "1e10af64a17778d1008a15942faabc6b891b7267560fe18ed5ed5b0cb88dc3d7"
+    },
+    "population/python/lib/ingest_capture.py": {
+      "bytes": 1075,
+      "mode": "0o644",
+      "sha256": "5b55cb0bdb4e5806b904539bef234ac0f7afa63e3ecd092e8dde0da8016695bb"
+    },
+    "population/python/lib/native_custody_ack.py": {
+      "bytes": 8597,
+      "mode": "0o644",
+      "sha256": "20368a7e031d12e8d80003b49a8faf052b38244424f41f23773edf97f886028f"
+    },
+    "population/python/lib/native_seed_policy.py": {
+      "bytes": 26176,
+      "mode": "0o644",
+      "sha256": "95fb323b51ec6771fce9f2f393b1dbe6573b74682720fa6773ccbfab8e0bf094"
+    },
+    "population/python/lib/policy_continuity.py": {
+      "bytes": 5482,
+      "mode": "0o644",
+      "sha256": "b8fbacdc22f4c2ba3caf49de7dfa2d518f8a6cd0c8ab07d7a81379d4aab744f2"
+    },
+    "population/python/lib/population_runtime/__init__.py": {
+      "bytes": 1367,
+      "mode": "0o644",
+      "sha256": "d96c8ebb642c13944f1bc11cdbb1e4a7fa23f949e0d1d0c4dd1389f08870927e"
+    },
+    "population/python/lib/population_runtime/adapter.py": {
+      "bytes": 13387,
+      "mode": "0o644",
+      "sha256": "4fd4c79347c0f6fce5a4f7e80a46dbbd2b44697f41e12eb5f371c097cebc7f64"
+    },
+    "population/python/lib/population_runtime/bands.py": {
+      "bytes": 2199,
+      "mode": "0o644",
+      "sha256": "988d9e8ca0ae758ef94e8871231fbd773bfed0534953cdec14cf4e11ca179ede"
+    },
+    "population/python/lib/population_runtime/canonical.py": {
+      "bytes": 1058,
+      "mode": "0o644",
+      "sha256": "45a8cd419e11ceaab556937da47b2cf5a99aded258dcef75d4af42b8073f4514"
+    },
+    "population/python/lib/population_runtime/capabilities.py": {
+      "bytes": 5142,
+      "mode": "0o644",
+      "sha256": "04db09023dad94e860501fc54684716d237dabb6e1d2df7d01fbc1c648b5d259"
+    },
+    "population/python/lib/population_runtime/config.py": {
+      "bytes": 13403,
+      "mode": "0o644",
+      "sha256": "78324e34212d5211e8f49f4056d6a53d9d909c265a0431a77342cd0a742b5a5c"
+    },
+    "population/python/lib/population_runtime/controller.py": {
+      "bytes": 29992,
+      "mode": "0o644",
+      "sha256": "834b58cc3323468f58aacf43bd79391a226024a6cf8de034110c8bc2133024bf"
+    },
+    "population/python/lib/population_runtime/errors.py": {
+      "bytes": 734,
+      "mode": "0o644",
+      "sha256": "714ad63abcd445eaa64b55198cd7b419cba0aac8a6c995778d311c8cf65cf688"
+    },
+    "population/python/lib/population_runtime/ledger.py": {
+      "bytes": 37840,
+      "mode": "0o644",
+      "sha256": "a34614b970eaa7d15c462cb95f3abdf22d8b44827950f61f94f9047796222057"
+    },
+    "population/python/lib/population_runtime/manifest.py": {
+      "bytes": 8350,
+      "mode": "0o644",
+      "sha256": "3d10691120023986063eeaa8092e5a7897047baebedb0742d94bf1ba3436d82c"
+    },
+    "population/python/lib/population_runtime/models.py": {
+      "bytes": 2261,
+      "mode": "0o644",
+      "sha256": "4625463887fa5a05959cd6c973b78cde0368afebfccddeaf8caff702591a21b0"
+    },
+    "population/python/lib/population_runtime/phase_veto.py": {
+      "bytes": 4635,
+      "mode": "0o644",
+      "sha256": "c4bffcf9a52b1b5cf92e2fd72dc39e876594473f5c20acc1910f406d1aea9ed9"
+    },
+    "population/python/lib/population_runtime/planning.py": {
+      "bytes": 10334,
+      "mode": "0o644",
+      "sha256": "9c80d1710e238ae88a360fbe3a24cbd07b478cbe761a76ad86bc91964ed4c8fc"
+    },
+    "population/python/lib/population_runtime/state.py": {
+      "bytes": 9303,
+      "mode": "0o644",
+      "sha256": "e16de4bd6d4d90ee380c47ac18e5646f5eca684a36c4b4e0f5466284b64b32c1"
+    },
+    "population/python/lib/quest_policy.py": {
+      "bytes": 21599,
+      "mode": "0o644",
+      "sha256": "8855b60d14557bb7c887050dd6afa5ef089889d1a8343f6b7274e88c26834f53"
+    },
+    "population/python/scripts/population_bootstrap.py": {
+      "bytes": 29648,
+      "mode": "0o644",
+      "sha256": "20d3d4387d63cd46dafd5de1e77d0606ac715b249ff639923a147b5a48768f24"
+    }
+  },
+  "overlays": {
+    "population/python/lib/population_runtime/config.py": {
+      "bytes": 13533,
+      "mode": "0o644",
+      "sha256": "0ea5da0f8f10a5fd73c584b0042c7ae3533a406d05a7d0a17d68c557ccdee77c"
+    },
+    "population/python/lib/population_runtime/controller.py": {
+      "bytes": 30209,
+      "mode": "0o644",
+      "sha256": "876124eda9595f5a866032be68b6ab4769e81469e20efb2c0f731d20397e24bc"
+    },
+    "population/python/lib/population_runtime/manifest.py": {
+      "bytes": 8524,
+      "mode": "0o644",
+      "sha256": "ea29a21be6659ea7d6b4a91d8aacdcf2cd77ed3aedd92b905b378087b9158077"
+    },
+    "population/python/lib/witness_runtime.py": {
+      "bytes": 27615,
+      "mode": "0o644",
+      "sha256": "f3513ce18d6add518453c3500a8c5bb05f72c98069e89e504325c4df8a79ea50"
+    },
+    "population/python/witness_scripts/engine.py": {
+      "bytes": 265,
+      "mode": "0o644",
+      "sha256": "3a5774e0ac4d9ab00827d2e619662014ced944e9658392d5b83794ac4f943bc7"
+    },
+    "population/python/witness_scripts/native_witness.py": {
+      "bytes": 5641,
+      "mode": "0o644",
+      "sha256": "e4d1268812301acda017e57701db510f70993bdb0bfb163944bdfe4eb5cd85cb"
+    }
+  },
+  "package": {
+    "bytes": 31928036,
+    "sha256": "f5d32f0273c0a6c11738b7619b81e960694cff6cb270bd90ae0546a0ac059fd3"
+  },
+  "predecessor": {
+    "module": {
+      "bytes": 956856,
+      "matches_handoff": true,
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/attempts/06/run/artifacts/view/task/build-design/output/tagged-module/_pbguide_gear.cpython-314-x86_64-linux-gnu.so",
+      "resolved": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/attempts/06/run/artifacts/view/task/build-design/output/tagged-module/_pbguide_gear.cpython-314-x86_64-linux-gnu.so",
+      "sha256": "53e5a03cf92b6f2dee85cf685efd67a59d10ea0582d06e18681ee6cd9b7e57f0"
+    },
+    "package": {
+      "bytes": 32333818,
+      "matches_handoff": true,
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/attempts/06/run/artifacts/view/task/build-design/output/delivery/candidate.tar.gz",
+      "resolved": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/attempts/06/run/artifacts/view/task/build-design/output/delivery/candidate.tar.gz",
+      "sha256": "97b23e27ed64beaec4b673638cf4785da1b54fbc67bc6581739ba4a87a8b9e87"
+    },
+    "world": {
+      "bytes": 116989360,
+      "matches_handoff": true,
+      "path": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/attempts/06/run/artifacts/view/task/build-design/output/worldserver",
+      "resolved": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/attempts/06/run/artifacts/view/task/build-design/output/worldserver",
+      "sha256": "0e1fd05b210d4ba080c9d0f07a81cd7ebe3feba8686a1d212c9b31b7eeb5934d"
+    }
+  },
+  "world_source_identity": "f4764eb77295c24027d407bd7476041e5796b625602031549b71465993ce037b"
+}

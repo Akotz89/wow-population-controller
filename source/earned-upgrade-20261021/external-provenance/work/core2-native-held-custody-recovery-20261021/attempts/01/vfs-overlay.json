@@ -1,0 +1,216 @@
+{
+  "case-sensitive": true,
+  "roots": [
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi224-native-integration-20261019/candidate/core/modules/mod-playerbot-dungeon-sim/src/BotActivityRegistry.h",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-playerbot-dungeon-sim/src/BotActivityRegistry.h",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi224-native-integration-20261019/candidate/core/modules/mod-playerbots/conf/playerbots.conf.dist",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-playerbots/conf/playerbots.conf.dist",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/06/core/modules/mod-playerbots/src/Ai/World/Rpg/Action/NewRpgAction.cpp",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-playerbots/src/Ai/World/Rpg/Action/NewRpgAction.cpp",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core3-cpi211-acquire-ownership-r3-20261020/candidate/core/modules/mod-playerbots/src/Ai/World/Rpg/Action/NewRpgAction.h",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-playerbots/src/Ai/World/Rpg/Action/NewRpgAction.h",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/modules/mod-playerbots/src/Ai/World/Rpg/Action/NewRpgBaseAction.cpp",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-playerbots/src/Ai/World/Rpg/Action/NewRpgBaseAction.cpp",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core3-cpi211-acquire-ownership-r3-20261020/candidate/core/modules/mod-playerbots/src/Ai/World/Rpg/Action/NewRpgBaseAction.h",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-playerbots/src/Ai/World/Rpg/Action/NewRpgBaseAction.h",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/modules/mod-playerbots/src/Ai/World/Rpg/NewRpgInfo.cpp",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-playerbots/src/Ai/World/Rpg/NewRpgInfo.cpp",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/modules/mod-playerbots/src/Ai/World/Rpg/NewRpgInfo.h",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-playerbots/src/Ai/World/Rpg/NewRpgInfo.h",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi224-native-integration-20261019/candidate/core/modules/mod-playerbots/src/Bot/PlayerbotAI.h",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-playerbots/src/Bot/PlayerbotAI.h",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi224-native-integration-20261019/native-fix01/candidate/core/modules/mod-playerbots/src/Guide/CourtesyBuffNative.inc",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-playerbots/src/Guide/CourtesyBuffNative.inc",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi224-native-integration-20261019/candidate/core/modules/mod-playerbots/src/Guide/CourtesyBuffPolicy.h",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-playerbots/src/Guide/CourtesyBuffPolicy.h",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi224-native-integration-20261019/native-fix01/candidate/core/modules/mod-playerbots/src/Guide/CourtesyBuffs.cpp",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-playerbots/src/Guide/CourtesyBuffs.cpp",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi224-native-integration-20261019/candidate/core/modules/mod-playerbots/src/Guide/CourtesyBuffs.h",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-playerbots/src/Guide/CourtesyBuffs.h",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-native-held-custody-recovery-20261021/candidate/core/modules/mod-playerbots/src/Guide/PythonPopulationBridge.cpp",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-playerbots/src/Guide/PythonPopulationBridge.cpp",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi224-native-integration-20261019/candidate/core/modules/mod-playerbots/src/Guide/PythonPopulationBridge.h",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-playerbots/src/Guide/PythonPopulationBridge.h",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core3-cpi211-acquire-ownership-r3-20261020/candidate/core/modules/mod-playerbots/src/Mgr/Travel/TravelMgr.cpp",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-playerbots/src/Mgr/Travel/TravelMgr.cpp",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi224-native-integration-20261019/candidate/core/modules/mod-playerbots/src/Script/Playerbots.cpp",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-playerbots/src/Script/Playerbots.cpp",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/modules/mod-progression-system/src/ProgressionSystem.h",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-progression-system/src/ProgressionSystem.h",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/modules/mod-progression-system/src/SharedPhaseGate.cpp",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-progression-system/src/SharedPhaseGate.cpp",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Bindings/PopulationModule.cpp",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/modules/mod-python-engine/src/Population/PopulationBridge.h",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/Population/PopulationBridge.h",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/modules/mod-python-engine/src/PythonEngine.h",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/modules/mod-python-engine/src/PythonEngine.h",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core3-cpi211-vendor-notifications-20261020/candidate/core/src/server/game/Entities/Player/Player.cpp",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Entities/Player/Player.cpp",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/src/server/game/Entities/Player/Player.h",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Entities/Player/Player.h",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/src/server/game/Entities/Player/PlayerMisc.cpp",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Entities/Player/PlayerMisc.cpp",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/src/server/game/Entities/Player/PlayerQuest.cpp",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Entities/Player/PlayerQuest.cpp",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core3-cpi211-vendor-notifications-20261020/candidate/core/src/server/game/Entities/Player/PlayerStorage.cpp",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Entities/Player/PlayerStorage.cpp",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/src/server/game/Events/GameEventMgr.h",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Events/GameEventMgr.h",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/src/server/game/Mails/Mail.cpp",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Mails/Mail.cpp",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/src/server/game/Mails/Mail.h",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Mails/Mail.h",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/src/server/game/Scripting/ScriptDefines/AllMapScript.cpp",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Scripting/ScriptDefines/AllMapScript.cpp",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/src/server/game/Scripting/ScriptDefines/PlayerScript.cpp",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Scripting/ScriptDefines/PlayerScript.cpp",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/src/server/game/Scripting/ScriptDefines/PlayerScript.h",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Scripting/ScriptDefines/PlayerScript.h",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/core/src/server/game/Scripting/ScriptMgr.h",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core/src/server/game/Scripting/ScriptMgr.h",
+      "type": "file",
+      "use-external-name": false
+    },
+    {
+      "external-contents": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-native-held-custody-recovery-20261021/attempts/01/generated/revision.h",
+      "name": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/generated/revision.h",
+      "type": "file",
+      "use-external-name": false
+    }
+  ],
+  "version": 0
+}

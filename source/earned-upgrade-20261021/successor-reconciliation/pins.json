@@ -1,0 +1,85 @@
+{
+  "actor": {
+    "account_id": 5988,
+    "character_guid": 937,
+    "identity_key": "77430a1e7b76c2a864289bfb5e4fec113ee94237ec909a47b1688cbf6792ba85"
+  },
+  "config_generation": 1,
+  "config_sha256": "99e9d087431608a6c13e169684b6a35c1f91624e4d5a79db47a40ebd627e0e24",
+  "dependencies": {
+    "capture_native_acquisition": "3cfa72f7cbbc7e8b2647ab9dbf8fa8fbea7abee2ba1cef125d4dcb740f214968",
+    "gear_policy": "1e10af64a17778d1008a15942faabc6b891b7267560fe18ed5ed5b0cb88dc3d7",
+    "ingest_capture": "5b55cb0bdb4e5806b904539bef234ac0f7afa63e3ecd092e8dde0da8016695bb",
+    "native_custody_ack": "20368a7e031d12e8d80003b49a8faf052b38244424f41f23773edf97f886028f",
+    "native_seed_policy": "95fb323b51ec6771fce9f2f393b1dbe6573b74682720fa6773ccbfab8e0bf094",
+    "quest_policy": "8855b60d14557bb7c887050dd6afa5ef089889d1a8343f6b7274e88c26834f53",
+    "witness_runtime": "f3513ce18d6add518453c3500a8c5bb05f72c98069e89e504325c4df8a79ea50"
+  },
+  "failed_result": {
+    "activated": false,
+    "first_failure": {
+      "code": "world-path-drift",
+      "type": "Refusal"
+    },
+    "gameplay_verified": false,
+    "recovered": false,
+    "recovery_failure": {
+      "code": "unknown-start-owner",
+      "type": "Refusal"
+    },
+    "successor_loaded_acceptance": false
+  },
+  "helper_pins_sha256": "5c7692ba7ba7353e6cf702dad21156f4d6ba8c6e7f63b9f3e8542378887af740",
+  "helper_sha256": "460c3c109c95f63d86a05ddfceff230fb3dcfaa2311d4d22030fef2350ec4cd4",
+  "input_evidence": {
+    "successor-cutover.json": {
+      "bytes": 245,
+      "sha256": "09df57252f59e04bd0d6e9e030ec283289275635e925d5cc1d00f667e47bdbe1"
+    },
+    "successor-first-failure-observation.json": {
+      "bytes": 1695,
+      "sha256": "b625dd9fd9feb16cbd2e9cb08206e500af3fe1c177fd5fe3a335f8757275ab62"
+    },
+    "successor-first-start-readiness.json": {
+      "bytes": 17786,
+      "sha256": "b1a66f08dcadbbe6677a772c2e6caaaf229dce9d3bc24c5bfaee653cc7f24096"
+    },
+    "successor-namespace-readback.json": {
+      "bytes": 1524,
+      "sha256": "d2cf65560b93c23cb76aea93ea1c4f04aa6759f694243301effbd14433bee073"
+    },
+    "successor-reconciliation-result.json": {
+      "bytes": 77,
+      "sha256": "dfa8988d013d12a770d6914f52db2766e7f380b337a99776666b3aed69ad7085"
+    },
+    "successor-startup-log-ownership.json": {
+      "bytes": 1069,
+      "sha256": "88c9ad31dcf4cbe8ed4caa7147a01d10a03572b818fa119db7e520b9de4549e0"
+    }
+  },
+  "invocation": "9b619e377ddf491b8a6a3f6b2b7883a7",
+  "process": {
+    "argv": [
+      "/srv/wow/releases/cpi225-native-held-custody-20261021/bin/worldserver",
+      "-c",
+      "/srv/wow/releases/cpi225-native-held-custody-20261021/etc/worldserver.conf"
+    ],
+    "cwd": "/srv/wow/releases/cpi225-native-held-custody-20261021/bin",
+    "exe": "/srv/wow/releases/cpi225-native-held-custody-20261021/bin/worldserver",
+    "pid": 1705346,
+    "sha256": "cbaa4a4ba3bcf83785444f90567d6d2a61bf390d5fa1594f79c038413fa585ce",
+    "startticks": 84525821
+  },
+  "schema": "core1-specific-successor-reconciliation-pins-v1",
+  "source_identity": "f4764eb77295c24027d407bd7476041e5796b625602031549b71465993ce037b",
+  "startup_log": {
+    "device": 64512,
+    "fd": "3",
+    "inode": 940092228,
+    "prefix_bytes": 29590,
+    "publication": ">> Published 2 Python scripts from canonical root '/srv/wow/releases/cpi225-native-held-custody-20261021/population/python/witness_scripts' in 2419 ms.",
+    "ready": "AzerothCore rev. source sha256:f4764eb77295c24027d407bd7476041e5796b625602031549b71465993ce037b; upstream recorded-in-baseline (Unix, RelWithDebInfo, Static) (worldserver-daemon) ready...",
+    "relative_path": "logs/Server.log",
+    "source_header": "AzerothCore rev. source sha256:f4764eb77295c24027d407bd7476041e5796b625602031549b71465993ce037b; upstream recorded-in-baseline (Unix, RelWithDebInfo, Static) (worldserver-daemon)"
+  }
+}

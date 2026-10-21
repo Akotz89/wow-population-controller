@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.playerbots.invalid/schemas/common-v1.schema.json",
+  "title": "Playerbots strategic domain common types v1",
+  "$defs": {
+    "stable_id": { "type": "string", "pattern": "^[a-z][a-z0-9_-]*:[a-zA-Z0-9_.:-]+$", "maxLength": 160 },
+    "revision": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "digest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "uint32": { "type": "integer", "minimum": 0, "maximum": 4294967295 },
+    "timestamp": { "type": "integer", "minimum": 0, "maximum": 9223372036854775807 },
+    "content_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "id"],
+      "properties": {
+        "kind": { "enum": ["quest", "item", "creature", "gameobject", "spell", "trainer", "vendor", "taxi_node", "area", "map", "dungeon", "loot_template", "recipe"] },
+        "id": { "$ref": "#/$defs/uint32" }
+      }
+    },
+    "execution_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["character_id", "phase", "map_id", "zone_id", "group_size", "core_revision", "playerbots_revision", "content_revision", "content_graph_digest", "route_id", "route_revision", "catalogue_digest", "profile_id", "profile_version", "capability_fingerprint"],
+      "properties": {
+        "character_id": { "type": "integer", "minimum": 1, "maximum": 18446744073709551615 },
+        "phase": { "type": "integer", "minimum": 1, "maximum": 4294967295 },
+        "map_id": { "$ref": "#/$defs/uint32" },
+        "zone_id": { "$ref": "#/$defs/uint32" },
+        "group_size": { "type": "integer", "minimum": 1, "maximum": 40 },
+        "core_revision": { "$ref": "#/$defs/revision" },
+        "playerbots_revision": { "$ref": "#/$defs/revision" },
+        "content_revision": { "$ref": "#/$defs/revision" },
+        "content_graph_digest": { "$ref": "#/$defs/digest" },
+        "route_id": { "$ref": "#/$defs/stable_id" },
+        "route_revision": { "$ref": "#/$defs/revision" },
+        "catalogue_digest": { "$ref": "#/$defs/digest" },
+        "profile_id": { "$ref": "#/$defs/stable_id" },
+        "profile_version": { "$ref": "#/$defs/revision" },
+        "capability_fingerprint": { "$ref": "#/$defs/revision" }
+      }
+    }
+  }
+}

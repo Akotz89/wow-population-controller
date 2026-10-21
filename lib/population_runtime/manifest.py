@@ -14,8 +14,6 @@ from .errors import ArtifactError
 from .models import Identity
 
 SCHEMA = "cpi-196-immutable-identity-manifest-v1"
-SCHEDULE_VERSION = "cpi-196-rndbot-wave-policy-2500-v1"
-SCHEDULE_SHA256 = "bdfea0aefa6e0a9c4d80d40cb6e1188863ab33396f659c5229c44ed99f0f6789"
 _ROW_KEYS = set(Identity.__dataclass_fields__)
 
 
@@ -26,7 +24,6 @@ class IdentityManifest:
     file_digest: str
     identities: tuple[Identity, ...]
     admission_holds: Mapping[str, str] = field(default_factory=lambda: MappingProxyType({}))
-    legacy_identity_keys: frozenset[str] = frozenset()
     validation_status: str = "ACCEPTED"
     eligibility_generation: int = 0
     eligibility_digest: str | None = None
@@ -84,13 +81,17 @@ def load_manifest(config: RuntimeConfig) -> IdentityManifest:
         or validated.get("status") not in {"ACCEPTED", "VALIDATED_WITH_HOLDS"}
         or validated.get("realm_id") != 1
         or validated.get("identity_count") != config.durable_target
-        or validated.get("schedule_version") != SCHEDULE_VERSION
-        or validated.get("schedule_sha256") != SCHEDULE_SHA256
+        or validated.get("schedule_version") != getattr(gate, "SCHEDULE_VERSION", None)
+        or not isinstance(validated.get("schedule_version"), str)
+        or not validated["schedule_version"]
+        or validated.get("schedule_sha256") != getattr(gate, "SCHEDULE_SHA256", None)
+        or validated.get("schedule_sha256") != digest_file(config.schedule_path)
+        or config.durable_target != getattr(gate, "ROSTER_TARGET", None)
     ):
         raise ArtifactError("identity manifest release fields are not the governed realm-1 values")
     rows = validated.get("rows")
     if not isinstance(rows, list) or len(rows) != config.durable_target:
-        raise ArtifactError("identity manifest does not contain exactly 2500 validated rows")
+        raise ArtifactError("identity manifest cardinality differs from the configured durable target")
     identities: list[Identity] = []
     for index, row in enumerate(rows):
         if not isinstance(row, dict) or set(row) != _ROW_KEYS:
@@ -108,12 +109,6 @@ def load_manifest(config: RuntimeConfig) -> IdentityManifest:
         or any(not isinstance(reason, str) or not reason.strip() for reason in holds.values())
     ):
         raise ArtifactError("admission holds must name known identities with nonempty reasons")
-    legacy_identity_keys = frozenset(
-        proof["identity"]["identity_key"]
-        for proof in validated.get("legacy_identity_proofs", [])
-    )
-    if not legacy_identity_keys <= keys:
-        raise ArtifactError("legacy identity proof names an unknown identity")
     manifest_digest = validated.get("manifest_digest")
     decision_digest = validated.get("decision_digest")
     if not isinstance(manifest_digest, str) or not isinstance(decision_digest, str):
@@ -171,7 +166,6 @@ def load_manifest(config: RuntimeConfig) -> IdentityManifest:
         file_digest=actual_file_digest,
         identities=tuple(identities),
         admission_holds=MappingProxyType(dict(holds)),
-        legacy_identity_keys=legacy_identity_keys,
         validation_status=validated["status"],
         eligibility_generation=eligibility_generation,
         eligibility_digest=eligibility_digest,

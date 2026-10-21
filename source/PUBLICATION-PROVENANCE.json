@@ -1,0 +1,848 @@
+{
+  "schema": "cpi225-controller-source-publication-v1",
+  "packet_sha256": "590075b122afc9aea28bf37545413e2ff88bcbac9356675062aa73de0c1fc6db",
+  "source_map_sha256": "c9bccb7a32a572ce11de1884f34dfc4e897198ce98d07d69aa7aa51e30e2ada3",
+  "actual_native_source_identity": "466c8c6066d98b98bdf31bf02e00e5bf1f5cd52ad03fa3b4d1c70acf2c9cb276",
+  "actual_native_cpp_sha256": "5b665ef40125b4a6a63d6ce4e977324ca4c320aa3830501cb9fa040c3c19419f",
+  "existing_built_module_sha256": "53e5a03cf92b6f2dee85cf685efd67a59d10ea0582d06e18681ee6cd9b7e57f0",
+  "module_binary_excluded": true,
+  "packet_source_actions": {
+    "publish_source_support_snapshot": 49,
+    "exclude_duplicate_component_source_from_controller": 171,
+    "exclude_generated_source_support": 2,
+    "publish_runtime_source": 6,
+    "publish_source_provenance_snapshot": 4
+  },
+  "pending_owner_freeze": [],
+  "baseline_22_preserved_separately_from_effective_25": true,
+  "historical_candidate_gear_separate_from_canonical_runtime": true,
+  "build_recipe_limits": "Portable relative source packaging only. CMake refuses the wrong host before project/compiler detection and rechecks through a dependency of all three build targets. The selected native closure is 21 files including 10 translation units for the actual module53 producer. No configure, compiler, link, build, import, deployment, runtime, or gameplay acceptance is established.",
+  "sdk_and_generated_excluded": true,
+  "source_files": [
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/capture_manifest.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/capture_manifest.py",
+      "sha256": "4934df3fbd85367b26b1788f938c7289d907779d48379957e52c50b93335ce21",
+      "bytes": 44559,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/capture_native_acquisition.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/capture_native_acquisition.py",
+      "sha256": "3cfa72f7cbbc7e8b2647ab9dbf8fa8fbea7abee2ba1cef125d4dcb740f214968",
+      "bytes": 58506,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/README.md",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/README.md",
+      "sha256": "212595597b12274f770178c34eb7b136e5f37af9874bf19e45684978a57ea048",
+      "bytes": 21214,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/first_current_input.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/first_current_input.py",
+      "sha256": "7dd587d90b3b69c52650623b6bf2894ed20402a2bcb5177d04200e95f56ec925",
+      "bytes": 20235,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/ordinary_kill_proof.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/ordinary_kill_proof.py",
+      "sha256": "598bda2aa39a72810c2f34f9129dd216dba93a3eeb6aae3e691f739ba562ff69",
+      "bytes": 17884,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/ordinary-kill-census-pin.json",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/ordinary-kill-census-pin.json",
+      "sha256": "7781c179fb689364ca46e423736f4fb4019ba1c4681eb1485dca634c9e5480c0",
+      "bytes": 297,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/ingest_capture.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/ingest_capture.py",
+      "sha256": "5b55cb0bdb4e5806b904539bef234ac0f7afa63e3ecd092e8dde0da8016695bb",
+      "bytes": 1075,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/normalize_current_quest.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/normalize_current_quest.py",
+      "sha256": "11d68645b9d789717029e2e456bc487f0829fa2e35d5933de3b4d9242f1592d1",
+      "bytes": 27465,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/producer/effective_data.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/producer/effective_data.py",
+      "sha256": "10900d4f7832f4f73a317ef74ea1a47d2dc1cd4cded20ba9d375633737137b58",
+      "bytes": 14803,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/producer/EIGHT-STORE-MAP.json",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/producer/EIGHT-STORE-MAP.json",
+      "sha256": "900120c3d6c3b4bc962459b54aa4d3150fe8c5c19881c15a5faaab251f0ed3f3",
+      "bytes": 43846,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/producer/generation.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/producer/generation.py",
+      "sha256": "c2710b739e2fa1f84d8f26f647a40e33483120da8ef187cf18a8d74eabce7ac8",
+      "bytes": 18538,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/producer/verify_generation.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/producer/verify_generation.py",
+      "sha256": "30f5655a05f89f1da14bf6214d6f7dedddee603d846b6618f1e18fdcf432bf4c",
+      "bytes": 55443,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/producer/compile_content_graph.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/producer/compile_content_graph.py",
+      "sha256": "3ce50a138e6b0b35dcba4ec376f2914a3dce70a5d5270979a15cd47e0c9e6ad3",
+      "bytes": 12665,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/producer/dbc_overlay.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/producer/dbc_overlay.py",
+      "sha256": "7eb582be2080131227781a19706309183b073f6c699ca500260bda354818c930",
+      "bytes": 12234,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/producer/ingest_capture.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/producer/ingest_capture.py",
+      "sha256": "5b55cb0bdb4e5806b904539bef234ac0f7afa63e3ecd092e8dde0da8016695bb",
+      "bytes": 1075,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/producer/schemas/content-graph-v1.schema.json",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/producer/schemas/content-graph-v1.schema.json",
+      "sha256": "570da9fd213a4da09025ee92ec99e03e709156f5357a188ea7c58773db2e5b67",
+      "bytes": 6823,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/producer/schemas/content-manifest-v1.schema.json",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/producer/schemas/content-manifest-v1.schema.json",
+      "sha256": "e21669570257cf77a94f2113e5338edbf8835e0625d31400e10c58f1fc994cf3",
+      "bytes": 2791,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/producer/schemas/item-source-v1.schema.json",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/producer/schemas/item-source-v1.schema.json",
+      "sha256": "ec441175522ec3b312e841012b5669b6c1bdf5fd6ec35c4e0670952247b0d2e3",
+      "bytes": 4044,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/producer/schemas/common-v1.schema.json",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/producer/schemas/common-v1.schema.json",
+      "sha256": "8db4dbd76294847ad342a92b860645fadd720ed1ec57244949b8890d806fea39",
+      "bytes": 2313,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/runtime/population/scripts/population_bootstrap.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/runtime/population/scripts/population_bootstrap.py",
+      "sha256": "20d3d4387d63cd46dafd5de1e77d0606ac715b249ff639923a147b5a48768f24",
+      "bytes": 29648,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/runtime/population/lib/capture_native_acquisition.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/runtime/population/lib/capture_native_acquisition.py",
+      "sha256": "3cfa72f7cbbc7e8b2647ab9dbf8fa8fbea7abee2ba1cef125d4dcb740f214968",
+      "bytes": 58506,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/runtime/population/lib/native_custody_ack.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/runtime/population/lib/native_custody_ack.py",
+      "sha256": "20368a7e031d12e8d80003b49a8faf052b38244424f41f23773edf97f886028f",
+      "bytes": 8597,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/runtime/population/lib/quest_policy.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/runtime/population/lib/quest_policy.py",
+      "sha256": "8855b60d14557bb7c887050dd6afa5ef089889d1a8343f6b7274e88c26834f53",
+      "bytes": 21599,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/runtime/population/lib/gear_policy.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/runtime/population/lib/gear_policy.py",
+      "sha256": "8a2bfc8a90da3c7af5856c22c999041024f9320e68e974e764a2d0833509a8b8",
+      "bytes": 35789,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/runtime/population/lib/native_seed_policy.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/runtime/population/lib/native_seed_policy.py",
+      "sha256": "95fb323b51ec6771fce9f2f393b1dbe6573b74682720fa6773ccbfab8e0bf094",
+      "bytes": 26176,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/candidate/runtime/population/lib/ingest_capture.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/runtime/population/lib/ingest_capture.py",
+      "sha256": "5b55cb0bdb4e5806b904539bef234ac0f7afa63e3ecd092e8dde0da8016695bb",
+      "bytes": 1075,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/source-proof-ordinary-kill/census/successor-native-held/engine-observation-capabilities.json",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/source-proof-ordinary-kill/census/successor-native-held/engine-observation-capabilities.json",
+      "sha256": "c36e90705965d09eac543c194f2bbecf01036fd5b7a2c4e50fc89e61a92f15cb",
+      "bytes": 114374,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/source-proof-ordinary-kill/census/successor-native-held/player-script-census.json",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/source-proof-ordinary-kill/census/successor-native-held/player-script-census.json",
+      "sha256": "9786368e5f2902a7769e1cecd4727f50e63dcc184bfd641c77bb45a0c71da9eb",
+      "bytes": 417604,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/source-proof-ordinary-kill/census/successor-native-held/selected-source-inventory.json",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/source-proof-ordinary-kill/census/successor-native-held/selected-source-inventory.json",
+      "sha256": "154cb70bb57ecbbbac7798a860f60c4f03dfa1fcffbfa21e784181521373b26b",
+      "bytes": 3783478,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-activation/assets/population/python/lib/witness_runtime.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-activation/assets/population/python/lib/witness_runtime.py",
+      "sha256": "f3513ce18d6add518453c3500a8c5bb05f72c98069e89e504325c4df8a79ea50",
+      "bytes": 27615,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/evidence/native/CURRENT-HANDLER-SOURCE-MAP.json",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/evidence/native/CURRENT-HANDLER-SOURCE-MAP.json",
+      "sha256": "4389751459b9bf752163b3568bd855198bca4542f16bb823a4c432b9f66f2203",
+      "bytes": 33088,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/physical_export.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/physical_export.py",
+      "sha256": "ee02d3db61c2abd431330f95b1c554a2ead653074d97216a2b7aa3b552c1dbdf",
+      "bytes": 37315,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "lib/capture_native_acquisition.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/attempts/06/run/artifacts/view/task/build-design/output/delivery/stage/population/python/lib/capture_native_acquisition.py",
+      "sha256": "3cfa72f7cbbc7e8b2647ab9dbf8fa8fbea7abee2ba1cef125d4dcb740f214968",
+      "bytes": 58506,
+      "mode": "0o644",
+      "role": "publish_runtime_source"
+    },
+    {
+      "destination": "lib/gear_policy.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/attempts/06/run/artifacts/view/task/build-design/output/delivery/stage/population/python/lib/gear_policy.py",
+      "sha256": "1e10af64a17778d1008a15942faabc6b891b7267560fe18ed5ed5b0cb88dc3d7",
+      "bytes": 41661,
+      "mode": "0o644",
+      "role": "publish_runtime_source"
+    },
+    {
+      "destination": "lib/ingest_capture.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/attempts/06/run/artifacts/view/task/build-design/output/delivery/stage/population/python/lib/ingest_capture.py",
+      "sha256": "5b55cb0bdb4e5806b904539bef234ac0f7afa63e3ecd092e8dde0da8016695bb",
+      "bytes": 1075,
+      "mode": "0o644",
+      "role": "publish_runtime_source"
+    },
+    {
+      "destination": "lib/native_custody_ack.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/attempts/06/run/artifacts/view/task/build-design/output/delivery/stage/population/python/lib/native_custody_ack.py",
+      "sha256": "20368a7e031d12e8d80003b49a8faf052b38244424f41f23773edf97f886028f",
+      "bytes": 8597,
+      "mode": "0o644",
+      "role": "publish_runtime_source"
+    },
+    {
+      "destination": "lib/native_seed_policy.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/attempts/06/run/artifacts/view/task/build-design/output/delivery/stage/population/python/lib/native_seed_policy.py",
+      "sha256": "95fb323b51ec6771fce9f2f393b1dbe6573b74682720fa6773ccbfab8e0bf094",
+      "bytes": 26176,
+      "mode": "0o644",
+      "role": "publish_runtime_source"
+    },
+    {
+      "destination": "lib/quest_policy.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/attempts/06/run/artifacts/view/task/build-design/output/delivery/stage/population/python/lib/quest_policy.py",
+      "sha256": "8855b60d14557bb7c887050dd6afa5ef089889d1a8343f6b7274e88c26834f53",
+      "bytes": 21599,
+      "mode": "0o644",
+      "role": "publish_runtime_source"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/external-provenance/work/core2-native-held-custody-recovery-20261021/attempts/01/SOURCE-SEAL.json",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-native-held-custody-recovery-20261021/attempts/01/SOURCE-SEAL.json",
+      "sha256": "c4fc2f8a2d8f133ccc65c1ca82720329a6fa9bec0f362001752f498aa5a39f95",
+      "bytes": 380,
+      "mode": "0o600",
+      "role": "publish_source_provenance_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/external-provenance/work/core2-native-held-custody-recovery-20261021/attempts/01/candidate.json",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-native-held-custody-recovery-20261021/attempts/01/candidate.json",
+      "sha256": "50b62c7dae8f4a2d3d4a8aef6c0add236d7cb54e35b333144fe7c2703cdf6307",
+      "bytes": 1577,
+      "mode": "0o600",
+      "role": "publish_source_provenance_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/external-provenance/work/core2-native-held-custody-recovery-20261021/attempts/01/composition.json",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-native-held-custody-recovery-20261021/attempts/01/composition.json",
+      "sha256": "d866aa6b28761b769de8f7b5bb3d76a66a89389ba5746bbe47372425f4c55b7b",
+      "bytes": 1092619,
+      "mode": "0o600",
+      "role": "publish_source_provenance_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/external-provenance/work/core2-native-held-custody-recovery-20261021/attempts/01/vfs-overlay.json",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-native-held-custody-recovery-20261021/attempts/01/vfs-overlay.json",
+      "sha256": "a98faffc40c06e248f9d85a014daf91e1e8deec96fe21f6d70385912ce8d67a4",
+      "bytes": 15840,
+      "mode": "0o600",
+      "role": "publish_source_provenance_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/review/REPORT.md",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/review/REPORT.md",
+      "sha256": "0b7e7e335ee30db330f5a3d9d3f4b893d41381e7a41777ab9155787a3342e761",
+      "bytes": 6170,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-source-proof/review/RESULT.json",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/review/RESULT.json",
+      "sha256": "e7a984c326ed7fa5fdeea9ffa26eb19428580dcc1c0f3aeb084f73c6a430772c",
+      "bytes": 18260,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-activation/successor.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-activation/successor.py",
+      "sha256": "460c3c109c95f63d86a05ddfceff230fb3dcfaa2311d4d22030fef2350ec4cd4",
+      "bytes": 27500,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-activation/pins.json",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-activation/pins.json",
+      "sha256": "5c7692ba7ba7353e6cf702dad21156f4d6ba8c6e7f63b9f3e8542378887af740",
+      "bytes": 9028,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-activation/test_successor.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-activation/test_successor.py",
+      "sha256": "82f7d3826fa235b4d1c7cd269b37eda647defb574229e5d204457d5ded941e86",
+      "bytes": 18689,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/activation/activate.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/activation/activate.py",
+      "sha256": "bc9b37c314d26b60160de7796c9801fe68594f57c470cb1b59fb97858e31a9f0",
+      "bytes": 33046,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/activation/soap_transport.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/activation/soap_transport.py",
+      "sha256": "c33e1468a222eef0c90b9841fb7d83236444b1533f503bfd0d64a7f73b5eb3c7",
+      "bytes": 2518,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-reconciliation/reconcile.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-reconciliation/reconcile.py",
+      "sha256": "6e64d9bb085a12693c6bf301e3e402d7280444725b1ddec0da98dd59cec8c4e2",
+      "bytes": 18888,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-reconciliation/pins.json",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-reconciliation/pins.json",
+      "sha256": "9f1ab57d5e87782cc02cdf978d74b16c0bc619afb7b0677d4c0788e5a8b0a521",
+      "bytes": 3838,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-reconciliation/test_reconcile.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-reconciliation/test_reconcile.py",
+      "sha256": "fb8dcd9c7be62b5cf5d0f665f4953f8af83687bb2ac503792322c8a3b4c44b73",
+      "bytes": 18596,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-reconciliation/README.md",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-reconciliation/README.md",
+      "sha256": "817b834a2c5c6e65067c23b4ddbb9a151a3a982fa74b0d45af090c37b4e6b853",
+      "bytes": 13423,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-reconciliation/fdinfo-review/REPORT.md",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-reconciliation/fdinfo-review/REPORT.md",
+      "sha256": "412d82ee43c5c1128f35c67925bb2faa1a6433546fe5a00cfe212a049fe34c57",
+      "bytes": 2554,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-reconciliation/fdinfo-review/RESULT.json",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-reconciliation/fdinfo-review/RESULT.json",
+      "sha256": "d73ab089ebd053a715ad8428dbfbf42079da531341d912d70e3cd659ca6aae00",
+      "bytes": 1749,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-reconciliation/successor-reconciliation-owned-log-review/REPORT.md",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-reconciliation/successor-reconciliation-owned-log-review/REPORT.md",
+      "sha256": "201c28eed9b746c1cfd091a2b4961e34c079e61321e6643fb1cb87a132e88781",
+      "bytes": 3253,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-reconciliation/successor-reconciliation-owned-log-review/RESULT.json",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-reconciliation/successor-reconciliation-owned-log-review/RESULT.json",
+      "sha256": "d776f63066a1669d9dbe1f43faf862b344614cba436330b88e053c643e04f32a",
+      "bytes": 1946,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-activation/assets/population/python/witness_scripts/engine.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-activation/assets/population/python/witness_scripts/engine.py",
+      "sha256": "3a5774e0ac4d9ab00827d2e619662014ced944e9658392d5b83794ac4f943bc7",
+      "bytes": 265,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "source/earned-upgrade-20261021/successor-activation/assets/population/python/witness_scripts/native_witness.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-activation/assets/population/python/witness_scripts/native_witness.py",
+      "sha256": "e4d1268812301acda017e57701db510f70993bdb0bfb163944bdfe4eb5cd85cb",
+      "bytes": 5641,
+      "mode": "0o644",
+      "role": "publish_source_support_snapshot"
+    },
+    {
+      "destination": "lib/policy_continuity.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/runtime/population/lib/policy_continuity.py",
+      "sha256": "b8fbacdc22f4c2ba3caf49de7dfa2d518f8a6cd0c8ab07d7a81379d4aab744f2",
+      "bytes": 5482,
+      "mode": "0o644",
+      "role": "canonical_effective_runtime_source"
+    },
+    {
+      "destination": "lib/population_runtime/__init__.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/runtime/population/lib/population_runtime/__init__.py",
+      "sha256": "d96c8ebb642c13944f1bc11cdbb1e4a7fa23f949e0d1d0c4dd1389f08870927e",
+      "bytes": 1367,
+      "mode": "0o644",
+      "role": "canonical_effective_runtime_source"
+    },
+    {
+      "destination": "lib/population_runtime/adapter.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/runtime/population/lib/population_runtime/adapter.py",
+      "sha256": "4fd4c79347c0f6fce5a4f7e80a46dbbd2b44697f41e12eb5f371c097cebc7f64",
+      "bytes": 13387,
+      "mode": "0o644",
+      "role": "canonical_effective_runtime_source"
+    },
+    {
+      "destination": "lib/population_runtime/bands.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/runtime/population/lib/population_runtime/bands.py",
+      "sha256": "988d9e8ca0ae758ef94e8871231fbd773bfed0534953cdec14cf4e11ca179ede",
+      "bytes": 2199,
+      "mode": "0o644",
+      "role": "canonical_effective_runtime_source"
+    },
+    {
+      "destination": "lib/population_runtime/canonical.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/runtime/population/lib/population_runtime/canonical.py",
+      "sha256": "45a8cd419e11ceaab556937da47b2cf5a99aded258dcef75d4af42b8073f4514",
+      "bytes": 1058,
+      "mode": "0o644",
+      "role": "canonical_effective_runtime_source"
+    },
+    {
+      "destination": "lib/population_runtime/capabilities.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/runtime/population/lib/population_runtime/capabilities.py",
+      "sha256": "04db09023dad94e860501fc54684716d237dabb6e1d2df7d01fbc1c648b5d259",
+      "bytes": 5142,
+      "mode": "0o644",
+      "role": "canonical_effective_runtime_source"
+    },
+    {
+      "destination": "lib/population_runtime/errors.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/runtime/population/lib/population_runtime/errors.py",
+      "sha256": "714ad63abcd445eaa64b55198cd7b419cba0aac8a6c995778d311c8cf65cf688",
+      "bytes": 734,
+      "mode": "0o644",
+      "role": "canonical_effective_runtime_source"
+    },
+    {
+      "destination": "lib/population_runtime/ledger.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/runtime/population/lib/population_runtime/ledger.py",
+      "sha256": "a34614b970eaa7d15c462cb95f3abdf22d8b44827950f61f94f9047796222057",
+      "bytes": 37840,
+      "mode": "0o644",
+      "role": "canonical_effective_runtime_source"
+    },
+    {
+      "destination": "lib/population_runtime/models.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/runtime/population/lib/population_runtime/models.py",
+      "sha256": "4625463887fa5a05959cd6c973b78cde0368afebfccddeaf8caff702591a21b0",
+      "bytes": 2261,
+      "mode": "0o644",
+      "role": "canonical_effective_runtime_source"
+    },
+    {
+      "destination": "lib/population_runtime/phase_veto.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/runtime/population/lib/population_runtime/phase_veto.py",
+      "sha256": "c4bffcf9a52b1b5cf92e2fd72dc39e876594473f5c20acc1910f406d1aea9ed9",
+      "bytes": 4635,
+      "mode": "0o644",
+      "role": "canonical_effective_runtime_source"
+    },
+    {
+      "destination": "lib/population_runtime/planning.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/runtime/population/lib/population_runtime/planning.py",
+      "sha256": "9c80d1710e238ae88a360fbe3a24cbd07b478cbe761a76ad86bc91964ed4c8fc",
+      "bytes": 10334,
+      "mode": "0o644",
+      "role": "canonical_effective_runtime_source"
+    },
+    {
+      "destination": "lib/population_runtime/state.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-current-native-world-package-20261021/candidate/02/runtime/population/lib/population_runtime/state.py",
+      "sha256": "e16de4bd6d4d90ee380c47ac18e5646f5eca684a36c4b4e0f5466284b64b32c1",
+      "bytes": 9303,
+      "mode": "0o644",
+      "role": "canonical_effective_runtime_source"
+    },
+    {
+      "destination": "scripts/population_bootstrap.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-source-proof/candidate/runtime/population/scripts/population_bootstrap.py",
+      "sha256": "20d3d4387d63cd46dafd5de1e77d0606ac715b249ff639923a147b5a48768f24",
+      "bytes": 29648,
+      "mode": "0o644",
+      "role": "canonical_effective_runtime_source"
+    },
+    {
+      "destination": "lib/witness_runtime.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-activation/assets/population/python/lib/witness_runtime.py",
+      "sha256": "f3513ce18d6add518453c3500a8c5bb05f72c98069e89e504325c4df8a79ea50",
+      "bytes": 27615,
+      "mode": "0o644",
+      "role": "canonical_effective_runtime_source"
+    },
+    {
+      "destination": "witness_scripts/engine.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-activation/assets/population/python/witness_scripts/engine.py",
+      "sha256": "3a5774e0ac4d9ab00827d2e619662014ced944e9658392d5b83794ac4f943bc7",
+      "bytes": 265,
+      "mode": "0o644",
+      "role": "canonical_effective_runtime_source"
+    },
+    {
+      "destination": "witness_scripts/native_witness.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-activation/assets/population/python/witness_scripts/native_witness.py",
+      "sha256": "e4d1268812301acda017e57701db510f70993bdb0bfb163944bdfe4eb5cd85cb",
+      "bytes": 5641,
+      "mode": "0o644",
+      "role": "canonical_effective_runtime_source"
+    },
+    {
+      "destination": "native/include/pbguide/activity_reservations.hpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/tools/playerbots-strategic-director/include/pbguide/activity_reservations.hpp",
+      "sha256": "72c3933fe0f7357f4eb0bfcd650747dc681b4679c8e9613f9bff26db9cb17650",
+      "bytes": 1747,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "native/src/activity_reservations.cpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/tools/playerbots-strategic-director/src/activity_reservations.cpp",
+      "sha256": "84f98242b88cfce0e03c93943420272797af40f8d51b75abd69fbf1399dbc260",
+      "bytes": 6357,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "native/include/pbguide/director.hpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/tools/playerbots-strategic-director/include/pbguide/director.hpp",
+      "sha256": "c837da095bb37b87a53fc52a676ec5287a695ae7c658f97ecf763df8cee5bd12",
+      "bytes": 5104,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "native/src/director.cpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/tools/playerbots-strategic-director/src/director.cpp",
+      "sha256": "272e3710d8fe0e44e60cb701e258061c22b35f097b26107c2d9be2865a555056",
+      "bytes": 19436,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "native/include/pbguide/failure_memory.hpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/tools/playerbots-strategic-director/include/pbguide/failure_memory.hpp",
+      "sha256": "533219000996a288c1c7c0144bb8864a216f7d677c2cbb6a1932a18f6ababcb3",
+      "bytes": 808,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "native/src/failure_memory.cpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/tools/playerbots-strategic-director/src/failure_memory.cpp",
+      "sha256": "7f54d6a2d051fc354c7f08c6fcfb6a1d7ee75fb52d7e7c8d11762583de3ad8d8",
+      "bytes": 8684,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "native/include/pbguide/route_graph.hpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/tools/playerbots-strategic-director/include/pbguide/route_graph.hpp",
+      "sha256": "554cdb9d01ad35fae83fb09d527db468df116fcd2c62e8286c3a1f78fc1f1cfa",
+      "bytes": 2637,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "native/src/route_graph.cpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/tools/playerbots-strategic-director/src/route_graph.cpp",
+      "sha256": "00f7edde2b8c520839f65c4f14ac695ce8ce0e8c757a1edd45bc501bd59c4337",
+      "bytes": 17693,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "native/include/pbguide/gear_plan_json.hpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/tools/playerbots-strategic-director/include/pbguide/gear_plan_json.hpp",
+      "sha256": "f7fcc4fa95d848e2d473a6d6998f8047058ad9fe8bc679d0cc8f02e0f4a42f41",
+      "bytes": 355,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "native/include/pbguide/gear_plan_store.hpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/tools/playerbots-strategic-director/include/pbguide/gear_plan_store.hpp",
+      "sha256": "11f2064b7d44675cf2f802cb1c4d4db226f8b2fc3a4b80f62d89b16ff0ebb502",
+      "bytes": 2223,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "native/src/gear_plan_store.cpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/tools/playerbots-strategic-director/src/gear_plan_store.cpp",
+      "sha256": "df919399a8012da2f4be7c905c27c4b897e0c9a2a4a27f7d8748c782244fd276",
+      "bytes": 15935,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "native/src/json_contract.hpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/tools/playerbots-strategic-director/src/json_contract.hpp",
+      "sha256": "dce90d82ef50be643eca71bbdbb2d75771991d522ca6dfe995322ea738803a88",
+      "bytes": 620,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "native/include/pbguide/canonical_item_sources.hpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-actor-source-context-20261021/attempts/06/candidate/extension-source/include/pbguide/canonical_item_sources.hpp",
+      "sha256": "48886dc7ac18635ef7a866689379a92ef195f116b970ecf0fecdcb7fd4658f14",
+      "bytes": 4186,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "native/include/pbguide/gear_planner.hpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-actor-source-context-20261021/attempts/06/candidate/extension-source/include/pbguide/gear_planner.hpp",
+      "sha256": "4f7aa6da9bd51f8695e1652f7d5e07d2ca2b542ffa5c5511b3b3a164bb31b568",
+      "bytes": 6652,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "native/src/canonical_schemas.hpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/tools/playerbots-strategic-director/src/canonical_schemas.hpp",
+      "sha256": "a0f13226b2b13f581547375125c8b87091b8564518bc4a092a19603770b2258c",
+      "bytes": 44117,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "native/src/canonical_item_sources.cpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-actor-source-context-20261021/attempts/06/candidate/extension-source/src/canonical_item_sources.cpp",
+      "sha256": "96b8a2fc43496326b7545375bd7f7049246e1045e65fb5fd61e3745b0cab2b86",
+      "bytes": 49684,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "native/src/gear_planner.cpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-actor-source-context-20261021/attempts/06/candidate/extension-source/src/gear_planner.cpp",
+      "sha256": "59fb2b76a4723932d567d3e438c62b07a3c2c0117acf25414765b8edf37db2b4",
+      "bytes": 34904,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "native/src/gear_plan_json.cpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-actor-source-context-20261021/attempts/06/candidate/extension-source/src/gear_plan_json.cpp",
+      "sha256": "eec5bfd631a5c4be886215bd77e20a09779911b153cbcf1aaa80176d971bb677",
+      "bytes": 15560,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "native/src/python_gear.cpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-actor-source-context-20261021/attempts/06/candidate/extension-source/src/python_gear.cpp",
+      "sha256": "5b665ef40125b4a6a63d6ce4e977324ca4c320aa3830501cb9fa040c3c19419f",
+      "bytes": 7107,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "native/include/pbguide/replay.hpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core3-cpi211-runtime-integration-20261019/source/director/include/pbguide/replay.hpp",
+      "sha256": "6c385b690b2ee9955b79da1ede07d7e89127307178c70bc5ae53b2e99a445a97",
+      "bytes": 1097,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "native/src/replay.cpp",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core3-cpi211-runtime-integration-20261019/source/director/src/replay.cpp",
+      "sha256": "3f06dc6b175161acd5a73d1646982f71bf3be32a5ccb707592c25eba24099d61",
+      "bytes": 18431,
+      "mode": "0o644",
+      "role": "actual_module53_native_dependency"
+    },
+    {
+      "destination": "scripts/wow-build-host-guard",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/scripts/wow-build-host-guard",
+      "sha256": "d64ca1a808d6bb7f7e26ddb7b7dae7c2f5d552bba18ba8371aba65c9a08f1a6d",
+      "bytes": 542,
+      "mode": "0o755",
+      "role": "current_project_build_host_guard"
+    },
+    {
+      "destination": "native/CMakeLists.txt",
+      "sha256": "d1554dbe07e1019d5651a0505b80d848881fdac3ecc9f935868a775798623a12",
+      "bytes": 2422,
+      "mode": "0o644",
+      "role": "mechanical relative-path source-only build recipe; not configured or built"
+    },
+    {
+      "destination": "lib/population_runtime/config.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-activation/assets/population/python/lib/population_runtime/config.py",
+      "sha256": "0ea5da0f8f10a5fd73c584b0042c7ae3533a406d05a7d0a17d68c557ccdee77c",
+      "bytes": 13533,
+      "mode": "0o644",
+      "role": "accepted_frozen_runtime_source_overlay"
+    },
+    {
+      "destination": "lib/population_runtime/controller.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-activation/assets/population/python/lib/population_runtime/controller.py",
+      "sha256": "876124eda9595f5a866032be68b6ab4769e81469e20efb2c0f731d20397e24bc",
+      "bytes": 30209,
+      "mode": "0o644",
+      "role": "accepted_frozen_runtime_source_overlay"
+    },
+    {
+      "destination": "lib/population_runtime/manifest.py",
+      "source": "/home/aaron/Documents/ChatGPT/wow private server/work/core1-native-earned-upgrade-delivery-20261021/successor-activation/assets/population/python/lib/population_runtime/manifest.py",
+      "sha256": "ea29a21be6659ea7d6b4a91d8aacdcf2cd77ed3aedd92b905b378087b9158077",
+      "bytes": 8524,
+      "mode": "0o644",
+      "role": "accepted_frozen_runtime_source_overlay"
+    }
+  ],
+  "supplement_packet_sha256": "4737cc061009e4c6711966127585d46e6f04737711166d2c1d5b540bebf98bc4",
+  "supplement_packet_path": "work/core1-native-earned-upgrade-delivery-20261021/PUBLICATION-SOURCE-SUPPLEMENT.json",
+  "supplement_overlay_paths": [
+    "lib/population_runtime/config.py",
+    "lib/population_runtime/controller.py",
+    "lib/population_runtime/manifest.py"
+  ],
+  "actual_native_source_header_closure_count": 21,
+  "actual_native_translation_unit_count": 10,
+  "historical_baseline_cpp_sha256": "8a2e86b7c0e7ecffa7c53b65ec690965c03b0613ba88ab874e4eab44e4da00c2",
+  "gear_version_binding": {
+    "candidate_snapshot_sha256": "8a2bfc8a90da3c7af5856c22c999041024f9320e68e974e764a2d0833509a8b8",
+    "candidate_snapshot_role": "frozen compiler snapshot support; not actual runtime gear source",
+    "actual_active_runtime_source_sha256": "1e10af64a17778d1008a15942faabc6b891b7267560fe18ed5ed5b0cb88dc3d7",
+    "actual_active_runtime_source_role": "separately observed active-helper original Python member; retained as a distinct pin",
+    "candidate_and_runtime_versions_are_distinct": true
+  },
+  "historical_source_reference_note": "Historical source-proof and provenance snapshots retain original absolute path references. They document capture/source context; they do not make this package relocatable or runnable, and they do not include the referenced raw SQL, DBC, catalogue, captures, datasets, runtime state, credentials, SDK, or generated binaries."
+}

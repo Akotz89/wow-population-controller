@@ -1,0 +1,15 @@
+{
+  "baseline_commands": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/native-run/evidence/view/task/build-design/commands.json",
+  "baseline_commands_sha256": "1046d12a3585a2eb5f9ce84614acbf3b06a0732f0b97f356d4edd089ef30cb78",
+  "baseline_plan": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/native-run/evidence/view/task/build-design/plan.json",
+  "baseline_plan_sha256": "0c34829cde51d3bf043e8f1e28c252a98f4e9ac043a086506cc7ea73ee5ca512",
+  "complete_source_identity": "f4764eb77295c24027d407bd7476041e5796b625602031549b71465993ce037b",
+  "composition": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-native-held-custody-recovery-20261021/attempts/01/composition.json",
+  "composition_sha256": "d866aa6b28761b769de8f7b5bb3d76a66a89389ba5746bbe47372425f4c55b7b",
+  "generated_root": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/generated",
+  "schema": "realm-vfs-world-source-v1",
+  "source_root": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-cpi231-native-source-20261019/materialized/view/source/core",
+  "task": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-native-held-custody-recovery-20261021/attempts/01/run/job/scratch/native-build/view/task",
+  "vfs": "/home/aaron/Documents/ChatGPT/wow private server/work/core2-native-held-custody-recovery-20261021/attempts/01/vfs-overlay.json",
+  "vfs_sha256": "a98faffc40c06e248f9d85a014daf91e1e8deec96fe21f6d70385912ce8d67a4"
+}
