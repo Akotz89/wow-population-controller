@@ -1,12 +1,14 @@
 """Offline checks for variable roster and gate-bound schedules."""
 import json
+from collections import deque
 from dataclasses import replace
+from decimal import Decimal
 import sys
 import tempfile
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'lib'))
 from population_runtime.canonical import digest_file
@@ -15,9 +17,82 @@ from population_runtime.controller import PopulationController
 from population_runtime.state import new_state
 from population_runtime.errors import ArtifactError
 from population_runtime.manifest import SCHEMA, load_manifest
+from population_runtime.models import BandAssignment, BandDefinition, EarnedProgress
 
 
 class SourceReconcileTest(unittest.TestCase):
+    def test_tick_releases_ineligible_session_only_after_adapter_ack(self):
+        for acknowledged in (True, False):
+            with self.subTest(acknowledged=acknowledged):
+                controller = PopulationController.__new__(PopulationController)
+                controller.config = SimpleNamespace(
+                    bands=(BandDefinition('main', Decimal('1'), 0),),
+                    allow_overcap_sessions=True, starter_zone_ids=(),
+                    starter_zone_online_cap=100, newcomer_session_share=Decimal('0'),
+                    online_cap=1, action_batch_size=1, admission_batch_size=1,
+                    admission_interval_seconds=30, snapshot_max_age_seconds=30,
+                    state_path='unused', audit_path='unused')
+                controller.state = new_state('a', 'b', 1)
+                earned = EarnedProgress('bot', 1, 30, 1234, 456, 0, 1, True, True)
+                controller.state.progress_cache['bot'] = earned
+                controller._artifact_digests = {}
+                controller._recovery_pending = False
+                controller._recovery_keys = deque()
+                controller._last_release_key = ''
+                controller._identity_by_key = {}
+                controller.capabilities = SimpleNamespace(generation=1)
+                controller.manifest = SimpleNamespace(manifest_digest='m', eligibility_digest='e',
+                                                      eligibility_generation=1)
+                controller.adapter = Mock()
+                controller.adapter.population_read_phase_snapshot.return_value = SimpleNamespace(
+                    enabled=True, policy_valid=True, level_ceiling=20, phase_id='p', policy_digest='d')
+                controller.adapter.population_read_owner_high_water.return_value = SimpleNamespace(
+                    observed_epoch=100, authenticated=True, level=10)
+                controller.adapter.population_read_capacity_snapshot.return_value = SimpleNamespace(
+                    observed_epoch=100, valid=True, generation=1, online_limit=1, available_sessions=0)
+                controller.adapter.population_apply_progression_policy.return_value = True
+                controller.adapter.population_release_session.return_value = acknowledged
+                assignment = BandAssignment('bot', 1, 'main', 10, 1)
+                with patch.object(controller, '_refresh_progress'), \
+                     patch.object(controller, '_admit_due_batch', return_value=[]), \
+                     patch.object(controller, '_assignments', return_value=(assignment,)), \
+                     patch('population_runtime.controller.save_state'), \
+                     patch('population_runtime.controller.append_audit') as audit:
+                    self.assertTrue(controller._tick(100))
+                controller.adapter.population_release_session.assert_called_once_with('bot')
+                controller.adapter.population_request_session.assert_not_called()
+                controller.adapter.population_apply_progression_policy.assert_called_once_with([
+                    {'identity_key': 'bot', 'effective_ceiling': 10, 'held': True}])
+                expected = replace(earned, session_requested=False, online=False) if acknowledged else earned
+                self.assertEqual(controller.state.progress_cache['bot'], expected)
+                self.assertEqual(controller.state.desired_session_keys, set())
+                action = audit.call_args.args[1]['actions'][0]
+                self.assertEqual(action['requested'], not acknowledged)
+                if not acknowledged:
+                    self.assertEqual(action['result'], 'release_not_acknowledged')
+
+    def test_requested_sessions_obey_ceilings_and_pending_login_is_retained(self):
+        controller = PopulationController.__new__(PopulationController)
+        controller.config = SimpleNamespace(
+            bands=(BandDefinition('main', Decimal('1'), 0),),
+            allow_overcap_sessions=True, starter_zone_ids=(),
+            starter_zone_online_cap=100, newcomer_session_share=Decimal('0'))
+        controller.state = new_state('a', 'b', 1)
+        record = SimpleNamespace(level=10, zone_id=0, map_id=0,
+                                 session_requested=True, online=False, played_seconds=0)
+        controller.state.progress_cache['bot'] = record
+        assignments = (BandAssignment('bot', 1, 'main', 10, 1),)
+
+        self.assertEqual(controller._desired_sessions(assignments, 1, 1, 20), {'bot'})
+        record.level = 30
+        self.assertEqual(controller._desired_sessions(assignments, 1, 1, 20), set())
+        record.zone_id = 1
+        self.assertEqual(controller._desired_sessions(assignments, 1, 1, 20), set())
+        record.level = 15
+        self.assertEqual(controller._desired_sessions(assignments, 1, 1, 20), {'bot'})
+        controller.config.allow_overcap_sessions = False
+        self.assertEqual(controller._desired_sessions(assignments, 1, 1, 20), set())
+
     def test_config_supports_large_target_and_preserves_safe_default(self):
         bands = [dict(name=n, share=s, owner_level_offset=i) for i, (n, s) in enumerate(zip(
             ('pioneer', 'scout', 'forward', 'main', 'trailing'), ('0.05', '0.15', '0.25', '0.35', '0.20')))]
