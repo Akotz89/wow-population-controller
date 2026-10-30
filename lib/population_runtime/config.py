@@ -68,7 +68,7 @@ class RuntimeConfig:
     pending_admission_limit: int = 1
     snapshot_weights: tuple[int, int, int] = (4, 1, 1)
     rank_denominator: str = "admitted"
-    admission_capacity: int = 2500
+    admission_capacity: int | None = None
     newcomer_wave_counts: tuple[int, ...] | None = None
     newcomer_schedule_path: Path | None = None
     eligibility_path: Path | None = None
@@ -81,6 +81,10 @@ class RuntimeConfig:
     session_rotation_interval_seconds: int = 900
     session_rotation_max_per_tick: int = 1
     newcomer_session_share: Decimal = Decimal("0.10")
+
+    def __post_init__(self) -> None:
+        if self.admission_capacity is None:
+            object.__setattr__(self, "admission_capacity", self.durable_target)
 
 
 def _integer(raw: dict[str, Any], key: str, minimum: int, maximum: int) -> int:
@@ -111,7 +115,7 @@ def _absolute_path(raw: dict[str, Any], key: str) -> Path:
     return path
 
 
-def _load_bands(value: object) -> tuple[BandDefinition, ...]:
+def _load_bands(value: object, target: int) -> tuple[BandDefinition, ...]:
     if not isinstance(value, list) or len(value) != len(_BAND_NAMES):
         raise ArtifactError("bands must contain the five ordered owner-relative definitions")
     bands: list[BandDefinition] = []
@@ -142,8 +146,8 @@ def _load_bands(value: object) -> tuple[BandDefinition, ...]:
                 raise ArtifactError("owner-relative offsets must strictly increase")
             previous_offset = offset
         minimum = row.get("minimum_slots", 0)
-        if isinstance(minimum, bool) or not isinstance(minimum, int) or not 0 <= minimum <= 2500:
-            raise ArtifactError("minimum_slots must be an integer in [0, 2500]")
+        if isinstance(minimum, bool) or not isinstance(minimum, int) or not 0 <= minimum <= target:
+            raise ArtifactError("minimum_slots must be an integer between 0 and durable_target")
         bands.append(BandDefinition(expected_name, share, offset, mode, minimum))
         share_sum += share
     if share_sum != Decimal(1):
@@ -192,7 +196,9 @@ def load_config(path: Path) -> RuntimeConfig:
         or len(zones) != len(set(zones))
     ):
         raise ArtifactError("starter_zone_ids must be a non-empty unique integer list")
-    target = _integer(raw, "durable_target", 1, 2500)
+    target = raw.get("durable_target")
+    if type(target) is not int or target < 1:
+        raise ArtifactError("durable_target must be a positive integer")
     online_cap = _integer(raw, "online_cap", 1, target)
     if raw.get("rank_denominator", "admitted") not in ("admitted", "admission_capacity"):
         raise ArtifactError("rank_denominator must be admitted or admission_capacity")
@@ -267,7 +273,7 @@ def load_config(path: Path) -> RuntimeConfig:
         snapshot_max_age_seconds=_integer(raw, "snapshot_max_age_seconds", 1, 300),
         starter_zone_ids=frozenset(zones),
         starter_zone_online_cap=_integer(raw, "starter_zone_online_cap", 1, target),
-        bands=_load_bands(raw["bands"]),
+        bands=_load_bands(raw["bands"], target),
         rank_denominator=raw.get("rank_denominator", "admitted"),
         admission_capacity=capacity,
         newcomer_wave_counts=tuple(waves) if waves is not None else None,

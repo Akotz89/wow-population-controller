@@ -14,8 +14,6 @@ from .errors import ArtifactError
 from .models import Identity
 
 SCHEMA = "cpi-196-immutable-identity-manifest-v1"
-SCHEDULE_VERSION = "cpi-196-rndbot-wave-policy-2500-v1"
-SCHEDULE_SHA256 = "bdfea0aefa6e0a9c4d80d40cb6e1188863ab33396f659c5229c44ed99f0f6789"
 _ROW_KEYS = set(Identity.__dataclass_fields__)
 
 
@@ -84,13 +82,18 @@ def load_manifest(config: RuntimeConfig) -> IdentityManifest:
         or validated.get("status") not in {"ACCEPTED", "VALIDATED_WITH_HOLDS"}
         or validated.get("realm_id") != 1
         or validated.get("identity_count") != config.durable_target
-        or validated.get("schedule_version") != SCHEDULE_VERSION
-        or validated.get("schedule_sha256") != SCHEDULE_SHA256
+        or not isinstance(validated.get("schedule_version"), str)
+        or not validated["schedule_version"]
+        or validated["schedule_version"] != getattr(gate, "SCHEDULE_VERSION", None)
+        or validated.get("schedule_sha256") != getattr(gate, "SCHEDULE_SHA256", None)
+        or validated.get("schedule_sha256") != digest_file(config.schedule_path)
+        or type(getattr(gate, "ROSTER_TARGET", None)) is not int
+        or config.durable_target != gate.ROSTER_TARGET
     ):
         raise ArtifactError("identity manifest release fields are not the governed realm-1 values")
     rows = validated.get("rows")
     if not isinstance(rows, list) or len(rows) != config.durable_target:
-        raise ArtifactError("identity manifest does not contain exactly 2500 validated rows")
+        raise ArtifactError("identity manifest cardinality differs from the configured durable target")
     identities: list[Identity] = []
     for index, row in enumerate(rows):
         if not isinstance(row, dict) or set(row) != _ROW_KEYS:

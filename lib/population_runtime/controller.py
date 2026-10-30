@@ -299,13 +299,16 @@ class PopulationController:
             band.name: [] for band in self.config.bands
         }
         eligible_by_key: dict[str, BandAssignment] = {}
+        pending_eligible: set[str] = set()
         for assignment in assignments:
-            level = self.state.progress_cache[assignment.identity_key].level
-            if (self.state.progress_cache[assignment.identity_key].zone_id > 0
-                    and level <= phase_ceiling
-                    and (self.config.allow_overcap_sessions or level <= assignment.effective_ceiling)):
-                by_band[assignment.band].append(assignment)
-                eligible_by_key[assignment.identity_key] = assignment
+            record = self.state.progress_cache[assignment.identity_key]
+            if (record.level <= phase_ceiling
+                    and (self.config.allow_overcap_sessions or record.level <= assignment.effective_ceiling)):
+                if record.zone_id > 0:
+                    by_band[assignment.band].append(assignment)
+                    eligible_by_key[assignment.identity_key] = assignment
+                elif record.zone_id == 0 and record.session_requested:
+                    pending_eligible.add(assignment.identity_key)
         desired: set[str] = set()
         active = {
             key for key, record in self.state.progress_cache.items()
@@ -318,7 +321,7 @@ class PopulationController:
         # no zone; releasing that pending login causes one-second churn.
         desired.update(
             key for key in incumbents
-            if key in eligible_by_key or self.state.progress_cache[key].session_requested
+            if key in eligible_by_key or key in pending_eligible
         )
         for key in desired:
             self.state.last_selected_epoch.setdefault(key, now)
