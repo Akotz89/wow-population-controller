@@ -1,10 +1,9 @@
 # WoW population controller
 
-Source-only ownership snapshot for the Python population controller used by the
-v30 release. The 17 tracked Python files are copied from the live, source-only
-working directory; `scripts/login.py`, bytecode, snapshots, credentials,
-database data, server configuration, and release artifacts are intentionally
-excluded.
+Source-only Python population controller based on the v30 release. The runtime
+configuration and identity gate bindings also support variable roster targets.
+`scripts/login.py`, bytecode, snapshots, credentials, database data, server
+configuration, and release artifacts are intentionally excluded.
 
 The native integration boundary is the maintained
 [`mod-python-engine`](https://github.com/Akotz89/mod-python-engine) fork at
