@@ -1,6 +1,8 @@
 """Offline tests for the ordinary-batch candidate generator."""
 import copy
+import hashlib
 import json
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -28,6 +30,18 @@ class PrepareOrdinaryBatchTest(unittest.TestCase):
         for item in self.patches:
             item.start()
             self.addCleanup(item.stop)
+
+    def generate_synthetic(self, inputs, output):
+        decisions = output.parent / 'decisions.json'
+        decisions.write_text('{}')
+        authority = dict(decisions_path=decisions, schedule_path=output.parent / 'schedule',
+                         template_path=output.parent / 'templates', appearance_path=output.parent / 'appearances',
+                         corpus_sha256=hashlib.sha256(inputs[0].read_bytes()).hexdigest())
+        with patch.object(generator.source, 'validate_manifest') as validate:
+            result = generator.generate(*inputs, output, **authority)
+        validate.assert_called_once_with(self.old, {}, authority['schedule_path'],
+                                         authority['template_path'], authority['appearance_path'])
+        return result
 
     def test_reserved_and_pending_rows_preserved(self):
         for field in ('population_identity', 'pending'):
@@ -77,12 +91,12 @@ class PrepareOrdinaryBatchTest(unittest.TestCase):
                 path.write_text(json.dumps(data))
                 inputs.append(path)
             output = root / 'output'
-            generator.generate(*inputs, output)
+            self.generate_synthetic(inputs, output)
             report = json.loads((output / 'preparation-report.json').read_text())
             self.assertFalse(report['template_gameplay_acceptance'])
             before = {path.name: path.read_bytes() for path in output.iterdir()}
             with self.assertRaises(FileExistsError):
-                generator.generate(*inputs, output)
+                self.generate_synthetic(inputs, output)
             self.assertEqual(before, {path.name: path.read_bytes() for path in output.iterdir()})
 
     def test_failure_does_not_publish_report(self):
@@ -96,7 +110,7 @@ class PrepareOrdinaryBatchTest(unittest.TestCase):
             output = root / 'output'
             with patch.object(generator.os, 'link', side_effect=OSError('injected failure')):
                 with self.assertRaisesRegex(OSError, 'injected failure'):
-                    generator.generate(*inputs, output)
+                    self.generate_synthetic(inputs, output)
             self.assertFalse((output / 'preparation-report.json').exists())
             self.assertFalse(output.exists())
 
@@ -116,9 +130,48 @@ class PrepareOrdinaryBatchTest(unittest.TestCase):
 
             with patch.object(generator.os, 'link', side_effect=fail_with_unowned_file):
                 with self.assertRaisesRegex(OSError, 'injected failure'):
-                    generator.generate(*inputs, output)
+                    self.generate_synthetic(inputs, output)
             self.assertEqual((output / 'unowned').read_text(), 'preserve')
             self.assertEqual([item.name for item in output.iterdir()], ['unowned'])
+
+    def test_invalid_inputs_fail_before_output(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            inputs = []
+            for name, data in (('corpus', self.corpus), ('manifest', self.old), ('policy', self.policy),
+                               ('decisions', {})):
+                path = root / name
+                path.write_text(json.dumps(data))
+                inputs.append(path)
+            output = root / 'output'
+            authority = dict(decisions_path=inputs[3], schedule_path=root / 'schedule',
+                             template_path=root / 'templates', appearance_path=root / 'appearances',
+                             corpus_sha256=hashlib.sha256(inputs[0].read_bytes()).hexdigest())
+            with self.assertRaises(TypeError):
+                generator.generate(*inputs[:3], output)
+            for wrong in ('0' * 64, 'NOT_A_DIGEST'):
+                with self.subTest(wrong=wrong), self.assertRaises(ValueError):
+                    generator.generate(*inputs[:3], output, **dict(authority, corpus_sha256=wrong))
+                self.assertFalse(output.exists())
+            with self.assertRaises(generator.source.GateError):
+                generator.generate(*inputs[:3], output, **authority)
+            self.assertFalse(output.exists())
+            with patch.object(generator.source, 'validate_manifest', side_effect=generator.source.GateError('wrong authority')):
+                with self.assertRaisesRegex(generator.source.GateError, 'wrong authority'):
+                    generator.generate(*inputs[:3], output, **authority)
+            self.assertFalse(output.exists())
+
+    def test_cli_requires_authority_arguments(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / 'output'
+            result = subprocess.run([sys.executable, '-B', str(Path(generator.__file__)),
+                                     '--corpus', 'unused', '--manifest', 'unused',
+                                     '--policy', 'unused', '--output-dir', str(output)],
+                                    capture_output=True, text=True)
+            self.assertEqual(result.returncode, 2)
+            self.assertIn('--decisions', result.stderr)
+            self.assertIn('--corpus-sha256', result.stderr)
+            self.assertFalse(output.exists())
 
 
 if __name__ == '__main__':

@@ -98,11 +98,18 @@ def prepare(corpus, old, policy):
     return result, holds, choices
 
 
-def generate(corpus_path, manifest_path, policy_path, output_dir):
+def generate(corpus_path, manifest_path, policy_path, output_dir, *, decisions_path,
+             schedule_path, template_path, appearance_path, corpus_sha256):
     """Write a candidate into a new directory; report presence marks complete output."""
     corpus_bytes = Path(corpus_path).read_bytes()
-    corpus = json.loads(corpus_bytes)
+    if not isinstance(corpus_sha256, str) or source.HEX64.fullmatch(corpus_sha256) is None:
+        raise ValueError('expected corpus SHA-256 must be a lowercase hexadecimal digest')
+    if hashlib.sha256(corpus_bytes).hexdigest() != corpus_sha256:
+        raise ValueError('source corpus SHA-256 mismatch')
     old = json.loads(Path(manifest_path).read_bytes())
+    decisions = json.loads(Path(decisions_path).read_bytes())
+    source.validate_manifest(old, decisions, Path(schedule_path), Path(template_path), Path(appearance_path))
+    corpus = json.loads(corpus_bytes)
     policy = json.loads(Path(policy_path).read_bytes())
     rows, holds, _ = prepare(corpus, old, policy)
     fields = ['race_id', 'gender', 'skin', 'face', 'hair_style', 'hair_color', 'facial_hair']
@@ -157,9 +164,17 @@ def main():
     parser.add_argument('--corpus', type=Path, required=True)
     parser.add_argument('--manifest', type=Path, required=True)
     parser.add_argument('--policy', type=Path, required=True)
+    parser.add_argument('--decisions', type=Path, required=True)
+    parser.add_argument('--schedule', type=Path, required=True)
+    parser.add_argument('--templates', type=Path, required=True)
+    parser.add_argument('--appearances', type=Path, required=True)
+    parser.add_argument('--corpus-sha256', required=True)
     parser.add_argument('--output-dir', type=Path, required=True)
     args = parser.parse_args()
-    print(json.dumps(generate(args.corpus, args.manifest, args.policy, args.output_dir)))
+    print(json.dumps(generate(args.corpus, args.manifest, args.policy, args.output_dir,
+                              decisions_path=args.decisions, schedule_path=args.schedule,
+                              template_path=args.templates, appearance_path=args.appearances,
+                              corpus_sha256=args.corpus_sha256)))
 
 
 if __name__ == '__main__':

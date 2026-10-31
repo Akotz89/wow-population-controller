@@ -27,15 +27,21 @@ at core commit `9fb906bb7296212ff42fc95ff73a92aaf8554f0d` (SQL SHA-256
 That core revision contains a GPL version 2 license. This repository has no
 declared license; provenance and licensing remain under review.
 
-Prepare an offline ordinary-level-one candidate from previously validated
-corpus and manifest inputs with:
+Prepare an offline ordinary-level-one candidate with explicit authority inputs:
 
 ```sh
 python3 lib/prepare_ordinary_batch.py --corpus /path/source-corpus.json \
   --manifest /path/held-manifest.json --policy /path/policy.json \
+  --decisions /path/decisions.json --schedule /path/wave-schedule.txt \
+  --templates /path/templates.tsv --appearances /path/appearances.json \
+  --corpus-sha256 TRUSTED_CORPUS_SHA256 \
   --output-dir /path/new-candidate-directory
 ```
 
+The gate validates the manifest against the supplied decisions, schedule and
+catalogues before generating output. Obtain the corpus digest and authority
+inputs from independently trusted records: matching a caller-supplied digest
+binds the bytes but does not establish their provenance or truth.
 The output directory must not already exist. The report is published last;
 if it is missing, the run is incomplete. An interrupted run may leave its
 directory for cleanup. These files are candidates and do not authorize admission.
