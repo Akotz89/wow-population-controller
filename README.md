@@ -27,6 +27,19 @@ at core commit `9fb906bb7296212ff42fc95ff73a92aaf8554f0d` (SQL SHA-256
 That core revision contains a GPL version 2 license. This repository has no
 declared license; provenance and licensing remain under review.
 
+Prepare an offline ordinary-level-one candidate from previously validated
+corpus and manifest inputs with:
+
+```sh
+python3 lib/prepare_ordinary_batch.py --corpus /path/source-corpus.json \
+  --manifest /path/held-manifest.json --policy /path/policy.json \
+  --output-dir /path/new-candidate-directory
+```
+
+The output directory must not already exist. The report is published last;
+if it is missing, the run is incomplete. An interrupted run may leave its
+directory for cleanup. These files are candidates and do not authorize admission.
+
 Public CI checks Python syntax and an offline ledger integrity regression. It
 requires no realm or credentials and does not prove native integration, runtime
 behavior, or gameplay acceptance.
