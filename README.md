@@ -10,6 +10,16 @@ The native integration boundary is the maintained
 engine revision `700a4f75a2e550f17022665d7b5b009c24e46a40`. Runtime and gameplay
 acceptance remain separate from this source snapshot.
 
+`lib/identity_gate.py` is the existing standalone CPI-196 identity and
+ordinary-batch gate, retained byte-for-byte for the runtime's single-file
+SHA-256 binding. It is source only: adding the file does not configure or
+enable admission. This historical gate fixes a 10,000-identity target and a
+specific schedule digest and version; it is not a tunable manifest policy.
+Its ordinary-batch validation explicitly does not accept
+talent templates; gameplay, restart, and persistence acceptance remain open.
+The standalone CLI does not provide an eligibility-validation command; the
+controller imports the gate for that purpose.
+
 Public CI checks Python syntax and an offline ledger integrity regression. It
 requires no realm or credentials and does not prove native integration, runtime
 behavior, or gameplay acceptance.
