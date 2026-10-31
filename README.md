@@ -20,6 +20,13 @@ talent templates; gameplay, restart, and persistence acceptance remain open.
 The standalone CLI does not provide an eligibility-validation command; the
 controller imports the gate for that purpose.
 
+Its race/class allowlist was checked against
+[`playercreateinfo.sql`](https://github.com/azerothcore/azerothcore-wotlk/blob/9fb906bb7296212ff42fc95ff73a92aaf8554f0d/data/sql/base/db_world/playercreateinfo.sql)
+at core commit `9fb906bb7296212ff42fc95ff73a92aaf8554f0d` (SQL SHA-256
+`0d74fddfeaac43fc07da188d1b6244a30088ca01b4d598d4ca7d317f619fdeac`).
+That core revision contains a GPL version 2 license. This repository has no
+declared license; provenance and licensing remain under review.
+
 Public CI checks Python syntax and an offline ledger integrity regression. It
 requires no realm or credentials and does not prove native integration, runtime
 behavior, or gameplay acceptance.
