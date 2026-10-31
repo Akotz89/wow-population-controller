@@ -46,6 +46,14 @@ The output directory must not already exist. The report is published last;
 if it is missing, the run is incomplete. An interrupted run may leave its
 directory for cleanup. These files are candidates and do not authorize admission.
 
+`lib/build_ordinary_release.py --help` describes the offline release builder.
+It revalidates the authority, corpus and complete generator output, and requires
+the absolute corpus file that will be named by the new eligibility digest.
+It writes a new directory and publishes `release-complete.json` last; consumers
+must verify its file hashes and absence means an incomplete run. These writes
+are not an atomic multi-file transaction. `lib/release_transition.py` computes
+an offline transition only; it performs no database writes or deployment.
+
 Public CI checks Python syntax and an offline ledger integrity regression. It
 requires no realm or credentials and does not prove native integration, runtime
 behavior, or gameplay acceptance.
